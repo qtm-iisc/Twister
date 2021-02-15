@@ -1,0 +1,17 @@
+In this example, we compare output for MoS2 bilayer in a range around 
+27.8 degree twist-angle with results from Coincidence 
+Lattices of 2D Crystals: Heterostructure Predictions and Applications, Koda et al, 2016.  
+
+Running this example:
+
+To find the commensurate twist-angles and new lattice parameters:
+mpirun -n 5 python $pathtoTwisterSRC/get_angle.py
+
+See Documentation/ for more details of the input and output.
+
+The commensurate twist-angle, superlattice vectors (n1, n2; n1', n2')
+and new lattice parameters are used in twist.inp along with the basis
+atom positions in files basis_pos_crys and basis_pos_crys_layer2.
+
+To obtain the atom positions in the superlattice:
+python $pathtoTwisterSRC/twister.py

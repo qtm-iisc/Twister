@@ -1,0 +1,79 @@
+
+=> Construction of moire superlattice for twisted bilayer
+mos2 near 0 degrees with atomic relaxation and with standard
+lammps build (i.e. without python wrapper).
+
+---------------------------------------------------
+The force-field used in this directory for twisted bilayer 
+of mos2 will be a combination of Stillinger-Weber 
+(parametrized as in: http://jiangjinwu.org/sw, within
+sw_mx2.zip file) and registry dependent Kolmogorov-Crespi
+Potential (Naik et al., as in J. Phys. Chem. C 2019, 123,
+15, 9770-9778). The corresponding forcefield files are
+available in the current directory, i) mos2.sw ii) MoS.KC.
+They are used to describe intra and interlayer interaction
+of mos2 layers, respectively.
+
+
+It is extremely important, that the user modifies
+pair_sw.cpp as suggested in:
+https://link.springer.com/article/10.1007/s10338-018-0049-z#appendices
+After this, please rebuild the lammps executable.
+For convenience, the modified pair_sw.cpp is provided here.
+
+[If you have not yet built lammps already, please see 
+/path-to-examples-of-mos2/LAMMPS_INSTALL]
+
+After this replace the original pair_sw.cpp by the one
+provided here (or, you can modify the pair_sw.cpp yourself)
+and type:
+
+make serial
+
+
+Without this step, if you simply run the script, homo.sh
+the intralayer interaction will be completely wrong. 
+
+
+In the script (homo.sh), init=1, end=6 were set
+to produce twist angles kept in the reference directory.
+Please, also note that while performing relaxation we are 
+using standard lammps build without python wrapper. 
+The python wrapper example can be found in with_python 
+directory 
+
+basis_pos_crys file contains the basis of one Mo atom and
+two S atoms.
+
+To reproduce this example, please edit the following variables in 
+homo.sh:
+hextable='' # Can be the current directory.
+twister_path='' # Path to Twister SRC folder
+aux_files='' # Path to Twister/KC_relaxation/mos2/aux_files/
+basis_file='' # Path to Twister/KC_relaxation/mos2/aux_files/basis_0
+forcefield='' # Path to Twister/KC_relaxation/mos2/aux_files/ff
+lammps_path='' #  lammps executable path
+
+Run from command line:
+bash homo.sh
+
+
+The superlattice vectors in units of celldm1,
+and atom positions (in Angstroms) constituting
+the superlattice are provided in superlattice.dat.
+
+A reference Quantum Espresso input file, qe.in, for
+this superlattice is also provided.
+
+Simulataneously, a reference LAMMPS input file, lammps.in
+along with formatted data file, lammps.dat are also created.
+The data file and the input provided are used to perform
+atomic relaxation.  Please see the log.lammps file in the
+corresponding directory to find out the output.
+
+
+lammps.dat_min: file produced by lammps after minimization.
+relaxed_data:   extracted atomic positons and lattice vectors
+                from lammps.dat_min
+----------------------------------------------------
+ 

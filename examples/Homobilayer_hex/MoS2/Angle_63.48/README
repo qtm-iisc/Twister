@@ -1,0 +1,28 @@
+This twist angle is close to 60 degrees. To 
+construct the superlattice, we start with the 
+60 degree rotated structure: Bernal stacking.
+And then perform a small twist using the hex.table
+
+The input file, twist.inp, here is constructed using i = 9
+entry of hex.table (../../hex.table). We add the following lines 
+in the input:
+
+layer2_from_file:
+True basis_pos_crys_layer2
+
+basis_pos_crys file contains the basis for layer 1. 
+basis_pos_crys_layer2 contains the basis for layer 2,
+which is chosen to produce the Bernal stacking.
+Hence the stacking is Bernal at the origin in the 
+superlattice.
+
+To run this example, run from command line:
+
+python path_to_Twister/src/twister.py
+
+The superlattice vectors in units of celldm1,
+and atom positions (in Angstroms) constituting 
+the superlattice are provided in superlattice.dat
+
+A reference Quantum Espresso input file, in.QE, for 
+this superlattice is also provided.

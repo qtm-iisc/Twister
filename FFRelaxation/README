@@ -1,0 +1,9 @@
+This directory contains examples for relaxing the moir\'e superlattices
+using forcefields as implemented in the LAMMPS package.
+
+NOTE: Please go through the README in the TMD relaxations carefully -- it 
+requires an additional step during the LAMMPS compilation to get the 
+Stillinger-Weber intralayer forcefields to work in the desired manner.
+
+Tips on installing LAMMPS with the required packages are provided in 
+LAMMPS_INSTALL

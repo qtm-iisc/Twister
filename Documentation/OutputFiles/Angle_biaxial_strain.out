@@ -1,0 +1,58 @@
+In this example, we find a commensurate angle for black phosphorene bilayer with a rectangular lattice.
+
+1.From the directory with the input file get_ang.inp, in the terminal, run the following command:
+  python path_to_Get_Ang/SRC/get_ang.py
+
+2.An output file will be written corresponding to each angle as "Angle_%angle%"
+
+An explained sample output file is given below.
+
+#Twist angle in deg
+Twist angle:27.800000
+
+#Co-efficients of vector 1 and vector 2 in top layer
+
+Superlattice (vector 1(n1,n2),vector2(n1',n2')):
+-4.000000 3.000000
+-3.000000 -1.000000
+
+#Co-efficients of vector 1 and vector 2 in bottom layer  
+
+Superlattice_m (vector 1(n1,n2),vector2(n1',n2')):
+-3.000000 4.000000
+-4.000000 1.000000
+
+#Number of atoms in the superlattice
+Total number of atoms: 78
+
+#self-explanatory
+Angle between super lattice vectors: 90.000000
+
+
+#Mismatch between top and bottom layer vectors in Angstroms
+Mismatch (vector1,vector2): 0.000842 0.000842
+
+#Percentage by which each lattice parameter is strained
+
+Strain Percent (vector 1,vector2): -0.000000 -0.000000
+
+
+#Strained lattice parameters for a better fit
+
+New lattice parameter layer 1: 3.164000 3.164000 25.000000
+New lattice parameter layer 2: 3.164000 3.164000 25.000000
+
+
+#Mismatch between top and bottom layer vectors in Angstroms with strained lattice parameters
+
+Mismatch with new lattice parmaters (vector1,vector2): 0.000842 0.000842
+
+
+
+3.Select the angle,corresponding superlattice co-efficientsas well as the  new lattice parameters and feed them to Twister 1.2. Refer to Twister 1.2 README for format of input and  more information.
+
+Note:
+
+1) The program is coded to give the superlattices with minimum area with an error of 1% allowed. The user is suggested to use the vectors with minimum mismatch.
+
+2) In case of lack of results, possible errors will be printed in the terminal.

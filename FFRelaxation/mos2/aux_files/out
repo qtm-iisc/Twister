@@ -1,0 +1,15 @@
+a_moire: 115.451592
+Following are for \sqrt3\sqrt3 with alat:3.100000
+change_box all xy final 99.984011 x final 0.0 199.968022 y final 0.0 173.177387 remap units box
+a_moire: 115.824016
+Following are for \sqrt3\sqrt3 with alat:3.110000
+change_box all xy final 100.306540 x final 0.0 200.613081 y final 0.0 173.736024 remap units box
+a_moire: 116.196441
+Following are for \sqrt3\sqrt3 with alat:3.120000
+change_box all xy final 100.629069 x final 0.0 201.258139 y final 0.0 174.294661 remap units box
+a_moire: 116.568865
+Following are for \sqrt3\sqrt3 with alat:3.130000
+change_box all xy final 100.951598 x final 0.0 201.903197 y final 0.0 174.853298 remap units box
+a_moire: 116.941290
+Following are for \sqrt3\sqrt3 with alat:3.140000
+change_box all xy final 101.274127 x final 0.0 202.548255 y final 0.0 175.411934 remap units box

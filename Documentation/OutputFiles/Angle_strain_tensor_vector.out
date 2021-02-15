@@ -1,0 +1,70 @@
+In this example, we find a commensurate angle for black phosphorene bilayer with a rectangular lattice.
+
+1.From the directory with the input file get_ang.inp, in the terminal, run the following command:
+  python path_to_Get_Ang/SRC/get_ang.py
+
+2.An output file will be written corresponding to each angle as "Angle_%angle%"
+
+An explained sample output file is given below.
+
+#Twist angle in deg
+Twist angle:5.400000
+
+#Co-efficients of vector 1 and vector 2 in top layer
+
+Superlattice (vector 1(n1,n2),vector2(n1',n2')):
+-15.000000000 -1.000000000
+-1.000000000 7.000000000
+
+#Co-efficients of vector 1 and vector 2 in bottom layer  
+Superlattice_m (vector 1(n1,n2),vector2(n1',n2')):
+-15.000000000 0.000000000
+0.000000000 7.000000000
+
+#Number of atoms in the superlattice
+Total number of atoms: 844
+
+#self-explanatory
+Angle between super lattice vectors (in degree):90.564866
+
+#Mismatch between top and bottom layer vectors in Angstroms
+
+Mismatch (vector1,vector2) (in Angstrom):0.231303818 0.312452555
+
+#Matrix by which unit vectors of the top layer are changed
+
+Deformation tensor:
+ 1.004289866 -0.001776761
+-0.008126111 1.005225963
+
+#Symmetric and rotation factors of the deformation tensor 
+
+Symmetric factor of deformation tensor:
+ 1.004310528 -0.004952890
+-0.004952890 1.005215331
+Rotation factor of deformation tensor:
+ 0.999995008 0.003159626
+-0.003159626 0.999995008
+
+#self-explanatory
+New angle of rotation (in degrees):5.581033531903
+
+#New unit vectors of the top layer
+
+New unit vector of top layer (in Angstrom):
+ 1.004310528416 -0.004952890196
+-0.004952890196 1.005215331395
+
+#Mismatch between top and bottom layer vectors in Angstroms with strained lattice parameters
+
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000 0.000000000000
+
+
+
+3.Select the angle,corresponding superlattice co-efficients as well as the  new lattice parameters and feed them to Twister 1.2. Refer to Twister 1.2 README for format of input and  more information.
+
+Note:
+
+1) The program is coded to give the superlattices with minimum area with an error of 1% allowed.
+
+2) In case of lack of results, possible errors are printed in the terminal.

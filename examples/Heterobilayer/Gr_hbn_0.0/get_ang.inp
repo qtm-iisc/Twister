@@ -1,0 +1,56 @@
+range_nm:
+-64 65
+
+celldm_a: 
+2.467 2.467 25.0
+
+a1:
+0.5 0.8660254 0.0
+
+a2:
+-0.5 0.8660254 0.0
+
+a3:
+0.0 0.0 1.0
+
+Number_basis_atoms_a:
+2
+
+celldm_b:
+2.512 2.512 25.0
+
+b1:
+0.5 0.8660254 0.0
+
+b2:
+-0.5 0.8660254 0.0
+
+b3:
+0.0 0.0 1.0
+
+Number_basis_atoms_b:
+2
+
+theta_range:
+0.0 0.1 0.05
+
+mismatch (Angstrom):
+0.01
+
+strain_tensor_vector:
+'False'
+
+strain_per:
+0.01
+
+strain_layer:
+'Both'
+
+fix_ang:
+'True'
+
+f_ang:
+120
+
+plot:
+'N'

@@ -1,0 +1,43 @@
+Twist angle:3.105500
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+3.000000000 -16.000000000
+16.000000000 -13.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+2.000000000 -15.000000000
+15.000000000 -13.000000000
+Total number of atoms: 1248
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.042295170 0.042295156
+Strain Percent (vector 1,vector2): -0.045393081 0.045393065
+New lattice parameter layer 1 (in Angstrom):3.162563763 3.162563763 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.302498425 3.302498425 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000124212 0.000124199
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+3.000000000 -16.000000000
+-13.000000000 -3.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+2.000000000 -15.000000000
+-13.000000000 -2.000000000
+Total number of atoms: 1248
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.042295170 0.042295151
+Strain Percent (vector 1,vector2): -0.045393081 0.045393061
+New lattice parameter layer 1 (in Angstrom):3.162563763 3.162563763 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.302498425 3.302498425 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000124212 0.000124217
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+16.000000000 -13.000000000
+13.000000000 3.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+15.000000000 -13.000000000
+13.000000000 2.000000000
+Total number of atoms: 1248
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.042295156 0.042295151
+Strain Percent (vector 1,vector2): -0.045393065 0.045393061
+New lattice parameter layer 1 (in Angstrom):3.162563763 3.162563763 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.302498425 3.302498425 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000124199 0.000124217

@@ -1,0 +1,33 @@
+HEXAGONAL LATTICES:
+(With the same lattice parameter, eg. twisted bilayer graphene, 
+twisted bilayer MoS2)
+
+For twist angles close to 0 degrees:
+
+Start with AA stacking of the two layers. The commensurate 
+angles are given by:
+
+theta_i = arccos((3*i**2 + 3*i + 0.5)/(3*i**2 + 3*i + 1)) - (1)
+(from J. M. B. Lopes dos Santos, N. M. R. Peres, and A. H. Castro Neto, 
+Phys. Rev. Lett. 99, 256802 (2007))
+
+for i = 0,1,2,3...
+
+Larger the i, the closer you get to 0 degrees. 
+
+Please look at README_steps for steps on how to run 
+the code.
+
+Also see MoS2/ and Graphene/
+.............................................................
+
+For twist angles close to 60 degrees: 
+
+Start with Bernal/AB stacking of the two layers. Note that the Bernal 
+stacking is a 60 degree twist of the AA stacking. Thus, 
+starting with a 60 degree stacking, we twist by the same angle  
+(1) as above to generate commensurate angles close to 60.
+
+Larger the i, the closer you get to 60 degrees.
+
+See MoS2/ and Graphene/ examples

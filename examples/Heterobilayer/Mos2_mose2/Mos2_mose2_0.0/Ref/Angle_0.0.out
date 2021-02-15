@@ -1,0 +1,85 @@
+Twist angle:0.000000
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+0.000000000 -24.000000000
+24.000000000 -24.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -23.000000000
+23.000000000 -23.000000000
+Total number of atoms: 3315
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.013000000 0.013000000
+Strain Percent (vector 1,vector2): -0.008560573 0.008560573
+New lattice parameter layer 1 (in Angstrom):3.163729143 3.163729143 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.301282585 3.301282585 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000000000 0.000000000
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+0.000000000 -24.000000000
+-24.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -23.000000000
+-23.000000000 0.000000000
+Total number of atoms: 3315
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.013000000 0.013000000
+Strain Percent (vector 1,vector2): -0.008560573 0.008560573
+New lattice parameter layer 1 (in Angstrom):3.163729143 3.163729143 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.301282585 3.301282585 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000000000 0.000000000
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+24.000000000 -24.000000000
+24.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+23.000000000 -23.000000000
+23.000000000 0.000000000
+Total number of atoms: 3315
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.013000000 0.013000000
+Strain Percent (vector 1,vector2): -0.008560573 0.008560573
+New lattice parameter layer 1 (in Angstrom):3.163729143 3.163729143 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.301282585 3.301282585 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000000000 0.000000000
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+-24.000000000 0.000000000
+-24.000000000 24.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-23.000000000 0.000000000
+-23.000000000 23.000000000
+Total number of atoms: 3315
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.013000000 0.013000000
+Strain Percent (vector 1,vector2): -0.008560573 0.008560573
+New lattice parameter layer 1 (in Angstrom):3.163729143 3.163729143 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.301282585 3.301282585 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000000000 0.000000000
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+24.000000000 0.000000000
+0.000000000 24.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+23.000000000 0.000000000
+0.000000000 23.000000000
+Total number of atoms: 3315
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.013000000 0.013000000
+Strain Percent (vector 1,vector2): -0.008560573 0.008560573
+New lattice parameter layer 1 (in Angstrom):3.163729143 3.163729143 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.301282585 3.301282585 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000000000 0.000000000
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+-24.000000000 24.000000000
+0.000000000 24.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-23.000000000 23.000000000
+0.000000000 23.000000000
+Total number of atoms: 3315
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.013000000 0.013000000
+Strain Percent (vector 1,vector2): -0.008560573 0.008560573
+New lattice parameter layer 1 (in Angstrom):3.163729143 3.163729143 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.301282585 3.301282585 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000000000 0.000000000

@@ -1,0 +1,2257 @@
+Twist angle:4.200000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -11.000000000
+19.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -11.000000000
+19.000000000 -2.000000000
+Total number of atoms: 1692
+Angle between super lattice vectors (in degree):89.555765
+Mismatch (vector1,vector2) (in Angstrom):0.545778668 0.507936670
+Deformation tensor:
+ 0.993211695 -0.000900166
+0.008601623 0.992646135
+Symmetric factor of deformation tensor:
+ 0.993241482 0.003849331
+0.003849331 0.992639080
+Rotation factor of deformation tensor:
+ 0.999988553 -0.004784673
+0.004784673 0.999988553
+New angle of rotation (in degrees):3.925857377440
+New unit vector of top layer (in Angstrom):
+ 0.993241481747737 0.003849331231072
+0.003849331231072 0.992639079646372
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000014 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -11.000000000
+-19.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -11.000000000
+-19.000000000 2.000000000
+Total number of atoms: 1692
+Angle between super lattice vectors (in degree):89.555765
+Mismatch (vector1,vector2) (in Angstrom):0.545778668 0.507936670
+Deformation tensor:
+ 0.993211695 -0.000900166
+0.008601623 0.992646135
+Symmetric factor of deformation tensor:
+ 0.993241482 0.003849331
+0.003849331 0.992639080
+Rotation factor of deformation tensor:
+ 0.999988553 -0.004784673
+0.004784673 0.999988553
+New angle of rotation (in degrees):3.925857377440
+New unit vector of top layer (in Angstrom):
+ 0.993241481747737 0.003849331231072
+0.003849331231072 0.992639079646372
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000014 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -11.000000000
+-19.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -11.000000000
+-19.000000000 1.000000000
+Total number of atoms: 1676
+Angle between super lattice vectors (in degree):89.551511
+Mismatch (vector1,vector2) (in Angstrom):0.423555653 0.169458464
+Deformation tensor:
+ 0.997902200 -0.000215519
+0.008026997 0.997328561
+Symmetric factor of deformation tensor:
+ 0.997926845 0.003904521
+0.003904521 0.997320941
+Rotation factor of deformation tensor:
+ 0.999991467 -0.004131074
+0.004131074 0.999991467
+New angle of rotation (in degrees):3.963306231135
+New unit vector of top layer (in Angstrom):
+ 0.997926845177982 0.003904520522387
+0.003904520522387 0.997320941237031
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -11.000000000
+-18.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -11.000000000
+-18.000000000 1.000000000
+Total number of atoms: 1588
+Angle between super lattice vectors (in degree):89.319699
+Mismatch (vector1,vector2) (in Angstrom):0.423555653 0.290378371
+Deformation tensor:
+ 0.997934687 0.003820910
+0.008024874 0.997064787
+Symmetric factor of deformation tensor:
+ 0.997949382 0.005921962
+0.005921962 0.997054522
+Rotation factor of deformation tensor:
+ 0.999997780 -0.002107246
+0.002107246 0.999997780
+New angle of rotation (in degrees):4.079263622352
+New unit vector of top layer (in Angstrom):
+ 0.997949381998531 0.005921962249814
+0.005921962249814 0.997054521959925
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -11.000000000
+-17.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -11.000000000
+-17.000000000 1.000000000
+Total number of atoms: 1500
+Angle between super lattice vectors (in degree):89.060623
+Mismatch (vector1,vector2) (in Angstrom):0.423555653 0.508328623
+Deformation tensor:
+ 0.997970976 0.008329688
+0.008022502 0.996770146
+Symmetric factor of deformation tensor:
+ 0.997969729 0.008176187
+0.008176187 0.996771417
+Rotation factor of deformation tensor:
+ 0.999999988 0.000153998
+-0.000153998 0.999999988
+New angle of rotation (in degrees):4.208823415752
+New unit vector of top layer (in Angstrom):
+ 0.997969728882690 0.008176187381784
+0.008176187381784 0.996771417323084
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000014 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -11.000000000
+17.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -11.000000000
+17.000000000 -1.000000000
+Total number of atoms: 1500
+Angle between super lattice vectors (in degree):89.060623
+Mismatch (vector1,vector2) (in Angstrom):0.423555653 0.508328623
+Deformation tensor:
+ 0.997970976 0.008329688
+0.008022502 0.996770146
+Symmetric factor of deformation tensor:
+ 0.997969729 0.008176187
+0.008176187 0.996771417
+Rotation factor of deformation tensor:
+ 0.999999988 0.000153998
+-0.000153998 0.999999988
+New angle of rotation (in degrees):4.208823415752
+New unit vector of top layer (in Angstrom):
+ 0.997969728882690 0.008176187381784
+0.008176187381784 0.996771417323084
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000014 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -11.000000000
+18.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -11.000000000
+18.000000000 -1.000000000
+Total number of atoms: 1588
+Angle between super lattice vectors (in degree):89.319699
+Mismatch (vector1,vector2) (in Angstrom):0.423555653 0.290378371
+Deformation tensor:
+ 0.997934687 0.003820910
+0.008024874 0.997064787
+Symmetric factor of deformation tensor:
+ 0.997949382 0.005921962
+0.005921962 0.997054522
+Rotation factor of deformation tensor:
+ 0.999997780 -0.002107246
+0.002107246 0.999997780
+New angle of rotation (in degrees):4.079263622352
+New unit vector of top layer (in Angstrom):
+ 0.997949381998531 0.005921962249814
+0.005921962249814 0.997054521959925
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -11.000000000
+19.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -11.000000000
+19.000000000 -1.000000000
+Total number of atoms: 1676
+Angle between super lattice vectors (in degree):89.551511
+Mismatch (vector1,vector2) (in Angstrom):0.423555653 0.169458464
+Deformation tensor:
+ 0.997902200 -0.000215519
+0.008026997 0.997328561
+Symmetric factor of deformation tensor:
+ 0.997926845 0.003904521
+0.003904521 0.997320941
+Rotation factor of deformation tensor:
+ 0.999991467 -0.004131074
+0.004131074 0.999991467
+New angle of rotation (in degrees):3.963306231135
+New unit vector of top layer (in Angstrom):
+ 0.997926845177982 0.003904520522387
+0.003904520522387 0.997320941237031
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -11.000000000
+-19.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -11.000000000
+-19.000000000 0.000000000
+Total number of atoms: 1676
+Angle between super lattice vectors (in degree):89.551511
+Mismatch (vector1,vector2) (in Angstrom):0.423555653 0.169458464
+Deformation tensor:
+ 1.002676852 -0.000216550
+0.008065403 1.002100468
+Symmetric factor of deformation tensor:
+ 1.002701615 0.003923202
+0.003923202 1.002092812
+Rotation factor of deformation tensor:
+ 0.999991467 -0.004131074
+0.004131074 0.999991467
+New angle of rotation (in degrees):3.963306231135
+New unit vector of top layer (in Angstrom):
+ 1.002701614772134 0.003923202438762
+0.003923202438762 1.002092811769265
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -11.000000000
+19.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -11.000000000
+19.000000000 0.000000000
+Total number of atoms: 1676
+Angle between super lattice vectors (in degree):89.551511
+Mismatch (vector1,vector2) (in Angstrom):0.423555653 0.169458464
+Deformation tensor:
+ 1.002676852 -0.000216550
+0.008065403 1.002100468
+Symmetric factor of deformation tensor:
+ 1.002701615 0.003923202
+0.003923202 1.002092812
+Rotation factor of deformation tensor:
+ 0.999991467 -0.004131074
+0.004131074 0.999991467
+New angle of rotation (in degrees):3.963306231135
+New unit vector of top layer (in Angstrom):
+ 1.002701614772134 0.003923202438762
+0.003923202438762 1.002092811769265
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -10.000000000
+17.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -10.000000000
+17.000000000 -2.000000000
+Total number of atoms: 1380
+Angle between super lattice vectors (in degree):89.439617
+Mismatch (vector1,vector2) (in Angstrom):0.371198011 0.698341950
+Deformation tensor:
+ 0.991706559 0.007339902
+0.002354353 0.990994657
+Symmetric factor of deformation tensor:
+ 0.991697504 0.004848007
+0.004848007 0.991009981
+Rotation factor of deformation tensor:
+ 0.999996839 0.002514516
+-0.002514516 0.999996839
+New angle of rotation (in degrees):4.344071280664
+New unit vector of top layer (in Angstrom):
+ 0.991697503635764 0.004848007418165
+0.004848007418165 0.991009980626656
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -10.000000000
+18.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -10.000000000
+18.000000000 -2.000000000
+Total number of atoms: 1460
+Angle between super lattice vectors (in degree):89.695485
+Mismatch (vector1,vector2) (in Angstrom):0.371198011 0.560002757
+Deformation tensor:
+ 0.992011337 0.002960658
+0.002310536 0.991624245
+Symmetric factor of deformation tensor:
+ 0.992010527 0.002635660
+0.002635660 0.991625162
+Rotation factor of deformation tensor:
+ 0.999999946 0.000327742
+-0.000327742 0.999999946
+New angle of rotation (in degrees):4.218778244378
+New unit vector of top layer (in Angstrom):
+ 0.992010526506615 0.002635660323094
+0.002635660323094 0.991625161825026
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -10.000000000
+19.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -10.000000000
+19.000000000 -2.000000000
+Total number of atoms: 1540
+Angle between super lattice vectors (in degree):89.924704
+Mismatch (vector1,vector2) (in Angstrom):0.371198011 0.507936670
+Deformation tensor:
+ 0.992284695 -0.000967118
+0.002271237 0.992188926
+Symmetric factor of deformation tensor:
+ 0.992287080 0.000651980
+0.000651980 0.992189183
+Rotation factor of deformation tensor:
+ 0.999998669 -0.001631844
+0.001631844 0.999998669
+New angle of rotation (in degrees):4.106502195389
+New unit vector of top layer (in Angstrom):
+ 0.992287079904943 0.000651980209234
+0.000651980209234 0.992189183443500
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000002 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -10.000000000
+-19.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -10.000000000
+-19.000000000 2.000000000
+Total number of atoms: 1540
+Angle between super lattice vectors (in degree):89.924704
+Mismatch (vector1,vector2) (in Angstrom):0.371198011 0.507936670
+Deformation tensor:
+ 0.992284695 -0.000967118
+0.002271237 0.992188926
+Symmetric factor of deformation tensor:
+ 0.992287080 0.000651980
+0.000651980 0.992189183
+Rotation factor of deformation tensor:
+ 0.999998669 -0.001631844
+0.001631844 0.999998669
+New angle of rotation (in degrees):4.106502195389
+New unit vector of top layer (in Angstrom):
+ 0.992287079904943 0.000651980209234
+0.000651980209234 0.992189183443500
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000002 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -10.000000000
+-18.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -10.000000000
+-18.000000000 2.000000000
+Total number of atoms: 1460
+Angle between super lattice vectors (in degree):89.695485
+Mismatch (vector1,vector2) (in Angstrom):0.371198011 0.560002757
+Deformation tensor:
+ 0.992011337 0.002960658
+0.002310536 0.991624245
+Symmetric factor of deformation tensor:
+ 0.992010527 0.002635660
+0.002635660 0.991625162
+Rotation factor of deformation tensor:
+ 0.999999946 0.000327742
+-0.000327742 0.999999946
+New angle of rotation (in degrees):4.218778244378
+New unit vector of top layer (in Angstrom):
+ 0.992010526506615 0.002635660323094
+0.002635660323094 0.991625161825026
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -10.000000000
+-17.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -10.000000000
+-17.000000000 2.000000000
+Total number of atoms: 1380
+Angle between super lattice vectors (in degree):89.439617
+Mismatch (vector1,vector2) (in Angstrom):0.371198011 0.698341950
+Deformation tensor:
+ 0.991706559 0.007339902
+0.002354353 0.990994657
+Symmetric factor of deformation tensor:
+ 0.991697504 0.004848007
+0.004848007 0.991009981
+Rotation factor of deformation tensor:
+ 0.999996839 0.002514516
+-0.002514516 0.999996839
+New angle of rotation (in degrees):4.344071280664
+New unit vector of top layer (in Angstrom):
+ 0.991697503635764 0.004848007418165
+0.004848007418165 0.991009980626656
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -9.000000000
+17.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -9.000000000
+17.000000000 -2.000000000
+Total number of atoms: 1244
+Angle between super lattice vectors (in degree):89.889632
+Mismatch (vector1,vector2) (in Angstrom):0.454956109 0.698341950
+Deformation tensor:
+ 0.990450382 0.007227905
+-0.005320967 0.990310346
+Symmetric factor of deformation tensor:
+ 0.990464216 0.000953893
+0.000953893 0.990336263
+Rotation factor of deformation tensor:
+ 0.999979932 0.006335253
+-0.006335253 0.999979932
+New angle of rotation (in degrees):4.562985682955
+New unit vector of top layer (in Angstrom):
+ 0.990464215660864 0.000953893085935
+0.000953893085935 0.990336262681399
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -9.000000000
+18.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -9.000000000
+18.000000000 -2.000000000
+Total number of atoms: 1316
+Angle between super lattice vectors (in degree):90.145469
+Mismatch (vector1,vector2) (in Angstrom):0.454956109 0.560002757
+Deformation tensor:
+ 0.990822532 0.002865285
+-0.005380415 0.991007232
+Symmetric factor of deformation tensor:
+ 0.990836342 -0.001257938
+-0.001257938 0.991010575
+Rotation factor of deformation tensor:
+ 0.999991345 0.004160614
+-0.004160614 0.999991345
+New angle of rotation (in degrees):4.438386290368
+New unit vector of top layer (in Angstrom):
+ 0.990836341859718 -0.001257938346034
+-0.001257938346034 0.991010575378428
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000002
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -9.000000000
+19.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -9.000000000
+19.000000000 -2.000000000
+Total number of atoms: 1388
+Angle between super lattice vectors (in degree):90.374694
+Mismatch (vector1,vector2) (in Angstrom):0.454956109 0.507936670
+Deformation tensor:
+ 0.991156403 -0.001048609
+-0.005433747 0.991632438
+Symmetric factor of deformation tensor:
+ 0.991165997 -0.003241697
+-0.003241697 0.991627694
+Rotation factor of deformation tensor:
+ 0.999997554 0.002211596
+-0.002211596 0.999997554
+New angle of rotation (in degrees):4.326715223435
+New unit vector of top layer (in Angstrom):
+ 0.991165996758596 -0.003241696502825
+-0.003241696502825 0.991627693713895
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -9.000000000
+-19.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -9.000000000
+-19.000000000 2.000000000
+Total number of atoms: 1388
+Angle between super lattice vectors (in degree):90.374694
+Mismatch (vector1,vector2) (in Angstrom):0.454956109 0.507936670
+Deformation tensor:
+ 0.991156403 -0.001048609
+-0.005433747 0.991632438
+Symmetric factor of deformation tensor:
+ 0.991165997 -0.003241697
+-0.003241697 0.991627694
+Rotation factor of deformation tensor:
+ 0.999997554 0.002211596
+-0.002211596 0.999997554
+New angle of rotation (in degrees):4.326715223435
+New unit vector of top layer (in Angstrom):
+ 0.991165996758596 -0.003241696502825
+-0.003241696502825 0.991627693713895
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -9.000000000
+-18.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -9.000000000
+-18.000000000 2.000000000
+Total number of atoms: 1316
+Angle between super lattice vectors (in degree):90.145469
+Mismatch (vector1,vector2) (in Angstrom):0.454956109 0.560002757
+Deformation tensor:
+ 0.990822532 0.002865285
+-0.005380415 0.991007232
+Symmetric factor of deformation tensor:
+ 0.990836342 -0.001257938
+-0.001257938 0.991010575
+Rotation factor of deformation tensor:
+ 0.999991345 0.004160614
+-0.004160614 0.999991345
+New angle of rotation (in degrees):4.438386290368
+New unit vector of top layer (in Angstrom):
+ 0.990836341859718 -0.001257938346034
+-0.001257938346034 0.991010575378428
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000002
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-1.000000000 -9.000000000
+-17.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 -9.000000000
+-17.000000000 2.000000000
+Total number of atoms: 1244
+Angle between super lattice vectors (in degree):89.889632
+Mismatch (vector1,vector2) (in Angstrom):0.454956109 0.698341950
+Deformation tensor:
+ 0.990450382 0.007227905
+-0.005320967 0.990310346
+Symmetric factor of deformation tensor:
+ 0.990464216 0.000953893
+0.000953893 0.990336263
+Rotation factor of deformation tensor:
+ 0.999979932 0.006335253
+-0.006335253 0.999979932
+New angle of rotation (in degrees):4.562985682955
+New unit vector of top layer (in Angstrom):
+ 0.990464215660864 0.000953893085935
+0.000953893085935 0.990336262681399
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -10.000000000
+-19.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -10.000000000
+-19.000000000 1.000000000
+Total number of atoms: 1524
+Angle between super lattice vectors (in degree):89.923911
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.169458464
+Deformation tensor:
+ 0.997427235 -0.000215417
+0.001540019 0.997329962
+Symmetric factor of deformation tensor:
+ 0.997428204 0.000662258
+0.000662258 0.997329765
+Rotation factor of deformation tensor:
+ 0.999999613 -0.000880024
+0.000880024 0.999999613
+New angle of rotation (in degrees):4.149578320789
+New unit vector of top layer (in Angstrom):
+ 0.997428203762208 0.000662257927207
+0.000662257927207 0.997329765429892
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -10.000000000
+-18.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -10.000000000
+-18.000000000 1.000000000
+Total number of atoms: 1444
+Angle between super lattice vectors (in degree):89.692101
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.290378371
+Deformation tensor:
+ 0.997433464 0.003818991
+0.001539571 0.997039956
+Symmetric factor of deformation tensor:
+ 0.997431054 0.002679504
+0.002679504 0.997043670
+Rotation factor of deformation tensor:
+ 0.999999347 0.001142867
+-0.001142867 0.999999347
+New angle of rotation (in degrees):4.265481496760
+New unit vector of top layer (in Angstrom):
+ 0.997431053507815 0.002679504074193
+0.002679504074193 0.997043669701465
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -10.000000000
+-17.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -10.000000000
+-17.000000000 1.000000000
+Total number of atoms: 1364
+Angle between super lattice vectors (in degree):89.433028
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.508328623
+Deformation tensor:
+ 0.997440423 0.008325259
+0.001539071 0.996716032
+Symmetric factor of deformation tensor:
+ 0.997429410 0.004933369
+0.004933369 0.996738591
+Rotation factor of deformation tensor:
+ 0.999994210 0.003403018
+-0.003403018 0.999994210
+New angle of rotation (in degrees):4.394978921727
+New unit vector of top layer (in Angstrom):
+ 0.997429409801573 0.004933369025298
+0.004933369025298 0.996738591366927
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000002 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -10.000000000
+17.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -10.000000000
+17.000000000 -1.000000000
+Total number of atoms: 1364
+Angle between super lattice vectors (in degree):89.433028
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.508328623
+Deformation tensor:
+ 0.997440423 0.008325259
+0.001539071 0.996716032
+Symmetric factor of deformation tensor:
+ 0.997429410 0.004933369
+0.004933369 0.996738591
+Rotation factor of deformation tensor:
+ 0.999994210 0.003403018
+-0.003403018 0.999994210
+New angle of rotation (in degrees):4.394978921727
+New unit vector of top layer (in Angstrom):
+ 0.997429409801573 0.004933369025298
+0.004933369025298 0.996738591366927
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000002 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -10.000000000
+18.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -10.000000000
+18.000000000 -1.000000000
+Total number of atoms: 1444
+Angle between super lattice vectors (in degree):89.692101
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.290378371
+Deformation tensor:
+ 0.997433464 0.003818991
+0.001539571 0.997039956
+Symmetric factor of deformation tensor:
+ 0.997431054 0.002679504
+0.002679504 0.997043670
+Rotation factor of deformation tensor:
+ 0.999999347 0.001142867
+-0.001142867 0.999999347
+New angle of rotation (in degrees):4.265481496760
+New unit vector of top layer (in Angstrom):
+ 0.997431053507815 0.002679504074193
+0.002679504074193 0.997043669701465
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -10.000000000
+19.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -10.000000000
+19.000000000 -1.000000000
+Total number of atoms: 1524
+Angle between super lattice vectors (in degree):89.923911
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.169458464
+Deformation tensor:
+ 0.997427235 -0.000215417
+0.001540019 0.997329962
+Symmetric factor of deformation tensor:
+ 0.997428204 0.000662258
+0.000662258 0.997329765
+Rotation factor of deformation tensor:
+ 0.999999613 -0.000880024
+0.000880024 0.999999613
+New angle of rotation (in degrees):4.149578320789
+New unit vector of top layer (in Angstrom):
+ 0.997428203762208 0.000662257927207
+0.000662257927207 0.997329765429892
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -9.000000000
+-19.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -9.000000000
+-19.000000000 1.000000000
+Total number of atoms: 1372
+Angle between super lattice vectors (in degree):90.379074
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.169458464
+Deformation tensor:
+ 0.996847335 -0.000215291
+-0.006380129 0.997331673
+Symmetric factor of deformation tensor:
+ 0.996862295 -0.003298443
+-0.003298443 0.997326241
+Rotation factor of deformation tensor:
+ 0.999995222 0.003091402
+-0.003091402 0.999995222
+New angle of rotation (in degrees):4.377124544903
+New unit vector of top layer (in Angstrom):
+ 0.996862295390818 -0.003298443089318
+-0.003298443089318 0.997326241382886
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -9.000000000
+-18.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -9.000000000
+-18.000000000 1.000000000
+Total number of atoms: 1300
+Angle between super lattice vectors (in degree):90.147264
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.290378371
+Deformation tensor:
+ 0.996821542 0.003816648
+-0.006378069 0.997009641
+Symmetric factor of deformation tensor:
+ 0.996841123 -0.001281175
+-0.001281175 0.997016123
+Rotation factor of deformation tensor:
+ 0.999986928 0.005113063
+-0.005113063 0.999986928
+New angle of rotation (in degrees):4.492958187824
+New unit vector of top layer (in Angstrom):
+ 0.996841123283243 -0.001281174506747
+-0.001281174506747 0.997016123100456
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -9.000000000
+-17.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -9.000000000
+-17.000000000 1.000000000
+Total number of atoms: 1228
+Angle between super lattice vectors (in degree):89.888191
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.508328623
+Deformation tensor:
+ 0.996792734 0.008319853
+-0.006375768 0.996649969
+Symmetric factor of deformation tensor:
+ 0.996812650 0.000972543
+0.000972543 0.996684221
+Rotation factor of deformation tensor:
+ 0.999972828 0.007371781
+-0.007371781 0.999972828
+New angle of rotation (in degrees):4.622375737138
+New unit vector of top layer (in Angstrom):
+ 0.996812650127092 0.000972542503140
+0.000972542503140 0.996684220669494
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -9.000000000
+17.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -9.000000000
+17.000000000 -1.000000000
+Total number of atoms: 1228
+Angle between super lattice vectors (in degree):89.888191
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.508328623
+Deformation tensor:
+ 0.996792734 0.008319853
+-0.006375768 0.996649969
+Symmetric factor of deformation tensor:
+ 0.996812650 0.000972543
+0.000972543 0.996684221
+Rotation factor of deformation tensor:
+ 0.999972828 0.007371781
+-0.007371781 0.999972828
+New angle of rotation (in degrees):4.622375737138
+New unit vector of top layer (in Angstrom):
+ 0.996812650127092 0.000972542503140
+0.000972542503140 0.996684220669494
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -9.000000000
+18.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -9.000000000
+18.000000000 -1.000000000
+Total number of atoms: 1300
+Angle between super lattice vectors (in degree):90.147264
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.290378371
+Deformation tensor:
+ 0.996821542 0.003816648
+-0.006378069 0.997009641
+Symmetric factor of deformation tensor:
+ 0.996841123 -0.001281175
+-0.001281175 0.997016123
+Rotation factor of deformation tensor:
+ 0.999986928 0.005113063
+-0.005113063 0.999986928
+New angle of rotation (in degrees):4.492958187824
+New unit vector of top layer (in Angstrom):
+ 0.996841123283243 -0.001281174506747
+-0.001281174506747 0.997016123100456
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+0.000000000 -9.000000000
+19.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -9.000000000
+19.000000000 -1.000000000
+Total number of atoms: 1372
+Angle between super lattice vectors (in degree):90.379074
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.169458464
+Deformation tensor:
+ 0.996847335 -0.000215291
+-0.006380129 0.997331673
+Symmetric factor of deformation tensor:
+ 0.996862295 -0.003298443
+-0.003298443 0.997326241
+Rotation factor of deformation tensor:
+ 0.999995222 0.003091402
+-0.003091402 0.999995222
+New angle of rotation (in degrees):4.377124544903
+New unit vector of top layer (in Angstrom):
+ 0.996862295390818 -0.003298443089318
+-0.003298443089318 0.997326241382886
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -10.000000000
+-19.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -10.000000000
+-19.000000000 0.000000000
+Total number of atoms: 1524
+Angle between super lattice vectors (in degree):89.923911
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.169458464
+Deformation tensor:
+ 1.002676852 -0.000216550
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.002677826 0.000665743
+0.000665743 1.002578869
+Rotation factor of deformation tensor:
+ 0.999999613 -0.000880024
+0.000880024 0.999999613
+New angle of rotation (in degrees):4.149578320789
+New unit vector of top layer (in Angstrom):
+ 1.002677825887272 0.000665743495245
+0.000665743495245 1.002578869458471
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -10.000000000
+-18.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -10.000000000
+-18.000000000 0.000000000
+Total number of atoms: 1444
+Angle between super lattice vectors (in degree):89.692101
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.290378371
+Deformation tensor:
+ 1.002974761 0.003840208
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.002972337 0.002694390
+0.002694390 1.002582801
+Rotation factor of deformation tensor:
+ 0.999999347 0.001142867
+-0.001142867 0.999999347
+New angle of rotation (in degrees):4.265481496760
+New unit vector of top layer (in Angstrom):
+ 1.002972337138414 0.002694390207939
+0.002694390207939 1.002582801199806
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -10.000000000
+-17.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -10.000000000
+-17.000000000 0.000000000
+Total number of atoms: 1364
+Angle between super lattice vectors (in degree):89.433028
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.508328623
+Deformation tensor:
+ 1.003307719 0.008374232
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.003296642 0.004962389
+0.004962389 1.002601760
+Rotation factor of deformation tensor:
+ 0.999994210 0.003403018
+-0.003403018 0.999994210
+New angle of rotation (in degrees):4.394978921727
+New unit vector of top layer (in Angstrom):
+ 1.003296641623935 0.004962388843094
+0.004962388843094 1.002601759551438
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -10.000000000
+17.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -10.000000000
+17.000000000 0.000000000
+Total number of atoms: 1364
+Angle between super lattice vectors (in degree):89.433028
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.508328623
+Deformation tensor:
+ 1.003307719 0.008374232
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.003296642 0.004962389
+0.004962389 1.002601760
+Rotation factor of deformation tensor:
+ 0.999994210 0.003403018
+-0.003403018 0.999994210
+New angle of rotation (in degrees):4.394978921727
+New unit vector of top layer (in Angstrom):
+ 1.003296641623935 0.004962388843094
+0.004962388843094 1.002601759551438
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -10.000000000
+18.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -10.000000000
+18.000000000 0.000000000
+Total number of atoms: 1444
+Angle between super lattice vectors (in degree):89.692101
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.290378371
+Deformation tensor:
+ 1.002974761 0.003840208
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.002972337 0.002694390
+0.002694390 1.002582801
+Rotation factor of deformation tensor:
+ 0.999999347 0.001142867
+-0.001142867 0.999999347
+New angle of rotation (in degrees):4.265481496760
+New unit vector of top layer (in Angstrom):
+ 1.002972337138414 0.002694390207939
+0.002694390207939 1.002582801199806
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -10.000000000
+19.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -10.000000000
+19.000000000 0.000000000
+Total number of atoms: 1524
+Angle between super lattice vectors (in degree):89.923911
+Mismatch (vector1,vector2) (in Angstrom):0.138971221 0.169458464
+Deformation tensor:
+ 1.002676852 -0.000216550
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.002677826 0.000665743
+0.000665743 1.002578869
+Rotation factor of deformation tensor:
+ 0.999999613 -0.000880024
+0.000880024 0.999999613
+New angle of rotation (in degrees):4.149578320789
+New unit vector of top layer (in Angstrom):
+ 1.002677825887272 0.000665743495245
+0.000665743495245 1.002578869458471
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -9.000000000
+-19.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -9.000000000
+-19.000000000 0.000000000
+Total number of atoms: 1372
+Angle between super lattice vectors (in degree):90.379074
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.169458464
+Deformation tensor:
+ 1.002676852 -0.000216550
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.002691899 -0.003317732
+-0.003317732 1.003158559
+Rotation factor of deformation tensor:
+ 0.999995222 0.003091402
+-0.003091402 0.999995222
+New angle of rotation (in degrees):4.377124544903
+New unit vector of top layer (in Angstrom):
+ 1.002691899457431 -0.003317732230191
+-0.003317732230191 1.003158558583956
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -9.000000000
+-18.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -9.000000000
+-18.000000000 0.000000000
+Total number of atoms: 1300
+Angle between super lattice vectors (in degree):90.147264
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.290378371
+Deformation tensor:
+ 1.002974761 0.003840208
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.002994464 -0.001289083
+-0.001289083 1.003170544
+Rotation factor of deformation tensor:
+ 0.999986928 0.005113063
+-0.005113063 0.999986928
+New angle of rotation (in degrees):4.492958187824
+New unit vector of top layer (in Angstrom):
+ 1.002994463550424 -0.001289082991357
+-0.001289082991357 1.003170543613422
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -9.000000000
+-17.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -9.000000000
+-17.000000000 0.000000000
+Total number of atoms: 1228
+Angle between super lattice vectors (in degree):89.888191
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.508328623
+Deformation tensor:
+ 1.003307719 0.008374232
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.003327765 0.000978899
+0.000978899 1.003198497
+Rotation factor of deformation tensor:
+ 0.999972828 0.007371781
+-0.007371781 0.999972828
+New angle of rotation (in degrees):4.622375737138
+New unit vector of top layer (in Angstrom):
+ 1.003327765487400 0.000978898990088
+0.000978898990088 1.003198496621582
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -9.000000000
+17.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -9.000000000
+17.000000000 0.000000000
+Total number of atoms: 1228
+Angle between super lattice vectors (in degree):89.888191
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.508328623
+Deformation tensor:
+ 1.003307719 0.008374232
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.003327765 0.000978899
+0.000978899 1.003198497
+Rotation factor of deformation tensor:
+ 0.999972828 0.007371781
+-0.007371781 0.999972828
+New angle of rotation (in degrees):4.622375737138
+New unit vector of top layer (in Angstrom):
+ 1.003327765487400 0.000978898990088
+0.000978898990088 1.003198496621582
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -9.000000000
+18.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -9.000000000
+18.000000000 0.000000000
+Total number of atoms: 1300
+Angle between super lattice vectors (in degree):90.147264
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.290378371
+Deformation tensor:
+ 1.002974761 0.003840208
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.002994464 -0.001289083
+-0.001289083 1.003170544
+Rotation factor of deformation tensor:
+ 0.999986928 0.005113063
+-0.005113063 0.999986928
+New angle of rotation (in degrees):4.492958187824
+New unit vector of top layer (in Angstrom):
+ 1.002994463550424 -0.001289082991357
+-0.001289082991357 1.003170543613422
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+1.000000000 -9.000000000
+19.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -9.000000000
+19.000000000 0.000000000
+Total number of atoms: 1372
+Angle between super lattice vectors (in degree):90.379074
+Mismatch (vector1,vector2) (in Angstrom):0.297506468 0.169458464
+Deformation tensor:
+ 1.002676852 -0.000216550
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.002691899 -0.003317732
+-0.003317732 1.003158559
+Rotation factor of deformation tensor:
+ 0.999995222 0.003091402
+-0.003091402 0.999995222
+New angle of rotation (in degrees):4.377124544903
+New unit vector of top layer (in Angstrom):
+ 1.002691899457431 -0.003317732230191
+-0.003317732230191 1.003158558583956
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+2.000000000 -10.000000000
+-19.000000000 -2.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+1.000000000 -10.000000000
+-19.000000000 -1.000000000
+Total number of atoms: 1540
+Angle between super lattice vectors (in degree):89.924704
+Mismatch (vector1,vector2) (in Angstrom):0.371198011 0.507936670
+Deformation tensor:
+ 1.007870318 -0.000982309
+0.002306911 1.007773046
+Symmetric factor of deformation tensor:
+ 1.007872741 0.000662221
+0.000662221 1.007773307
+Rotation factor of deformation tensor:
+ 0.999998669 -0.001631844
+0.001631844 0.999998669
+New angle of rotation (in degrees):4.106502195389
+New unit vector of top layer (in Angstrom):
+ 1.007872740845858 0.000662220736081
+0.000662220736081 1.007773306743660
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000014 0.000000000000014
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+2.000000000 -10.000000000
+19.000000000 2.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+1.000000000 -10.000000000
+19.000000000 1.000000000
+Total number of atoms: 1540
+Angle between super lattice vectors (in degree):89.924704
+Mismatch (vector1,vector2) (in Angstrom):0.371198011 0.507936670
+Deformation tensor:
+ 1.007870318 -0.000982309
+0.002306911 1.007773046
+Symmetric factor of deformation tensor:
+ 1.007872741 0.000662221
+0.000662221 1.007773307
+Rotation factor of deformation tensor:
+ 0.999998669 -0.001631844
+0.001631844 0.999998669
+New angle of rotation (in degrees):4.106502195389
+New unit vector of top layer (in Angstrom):
+ 1.007872740845858 0.000662220736081
+0.000662220736081 1.007773306743660
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000014 0.000000000000014
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+2.000000000 -9.000000000
+-18.000000000 -2.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+1.000000000 -9.000000000
+-18.000000000 -1.000000000
+Total number of atoms: 1316
+Angle between super lattice vectors (in degree):90.145469
+Mismatch (vector1,vector2) (in Angstrom):0.454956109 0.560002757
+Deformation tensor:
+ 1.009058530 0.002918020
+-0.005479441 1.009246628
+Symmetric factor of deformation tensor:
+ 1.009072594 -0.001281091
+-0.001281091 1.009250034
+Rotation factor of deformation tensor:
+ 0.999991345 0.004160614
+-0.004160614 0.999991345
+New angle of rotation (in degrees):4.438386290368
+New unit vector of top layer (in Angstrom):
+ 1.009072593550388 -0.001281090585532
+-0.001281090585532 1.009250033820976
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+2.000000000 -9.000000000
+-17.000000000 -2.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+1.000000000 -9.000000000
+-17.000000000 -1.000000000
+Total number of atoms: 1244
+Angle between super lattice vectors (in degree):89.889632
+Mismatch (vector1,vector2) (in Angstrom):0.454956109 0.698341950
+Deformation tensor:
+ 1.009744870 0.007368708
+-0.005424623 1.009602106
+Symmetric factor of deformation tensor:
+ 1.009758973 0.000972475
+0.000972475 1.009628528
+Rotation factor of deformation tensor:
+ 0.999979932 0.006335253
+-0.006335253 0.999979932
+New angle of rotation (in degrees):4.562985682955
+New unit vector of top layer (in Angstrom):
+ 1.009758973108802 0.000972475418778
+0.000972475418778 1.009628527538828
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+2.000000000 -9.000000000
+17.000000000 2.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+1.000000000 -9.000000000
+17.000000000 1.000000000
+Total number of atoms: 1244
+Angle between super lattice vectors (in degree):89.889632
+Mismatch (vector1,vector2) (in Angstrom):0.454956109 0.698341950
+Deformation tensor:
+ 1.009744870 0.007368708
+-0.005424623 1.009602106
+Symmetric factor of deformation tensor:
+ 1.009758973 0.000972475
+0.000972475 1.009628528
+Rotation factor of deformation tensor:
+ 0.999979932 0.006335253
+-0.006335253 0.999979932
+New angle of rotation (in degrees):4.562985682955
+New unit vector of top layer (in Angstrom):
+ 1.009758973108802 0.000972475418778
+0.000972475418778 1.009628527538828
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+2.000000000 -9.000000000
+18.000000000 2.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+1.000000000 -9.000000000
+18.000000000 1.000000000
+Total number of atoms: 1316
+Angle between super lattice vectors (in degree):90.145469
+Mismatch (vector1,vector2) (in Angstrom):0.454956109 0.560002757
+Deformation tensor:
+ 1.009058530 0.002918020
+-0.005479441 1.009246628
+Symmetric factor of deformation tensor:
+ 1.009072594 -0.001281091
+-0.001281091 1.009250034
+Rotation factor of deformation tensor:
+ 0.999991345 0.004160614
+-0.004160614 0.999991345
+New angle of rotation (in degrees):4.438386290368
+New unit vector of top layer (in Angstrom):
+ 1.009072593550388 -0.001281090585532
+-0.001281090585532 1.009250033820976
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+17.000000000 -1.000000000
+1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+17.000000000 -2.000000000
+2.000000000 9.000000000
+Total number of atoms: 1244
+Angle between super lattice vectors (in degree):89.889632
+Mismatch (vector1,vector2) (in Angstrom):0.698341950 0.454956109
+Deformation tensor:
+ 0.990450382 0.007227905
+-0.005320967 0.990310346
+Symmetric factor of deformation tensor:
+ 0.990464216 0.000953893
+0.000953893 0.990336263
+Rotation factor of deformation tensor:
+ 0.999979932 0.006335253
+-0.006335253 0.999979932
+New angle of rotation (in degrees):4.562985682955
+New unit vector of top layer (in Angstrom):
+ 0.990464215660864 0.000953893085935
+0.000953893085935 0.990336262681399
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+17.000000000 -1.000000000
+1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+17.000000000 -2.000000000
+2.000000000 10.000000000
+Total number of atoms: 1380
+Angle between super lattice vectors (in degree):89.439617
+Mismatch (vector1,vector2) (in Angstrom):0.698341950 0.371198011
+Deformation tensor:
+ 0.991706559 0.007339902
+0.002354353 0.990994657
+Symmetric factor of deformation tensor:
+ 0.991697504 0.004848007
+0.004848007 0.991009981
+Rotation factor of deformation tensor:
+ 0.999996839 0.002514516
+-0.002514516 0.999996839
+New angle of rotation (in degrees):4.344071280664
+New unit vector of top layer (in Angstrom):
+ 0.991697503635764 0.004848007418165
+0.004848007418165 0.991009980626656
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+18.000000000 -1.000000000
+1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+18.000000000 -2.000000000
+2.000000000 9.000000000
+Total number of atoms: 1316
+Angle between super lattice vectors (in degree):90.145469
+Mismatch (vector1,vector2) (in Angstrom):0.560002757 0.454956109
+Deformation tensor:
+ 0.990822532 0.002865285
+-0.005380415 0.991007232
+Symmetric factor of deformation tensor:
+ 0.990836342 -0.001257938
+-0.001257938 0.991010575
+Rotation factor of deformation tensor:
+ 0.999991345 0.004160614
+-0.004160614 0.999991345
+New angle of rotation (in degrees):4.438386290368
+New unit vector of top layer (in Angstrom):
+ 0.990836341859719 -0.001257938346034
+-0.001257938346034 0.991010575378428
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+18.000000000 -1.000000000
+1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+18.000000000 -2.000000000
+2.000000000 10.000000000
+Total number of atoms: 1460
+Angle between super lattice vectors (in degree):89.695485
+Mismatch (vector1,vector2) (in Angstrom):0.560002757 0.371198011
+Deformation tensor:
+ 0.992011337 0.002960658
+0.002310536 0.991624245
+Symmetric factor of deformation tensor:
+ 0.992010527 0.002635660
+0.002635660 0.991625162
+Rotation factor of deformation tensor:
+ 0.999999946 0.000327742
+-0.000327742 0.999999946
+New angle of rotation (in degrees):4.218778244378
+New unit vector of top layer (in Angstrom):
+ 0.992010526506615 0.002635660323094
+0.002635660323094 0.991625161825026
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+19.000000000 -1.000000000
+1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+19.000000000 -2.000000000
+2.000000000 9.000000000
+Total number of atoms: 1388
+Angle between super lattice vectors (in degree):90.374694
+Mismatch (vector1,vector2) (in Angstrom):0.507936670 0.454956109
+Deformation tensor:
+ 0.991156403 -0.001048609
+-0.005433747 0.991632438
+Symmetric factor of deformation tensor:
+ 0.991165997 -0.003241697
+-0.003241697 0.991627694
+Rotation factor of deformation tensor:
+ 0.999997554 0.002211596
+-0.002211596 0.999997554
+New angle of rotation (in degrees):4.326715223435
+New unit vector of top layer (in Angstrom):
+ 0.991165996758595 -0.003241696502825
+-0.003241696502825 0.991627693713894
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+19.000000000 -1.000000000
+1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+19.000000000 -2.000000000
+2.000000000 10.000000000
+Total number of atoms: 1540
+Angle between super lattice vectors (in degree):89.924704
+Mismatch (vector1,vector2) (in Angstrom):0.507936670 0.371198011
+Deformation tensor:
+ 0.992284695 -0.000967118
+0.002271237 0.992188926
+Symmetric factor of deformation tensor:
+ 0.992287080 0.000651980
+0.000651980 0.992189183
+Rotation factor of deformation tensor:
+ 0.999998669 -0.001631844
+0.001631844 0.999998669
+New angle of rotation (in degrees):4.106502195389
+New unit vector of top layer (in Angstrom):
+ 0.992287079904943 0.000651980209234
+0.000651980209234 0.992189183443500
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000002
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-19.000000000 -2.000000000
+-2.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-19.000000000 -1.000000000
+-1.000000000 10.000000000
+Total number of atoms: 1540
+Angle between super lattice vectors (in degree):89.924704
+Mismatch (vector1,vector2) (in Angstrom):0.507936670 0.371198011
+Deformation tensor:
+ 1.007870318 -0.000982309
+0.002306911 1.007773046
+Symmetric factor of deformation tensor:
+ 1.007872741 0.000662221
+0.000662221 1.007773307
+Rotation factor of deformation tensor:
+ 0.999998669 -0.001631844
+0.001631844 0.999998669
+New angle of rotation (in degrees):4.106502195389
+New unit vector of top layer (in Angstrom):
+ 1.007872740845858 0.000662220736081
+0.000662220736081 1.007773306743660
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000014 0.000000000000014
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-19.000000000 -1.000000000
+-1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-19.000000000 0.000000000
+0.000000000 9.000000000
+Total number of atoms: 1372
+Angle between super lattice vectors (in degree):90.379074
+Mismatch (vector1,vector2) (in Angstrom):0.169458464 0.297506468
+Deformation tensor:
+ 1.002676852 -0.000216550
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.002691899 -0.003317732
+-0.003317732 1.003158559
+Rotation factor of deformation tensor:
+ 0.999995222 0.003091402
+-0.003091402 0.999995222
+New angle of rotation (in degrees):4.377124544903
+New unit vector of top layer (in Angstrom):
+ 1.002691899457431 -0.003317732230191
+-0.003317732230191 1.003158558583956
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-19.000000000 -1.000000000
+-1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-19.000000000 0.000000000
+0.000000000 10.000000000
+Total number of atoms: 1524
+Angle between super lattice vectors (in degree):89.923911
+Mismatch (vector1,vector2) (in Angstrom):0.169458464 0.138971221
+Deformation tensor:
+ 1.002676852 -0.000216550
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.002677826 0.000665743
+0.000665743 1.002578869
+Rotation factor of deformation tensor:
+ 0.999999613 -0.000880024
+0.000880024 0.999999613
+New angle of rotation (in degrees):4.149578320789
+New unit vector of top layer (in Angstrom):
+ 1.002677825887272 0.000665743495245
+0.000665743495245 1.002578869458471
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-19.000000000 0.000000000
+0.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-19.000000000 1.000000000
+1.000000000 9.000000000
+Total number of atoms: 1372
+Angle between super lattice vectors (in degree):90.379074
+Mismatch (vector1,vector2) (in Angstrom):0.169458464 0.297506468
+Deformation tensor:
+ 0.996847335 -0.000215291
+-0.006380129 0.997331673
+Symmetric factor of deformation tensor:
+ 0.996862295 -0.003298443
+-0.003298443 0.997326241
+Rotation factor of deformation tensor:
+ 0.999995222 0.003091402
+-0.003091402 0.999995222
+New angle of rotation (in degrees):4.377124544903
+New unit vector of top layer (in Angstrom):
+ 0.996862295390818 -0.003298443089318
+-0.003298443089318 0.997326241382886
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-19.000000000 0.000000000
+0.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-19.000000000 1.000000000
+1.000000000 10.000000000
+Total number of atoms: 1524
+Angle between super lattice vectors (in degree):89.923911
+Mismatch (vector1,vector2) (in Angstrom):0.169458464 0.138971221
+Deformation tensor:
+ 0.997427235 -0.000215417
+0.001540019 0.997329962
+Symmetric factor of deformation tensor:
+ 0.997428204 0.000662258
+0.000662258 0.997329765
+Rotation factor of deformation tensor:
+ 0.999999613 -0.000880024
+0.000880024 0.999999613
+New angle of rotation (in degrees):4.149578320789
+New unit vector of top layer (in Angstrom):
+ 0.997428203762208 0.000662257927207
+0.000662257927207 0.997329765429893
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-18.000000000 -2.000000000
+-2.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-18.000000000 -1.000000000
+-1.000000000 9.000000000
+Total number of atoms: 1316
+Angle between super lattice vectors (in degree):90.145469
+Mismatch (vector1,vector2) (in Angstrom):0.560002757 0.454956109
+Deformation tensor:
+ 1.009058530 0.002918020
+-0.005479441 1.009246628
+Symmetric factor of deformation tensor:
+ 1.009072594 -0.001281091
+-0.001281091 1.009250034
+Rotation factor of deformation tensor:
+ 0.999991345 0.004160614
+-0.004160614 0.999991345
+New angle of rotation (in degrees):4.438386290368
+New unit vector of top layer (in Angstrom):
+ 1.009072593550388 -0.001281090585532
+-0.001281090585532 1.009250033820975
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-18.000000000 -1.000000000
+-1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-18.000000000 0.000000000
+0.000000000 9.000000000
+Total number of atoms: 1300
+Angle between super lattice vectors (in degree):90.147264
+Mismatch (vector1,vector2) (in Angstrom):0.290378371 0.297506468
+Deformation tensor:
+ 1.002974761 0.003840208
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.002994464 -0.001289083
+-0.001289083 1.003170544
+Rotation factor of deformation tensor:
+ 0.999986928 0.005113063
+-0.005113063 0.999986928
+New angle of rotation (in degrees):4.492958187824
+New unit vector of top layer (in Angstrom):
+ 1.002994463550424 -0.001289082991357
+-0.001289082991357 1.003170543613422
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-18.000000000 -1.000000000
+-1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-18.000000000 0.000000000
+0.000000000 10.000000000
+Total number of atoms: 1444
+Angle between super lattice vectors (in degree):89.692101
+Mismatch (vector1,vector2) (in Angstrom):0.290378371 0.138971221
+Deformation tensor:
+ 1.002974761 0.003840208
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.002972337 0.002694390
+0.002694390 1.002582801
+Rotation factor of deformation tensor:
+ 0.999999347 0.001142867
+-0.001142867 0.999999347
+New angle of rotation (in degrees):4.265481496760
+New unit vector of top layer (in Angstrom):
+ 1.002972337138414 0.002694390207939
+0.002694390207939 1.002582801199806
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-18.000000000 0.000000000
+0.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-18.000000000 1.000000000
+1.000000000 9.000000000
+Total number of atoms: 1300
+Angle between super lattice vectors (in degree):90.147264
+Mismatch (vector1,vector2) (in Angstrom):0.290378371 0.297506468
+Deformation tensor:
+ 0.996821542 0.003816648
+-0.006378069 0.997009641
+Symmetric factor of deformation tensor:
+ 0.996841123 -0.001281175
+-0.001281175 0.997016123
+Rotation factor of deformation tensor:
+ 0.999986928 0.005113063
+-0.005113063 0.999986928
+New angle of rotation (in degrees):4.492958187824
+New unit vector of top layer (in Angstrom):
+ 0.996841123283243 -0.001281174506747
+-0.001281174506747 0.997016123100456
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-18.000000000 0.000000000
+0.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-18.000000000 1.000000000
+1.000000000 10.000000000
+Total number of atoms: 1444
+Angle between super lattice vectors (in degree):89.692101
+Mismatch (vector1,vector2) (in Angstrom):0.290378371 0.138971221
+Deformation tensor:
+ 0.997433464 0.003818991
+0.001539571 0.997039956
+Symmetric factor of deformation tensor:
+ 0.997431054 0.002679504
+0.002679504 0.997043670
+Rotation factor of deformation tensor:
+ 0.999999347 0.001142867
+-0.001142867 0.999999347
+New angle of rotation (in degrees):4.265481496760
+New unit vector of top layer (in Angstrom):
+ 0.997431053507815 0.002679504074193
+0.002679504074193 0.997043669701465
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-17.000000000 -2.000000000
+-2.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-17.000000000 -1.000000000
+-1.000000000 9.000000000
+Total number of atoms: 1244
+Angle between super lattice vectors (in degree):89.889632
+Mismatch (vector1,vector2) (in Angstrom):0.698341950 0.454956109
+Deformation tensor:
+ 1.009744870 0.007368708
+-0.005424623 1.009602106
+Symmetric factor of deformation tensor:
+ 1.009758973 0.000972475
+0.000972475 1.009628528
+Rotation factor of deformation tensor:
+ 0.999979932 0.006335253
+-0.006335253 0.999979932
+New angle of rotation (in degrees):4.562985682955
+New unit vector of top layer (in Angstrom):
+ 1.009758973108802 0.000972475418778
+0.000972475418778 1.009628527538828
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-17.000000000 -1.000000000
+-1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-17.000000000 0.000000000
+0.000000000 9.000000000
+Total number of atoms: 1228
+Angle between super lattice vectors (in degree):89.888191
+Mismatch (vector1,vector2) (in Angstrom):0.508328623 0.297506468
+Deformation tensor:
+ 1.003307719 0.008374232
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.003327765 0.000978899
+0.000978899 1.003198497
+Rotation factor of deformation tensor:
+ 0.999972828 0.007371781
+-0.007371781 0.999972828
+New angle of rotation (in degrees):4.622375737138
+New unit vector of top layer (in Angstrom):
+ 1.003327765487400 0.000978898990088
+0.000978898990088 1.003198496621582
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-17.000000000 -1.000000000
+-1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-17.000000000 0.000000000
+0.000000000 10.000000000
+Total number of atoms: 1364
+Angle between super lattice vectors (in degree):89.433028
+Mismatch (vector1,vector2) (in Angstrom):0.508328623 0.138971221
+Deformation tensor:
+ 1.003307719 0.008374232
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.003296642 0.004962389
+0.004962389 1.002601760
+Rotation factor of deformation tensor:
+ 0.999994210 0.003403018
+-0.003403018 0.999994210
+New angle of rotation (in degrees):4.394978921727
+New unit vector of top layer (in Angstrom):
+ 1.003296641623935 0.004962388843094
+0.004962388843094 1.002601759551438
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-17.000000000 0.000000000
+0.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-17.000000000 1.000000000
+1.000000000 9.000000000
+Total number of atoms: 1228
+Angle between super lattice vectors (in degree):89.888191
+Mismatch (vector1,vector2) (in Angstrom):0.508328623 0.297506468
+Deformation tensor:
+ 0.996792734 0.008319853
+-0.006375768 0.996649969
+Symmetric factor of deformation tensor:
+ 0.996812650 0.000972543
+0.000972543 0.996684221
+Rotation factor of deformation tensor:
+ 0.999972828 0.007371781
+-0.007371781 0.999972828
+New angle of rotation (in degrees):4.622375737138
+New unit vector of top layer (in Angstrom):
+ 0.996812650127092 0.000972542503140
+0.000972542503140 0.996684220669494
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-17.000000000 0.000000000
+0.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-17.000000000 1.000000000
+1.000000000 10.000000000
+Total number of atoms: 1364
+Angle between super lattice vectors (in degree):89.433028
+Mismatch (vector1,vector2) (in Angstrom):0.508328623 0.138971221
+Deformation tensor:
+ 0.997440423 0.008325259
+0.001539071 0.996716032
+Symmetric factor of deformation tensor:
+ 0.997429410 0.004933369
+0.004933369 0.996738591
+Rotation factor of deformation tensor:
+ 0.999994210 0.003403018
+-0.003403018 0.999994210
+New angle of rotation (in degrees):4.394978921727
+New unit vector of top layer (in Angstrom):
+ 0.997429409801573 0.004933369025298
+0.004933369025298 0.996738591366927
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+17.000000000 0.000000000
+0.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+17.000000000 -1.000000000
+1.000000000 9.000000000
+Total number of atoms: 1228
+Angle between super lattice vectors (in degree):89.888191
+Mismatch (vector1,vector2) (in Angstrom):0.508328623 0.297506468
+Deformation tensor:
+ 0.996792734 0.008319853
+-0.006375768 0.996649969
+Symmetric factor of deformation tensor:
+ 0.996812650 0.000972543
+0.000972543 0.996684221
+Rotation factor of deformation tensor:
+ 0.999972828 0.007371781
+-0.007371781 0.999972828
+New angle of rotation (in degrees):4.622375737138
+New unit vector of top layer (in Angstrom):
+ 0.996812650127092 0.000972542503140
+0.000972542503140 0.996684220669494
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+17.000000000 0.000000000
+0.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+17.000000000 -1.000000000
+1.000000000 10.000000000
+Total number of atoms: 1364
+Angle between super lattice vectors (in degree):89.433028
+Mismatch (vector1,vector2) (in Angstrom):0.508328623 0.138971221
+Deformation tensor:
+ 0.997440423 0.008325259
+0.001539071 0.996716032
+Symmetric factor of deformation tensor:
+ 0.997429410 0.004933369
+0.004933369 0.996738591
+Rotation factor of deformation tensor:
+ 0.999994210 0.003403018
+-0.003403018 0.999994210
+New angle of rotation (in degrees):4.394978921727
+New unit vector of top layer (in Angstrom):
+ 0.997429409801573 0.004933369025298
+0.004933369025298 0.996738591366927
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+17.000000000 1.000000000
+-1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+17.000000000 0.000000000
+0.000000000 9.000000000
+Total number of atoms: 1228
+Angle between super lattice vectors (in degree):89.888191
+Mismatch (vector1,vector2) (in Angstrom):0.508328623 0.297506468
+Deformation tensor:
+ 1.003307719 0.008374232
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.003327765 0.000978899
+0.000978899 1.003198497
+Rotation factor of deformation tensor:
+ 0.999972828 0.007371781
+-0.007371781 0.999972828
+New angle of rotation (in degrees):4.622375737138
+New unit vector of top layer (in Angstrom):
+ 1.003327765487400 0.000978898990088
+0.000978898990088 1.003198496621582
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+17.000000000 1.000000000
+-1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+17.000000000 0.000000000
+0.000000000 10.000000000
+Total number of atoms: 1364
+Angle between super lattice vectors (in degree):89.433028
+Mismatch (vector1,vector2) (in Angstrom):0.508328623 0.138971221
+Deformation tensor:
+ 1.003307719 0.008374232
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.003296642 0.004962389
+0.004962389 1.002601760
+Rotation factor of deformation tensor:
+ 0.999994210 0.003403018
+-0.003403018 0.999994210
+New angle of rotation (in degrees):4.394978921727
+New unit vector of top layer (in Angstrom):
+ 1.003296641623935 0.004962388843094
+0.004962388843094 1.002601759551438
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+17.000000000 2.000000000
+-2.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+17.000000000 1.000000000
+-1.000000000 9.000000000
+Total number of atoms: 1244
+Angle between super lattice vectors (in degree):89.889632
+Mismatch (vector1,vector2) (in Angstrom):0.698341950 0.454956109
+Deformation tensor:
+ 1.009744870 0.007368708
+-0.005424623 1.009602106
+Symmetric factor of deformation tensor:
+ 1.009758973 0.000972475
+0.000972475 1.009628528
+Rotation factor of deformation tensor:
+ 0.999979932 0.006335253
+-0.006335253 0.999979932
+New angle of rotation (in degrees):4.562985682955
+New unit vector of top layer (in Angstrom):
+ 1.009758973108802 0.000972475418778
+0.000972475418778 1.009628527538828
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+18.000000000 0.000000000
+0.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+18.000000000 -1.000000000
+1.000000000 9.000000000
+Total number of atoms: 1300
+Angle between super lattice vectors (in degree):90.147264
+Mismatch (vector1,vector2) (in Angstrom):0.290378371 0.297506468
+Deformation tensor:
+ 0.996821542 0.003816648
+-0.006378069 0.997009641
+Symmetric factor of deformation tensor:
+ 0.996841123 -0.001281175
+-0.001281175 0.997016123
+Rotation factor of deformation tensor:
+ 0.999986928 0.005113063
+-0.005113063 0.999986928
+New angle of rotation (in degrees):4.492958187824
+New unit vector of top layer (in Angstrom):
+ 0.996841123283243 -0.001281174506747
+-0.001281174506747 0.997016123100456
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+18.000000000 0.000000000
+0.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+18.000000000 -1.000000000
+1.000000000 10.000000000
+Total number of atoms: 1444
+Angle between super lattice vectors (in degree):89.692101
+Mismatch (vector1,vector2) (in Angstrom):0.290378371 0.138971221
+Deformation tensor:
+ 0.997433464 0.003818991
+0.001539571 0.997039956
+Symmetric factor of deformation tensor:
+ 0.997431054 0.002679504
+0.002679504 0.997043670
+Rotation factor of deformation tensor:
+ 0.999999347 0.001142867
+-0.001142867 0.999999347
+New angle of rotation (in degrees):4.265481496760
+New unit vector of top layer (in Angstrom):
+ 0.997431053507815 0.002679504074193
+0.002679504074193 0.997043669701465
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+18.000000000 1.000000000
+-1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+18.000000000 0.000000000
+0.000000000 9.000000000
+Total number of atoms: 1300
+Angle between super lattice vectors (in degree):90.147264
+Mismatch (vector1,vector2) (in Angstrom):0.290378371 0.297506468
+Deformation tensor:
+ 1.002974761 0.003840208
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.002994464 -0.001289083
+-0.001289083 1.003170544
+Rotation factor of deformation tensor:
+ 0.999986928 0.005113063
+-0.005113063 0.999986928
+New angle of rotation (in degrees):4.492958187824
+New unit vector of top layer (in Angstrom):
+ 1.002994463550424 -0.001289082991357
+-0.001289082991357 1.003170543613422
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+18.000000000 1.000000000
+-1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+18.000000000 0.000000000
+0.000000000 10.000000000
+Total number of atoms: 1444
+Angle between super lattice vectors (in degree):89.692101
+Mismatch (vector1,vector2) (in Angstrom):0.290378371 0.138971221
+Deformation tensor:
+ 1.002974761 0.003840208
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.002972337 0.002694390
+0.002694390 1.002582801
+Rotation factor of deformation tensor:
+ 0.999999347 0.001142867
+-0.001142867 0.999999347
+New angle of rotation (in degrees):4.265481496760
+New unit vector of top layer (in Angstrom):
+ 1.002972337138414 0.002694390207939
+0.002694390207939 1.002582801199806
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+18.000000000 2.000000000
+-2.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+18.000000000 1.000000000
+-1.000000000 9.000000000
+Total number of atoms: 1316
+Angle between super lattice vectors (in degree):90.145469
+Mismatch (vector1,vector2) (in Angstrom):0.560002757 0.454956109
+Deformation tensor:
+ 1.009058530 0.002918020
+-0.005479441 1.009246628
+Symmetric factor of deformation tensor:
+ 1.009072594 -0.001281091
+-0.001281091 1.009250034
+Rotation factor of deformation tensor:
+ 0.999991345 0.004160614
+-0.004160614 0.999991345
+New angle of rotation (in degrees):4.438386290368
+New unit vector of top layer (in Angstrom):
+ 1.009072593550388 -0.001281090585532
+-0.001281090585532 1.009250033820975
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+19.000000000 0.000000000
+0.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+19.000000000 -1.000000000
+1.000000000 9.000000000
+Total number of atoms: 1372
+Angle between super lattice vectors (in degree):90.379074
+Mismatch (vector1,vector2) (in Angstrom):0.169458464 0.297506468
+Deformation tensor:
+ 0.996847335 -0.000215291
+-0.006380129 0.997331673
+Symmetric factor of deformation tensor:
+ 0.996862295 -0.003298443
+-0.003298443 0.997326241
+Rotation factor of deformation tensor:
+ 0.999995222 0.003091402
+-0.003091402 0.999995222
+New angle of rotation (in degrees):4.377124544903
+New unit vector of top layer (in Angstrom):
+ 0.996862295390818 -0.003298443089318
+-0.003298443089318 0.997326241382886
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+19.000000000 0.000000000
+0.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+19.000000000 -1.000000000
+1.000000000 10.000000000
+Total number of atoms: 1524
+Angle between super lattice vectors (in degree):89.923911
+Mismatch (vector1,vector2) (in Angstrom):0.169458464 0.138971221
+Deformation tensor:
+ 0.997427235 -0.000215417
+0.001540019 0.997329962
+Symmetric factor of deformation tensor:
+ 0.997428204 0.000662258
+0.000662258 0.997329765
+Rotation factor of deformation tensor:
+ 0.999999613 -0.000880024
+0.000880024 0.999999613
+New angle of rotation (in degrees):4.149578320789
+New unit vector of top layer (in Angstrom):
+ 0.997428203762208 0.000662257927207
+0.000662257927207 0.997329765429893
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000001
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+19.000000000 1.000000000
+-1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+19.000000000 0.000000000
+0.000000000 9.000000000
+Total number of atoms: 1372
+Angle between super lattice vectors (in degree):90.379074
+Mismatch (vector1,vector2) (in Angstrom):0.169458464 0.297506468
+Deformation tensor:
+ 1.002676852 -0.000216550
+-0.006417440 1.003164022
+Symmetric factor of deformation tensor:
+ 1.002691899 -0.003317732
+-0.003317732 1.003158559
+Rotation factor of deformation tensor:
+ 0.999995222 0.003091402
+-0.003091402 0.999995222
+New angle of rotation (in degrees):4.377124544903
+New unit vector of top layer (in Angstrom):
+ 1.002691899457431 -0.003317732230191
+-0.003317732230191 1.003158558583956
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+19.000000000 1.000000000
+-1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+19.000000000 0.000000000
+0.000000000 10.000000000
+Total number of atoms: 1524
+Angle between super lattice vectors (in degree):89.923911
+Mismatch (vector1,vector2) (in Angstrom):0.169458464 0.138971221
+Deformation tensor:
+ 1.002676852 -0.000216550
+0.001548124 1.002579067
+Symmetric factor of deformation tensor:
+ 1.002677826 0.000665743
+0.000665743 1.002578869
+Rotation factor of deformation tensor:
+ 0.999999613 -0.000880024
+0.000880024 0.999999613
+New angle of rotation (in degrees):4.149578320789
+New unit vector of top layer (in Angstrom):
+ 1.002677825887272 0.000665743495245
+0.000665743495245 1.002578869458471
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+19.000000000 2.000000000
+-2.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+19.000000000 1.000000000
+-1.000000000 10.000000000
+Total number of atoms: 1540
+Angle between super lattice vectors (in degree):89.924704
+Mismatch (vector1,vector2) (in Angstrom):0.507936670 0.371198011
+Deformation tensor:
+ 1.007870318 -0.000982309
+0.002306911 1.007773046
+Symmetric factor of deformation tensor:
+ 1.007872741 0.000662221
+0.000662221 1.007773307
+Rotation factor of deformation tensor:
+ 0.999998669 -0.001631844
+0.001631844 0.999998669
+New angle of rotation (in degrees):4.106502195389
+New unit vector of top layer (in Angstrom):
+ 1.007872740845858 0.000662220736081
+0.000662220736081 1.007773306743660
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000014 0.000000000000014
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-19.000000000 1.000000000
+1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-19.000000000 2.000000000
+2.000000000 9.000000000
+Total number of atoms: 1388
+Angle between super lattice vectors (in degree):90.374694
+Mismatch (vector1,vector2) (in Angstrom):0.507936670 0.454956109
+Deformation tensor:
+ 0.991156403 -0.001048609
+-0.005433747 0.991632438
+Symmetric factor of deformation tensor:
+ 0.991165997 -0.003241697
+-0.003241697 0.991627694
+Rotation factor of deformation tensor:
+ 0.999997554 0.002211596
+-0.002211596 0.999997554
+New angle of rotation (in degrees):4.326715223435
+New unit vector of top layer (in Angstrom):
+ 0.991165996758595 -0.003241696502825
+-0.003241696502825 0.991627693713894
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-19.000000000 1.000000000
+1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-19.000000000 2.000000000
+2.000000000 10.000000000
+Total number of atoms: 1540
+Angle between super lattice vectors (in degree):89.924704
+Mismatch (vector1,vector2) (in Angstrom):0.507936670 0.371198011
+Deformation tensor:
+ 0.992284695 -0.000967118
+0.002271237 0.992188926
+Symmetric factor of deformation tensor:
+ 0.992287080 0.000651980
+0.000651980 0.992189183
+Rotation factor of deformation tensor:
+ 0.999998669 -0.001631844
+0.001631844 0.999998669
+New angle of rotation (in degrees):4.106502195389
+New unit vector of top layer (in Angstrom):
+ 0.992287079904943 0.000651980209234
+0.000651980209234 0.992189183443500
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000002
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-18.000000000 1.000000000
+1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-18.000000000 2.000000000
+2.000000000 9.000000000
+Total number of atoms: 1316
+Angle between super lattice vectors (in degree):90.145469
+Mismatch (vector1,vector2) (in Angstrom):0.560002757 0.454956109
+Deformation tensor:
+ 0.990822532 0.002865285
+-0.005380415 0.991007232
+Symmetric factor of deformation tensor:
+ 0.990836342 -0.001257938
+-0.001257938 0.991010575
+Rotation factor of deformation tensor:
+ 0.999991345 0.004160614
+-0.004160614 0.999991345
+New angle of rotation (in degrees):4.438386290368
+New unit vector of top layer (in Angstrom):
+ 0.990836341859719 -0.001257938346034
+-0.001257938346034 0.991010575378428
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000001 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-18.000000000 1.000000000
+1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-18.000000000 2.000000000
+2.000000000 10.000000000
+Total number of atoms: 1460
+Angle between super lattice vectors (in degree):89.695485
+Mismatch (vector1,vector2) (in Angstrom):0.560002757 0.371198011
+Deformation tensor:
+ 0.992011337 0.002960658
+0.002310536 0.991624245
+Symmetric factor of deformation tensor:
+ 0.992010527 0.002635660
+0.002635660 0.991625162
+Rotation factor of deformation tensor:
+ 0.999999946 0.000327742
+-0.000327742 0.999999946
+New angle of rotation (in degrees):4.218778244378
+New unit vector of top layer (in Angstrom):
+ 0.992010526506615 0.002635660323094
+0.002635660323094 0.991625161825026
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000000 0.000000000000007
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-17.000000000 1.000000000
+1.000000000 9.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-17.000000000 2.000000000
+2.000000000 9.000000000
+Total number of atoms: 1244
+Angle between super lattice vectors (in degree):89.889632
+Mismatch (vector1,vector2) (in Angstrom):0.698341950 0.454956109
+Deformation tensor:
+ 0.990450382 0.007227905
+-0.005320967 0.990310346
+Symmetric factor of deformation tensor:
+ 0.990464216 0.000953893
+0.000953893 0.990336263
+Rotation factor of deformation tensor:
+ 0.999979932 0.006335253
+-0.006335253 0.999979932
+New angle of rotation (in degrees):4.562985682955
+New unit vector of top layer (in Angstrom):
+ 0.990464215660864 0.000953893085935
+0.000953893085935 0.990336262681399
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000
+
+Superlattice (vector1 (n1,n2),vector2 (n1',n2')):
+-17.000000000 1.000000000
+1.000000000 10.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-17.000000000 2.000000000
+2.000000000 10.000000000
+Total number of atoms: 1380
+Angle between super lattice vectors (in degree):89.439617
+Mismatch (vector1,vector2) (in Angstrom):0.698341950 0.371198011
+Deformation tensor:
+ 0.991706559 0.007339902
+0.002354353 0.990994657
+Symmetric factor of deformation tensor:
+ 0.991697504 0.004848007
+0.004848007 0.991009981
+Rotation factor of deformation tensor:
+ 0.999996839 0.002514516
+-0.002514516 0.999996839
+New angle of rotation (in degrees):4.344071280664
+New unit vector of top layer (in Angstrom):
+ 0.991697503635764 0.004848007418165
+0.004848007418165 0.991009980626656
+Mismatch with new unit vectors (vector1,vector2) (in Angstrom):0.000000000000007 0.000000000000000

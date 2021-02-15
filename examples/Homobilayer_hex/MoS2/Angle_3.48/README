@@ -1,0 +1,20 @@
+The input file, twist.inp, here is constructed using i = 9
+entry of hex.table (../../hex.table).
+
+basis_pos_crys file contains the basis of one Mo atom and 
+two S atoms. Both layers are constructed using this basis.
+Hence the stacking is AA at the origin.
+
+To run this example, run from command line:
+
+python path_to_Twister_1.0/src/twister.py
+
+The superlattice vectors in units of celldm1,
+and atom positions (in Angstroms) constituting 
+the superlattice are provided in superlattice.dat
+
+A reference Quantum Espresso input file, in.QE, for 
+this superlattice is also provided.
+
+If the plotting takes too long, you can turn the plotting 
+flag to False in twist.inp

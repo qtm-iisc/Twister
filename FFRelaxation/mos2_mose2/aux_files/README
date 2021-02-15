@@ -1,0 +1,57 @@
+
+=> Set of auxillary files that you need to simplify
+the moire lattice generation and performing 
+the relaxation using lammps.
+=> This can be used by homo-bilayers with triangular
+lattice.
+
+--------------------------------------------------------
+basis_pos_crys: 	basis of one Mo and two S atoms
+			(layer 1 - Mos2)
+basis_pos_crys_l2: 	basis of one Mo and two Se atoms
+			(layer 2 - MoSe2)
+
+toqe.py:		Generates a reference input file 
+                        for quantum espresso after reading
+                        the superlattice.dat file produced
+                        by twister
+
+lammps_triclinic.py:	Generates a lammps.dat file 
+                        formatted the way LAMMPS package 
+                        can use
+
+tolammps.py:		Generates a reference input file
+                        for LAMMPS, with the atomic 
+                        positions taken from lammps.dat 
+
+Mass_FF:		Provide the masses and 
+			forcefield(FF) you wish to include
+
+Note that, for relaxation with lammps, you need two things:
+1) pre-built lammps executable, 2) force-fields. 
+Go through this example of mos2 to understand how to build 
+lammps executable and set-up these forcef-fields. 
+It is upto the user to choose an accurate force-field before performing the relaxation with lammps. 
+
+run_lammps.py:		Run lammps using a python wrapper.
+extract_pos.py:		After lammps minimization, this
+			file extracts the lattice vectors,
+			atomic positions from the output
+
+homo.sh:		The script that needs to be run
+                        see examples as to how to modify
+The examples for generating twist angles near 0 degree 
+and performing the relaxation are given in the folder 
+near_0. Similarly for near 60 degrees calculations, 
+please have a look at the near_60 folder. Both without 
+and with the python wrapper examples are provided.  
+---------------------------------------------------------
+
+
+Note: 
+
+System dependent input files for the auxillary files are:
+1) Mass_FF 
+2) basis_pos_crys and basis_pos_l2
+If you wish to perform similar calculations for a different homobilayer, for instance WS2 or WSe2 or graphene etc, you only need to modify the above two files along with the force-field files in ff folder.
+

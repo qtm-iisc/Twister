@@ -1,0 +1,40 @@
+
+=> Construction of moire superlattice for twisted bilayer
+graphene with atomic relaxation and with python wrapper.
+
+---------------------------------------------------
+The force-field used in this directory for twisted bilayer
+of graphene will be a combination of REBO and registry
+dependent Kolmogorov-Crespi Potential. The corresponding
+forcefield files are available in the aux_files/ff
+directory, i) CH.rebo ii) CC.KC.  They are used to describe
+intra and interlayer interaction of graphene layers,
+respectively.
+
+To use the python wrapper, the user must install LAMMPS as
+explained in /path-to-graphene/LAMMPS_INSTALL 
+
+In the script (homo.sh), init=1, end=6 were set
+to produce twist angles kept in the reference directory.
+
+To reproduce this example, run from command line:
+
+bash homo.sh
+
+
+The superlattice vectors in units of celldm1,
+and atom positions (in Angstroms) constituting
+the superlattice are provided in superlattice.dat.
+
+A reference Quantum Espresso input file, qe.in, for
+this superlattice is also provided.
+
+Simulataneously, a reference LAMMPS input file, lammps.in
+along with formatted data file, lammps.dat are also created.
+The data file and the input provided are used to perform
+atomic relaxation.  Please see the log.lammps file in the
+corresponding directory to find out the output.
+
+
+lammps.dat_min: file produced by lammps after minimization.
+----------------------------------------------------

@@ -1,0 +1,13 @@
+If you wish to perform relaxation with LAMMPS, you must write the
+basis file as required by the force-fields. For example, in the
+case of MoS2 the intralayer Stillinger-Weber potential uses
+3-atom-type basis (Mo-S-S). In our code, we infer the basis atom
+types from the strings you provide in the basis_file_crys and
+basis_file_crys_l2. If the strings you provide are (first column in
+the basis files), "Mo S S", then the code will assume 2-atom-basis.
+While performing LAMMPS relaxation with the aformentioned SW
+potential, the code might crash. 
+
+To overcome this, the first column is written as "Mo S1 S2". Our
+code infers there are 3 atom types and correctly writes the lammps
+data and input file. 

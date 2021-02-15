@@ -1,0 +1,34 @@
+In thispath_to_Twister/SRC example, we find commensurate twist-angle for MoS2/MoSe2.
+The method described in Section 2.1 of the paper is used to find
+commensurate twist-angles.
+
+From the directory with the input file get_ang.inp, in the 
+terminal, run the following command:
+python path_to_Twister/SRC/get_ang.py
+
+The documentation of the input can be found in the Documentation/ folder.
+
+An output file will be written corresponding to each angle as "Angle_%angle%". 
+The documentation of the output can be found in the Documentation/ folder.
+
+To find commensurate twist-angles, run get_ang.inp iteratively for a range of twist-angles. 
+
+1. Choose a range of twist-angles, in theta_range and run get_ang.inp. For example, 
+   theta_range of 1.0 2.0 0.1 will sample twist angles from 1 degree to 2 degree with a step
+   of 0.1 degrees.
+
+2. Find the twist-angle with minimum mismatch by runnning: 
+   "grep Mismatch *.out", say 1.5 degrees.
+
+Narrow your range of twist-angle in theta_range to 1.4 1.6 0.01 and repeat steps 1 and 2. 
+
+This procedure is repeated until the mismatch is < 1.e-6.
+
+Once you find the commensurate twist-angle, generate twist.inp with the 
+new lattice parameters, superlattice vectors (n1,n2; n1',n2')  and 
+twist-angle and run twister.py to obtain the atom positions in the superlattice. 
+
+To visualize the generated structure, we provide a utility, tovasp.py, which reads 
+twist.inp and superlattice.dat to generate POSCAR.vasp. This can be visualised 
+directly in VESTA (http://jp-minerals.org/vesta)
+python path_to_Twister/SRC/tovasp.py

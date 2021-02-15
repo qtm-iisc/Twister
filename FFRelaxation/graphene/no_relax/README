@@ -1,0 +1,29 @@
+
+=> Construction of moire superlattice for twisted bilayer 
+graphene without atomic relaxation.
+
+--------------------------------------------------- 
+In the homo.sh script, init=1, end=6 were set
+to produce twist angles kept in the reference directory. 
+Since no relaxation will be performed, don't worry about 
+forcefield, lammps_path and style. 
+
+basis_pos_crys file contains the basis of two c atoms.
+
+To reproduce this example, run from command line:
+
+bash homo.sh
+
+
+The superlattice vectors in units of celldm1,
+and atom positions (in Angstroms) constituting 
+the superlattice are provided in superlattice.dat.
+
+A reference Quantum Espresso input file, qe.in, for 
+this superlattice is also provided.
+
+Simulataneously, a reference LAMMPS input file, lammps.in along
+with formatted data file, lammps.dat are also created. The data
+file and the input provided can de directly used with 
+LAMMPS. 
+----------------------------------------------------

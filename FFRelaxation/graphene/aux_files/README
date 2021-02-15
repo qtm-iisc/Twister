@@ -1,0 +1,66 @@
+
+=> Set of auxillary files that you need to simplify
+the moire lattice generation and performing 
+the relaxation using lammps.
+=> This can be used by homo-bilayers with triangular
+lattice.
+
+--------------------------------------------------------
+basis_pos_crys: 	basis of two C atoms
+			(layer 1)
+basis_pos_crys_l2: 	basis of two C atoms
+			(layer 2)
+
+hex_table_least.py:	When the hex.table is not found
+                        generates a hex.table
+hex_table_generic.py:	a more generic version 
+By default, when the hex.table is not found, 
+hex_table_least.py will be used. You can generate 
+the hex.table using the more generic version
+if you want to experiment. See homo.sh if you 
+want to change.  
+
+toqe.py:		Generates a reference input file 
+                        for quantum espresso after reading
+                        the superlattice.dat file produced
+                        by twister
+
+lammps_triclinic.py:	Generates a lammps.dat file 
+                        formatted the way LAMMPS package 
+                        can use
+
+tolammps.py:		Generates a reference input file
+                        for LAMMPS, with the atomic 
+                        positions taken from lammps.dat 
+
+Mass_FF:		Provide the masses and 
+			forcefield(FF) you wish to include
+
+Note that, for relaxation with lammps, you need two things:
+1) pre-built lammps executable, 2) force-fields. 
+Go through this example of mos2 to understand how to build 
+lammps executable and set-up these forcef-fields. 
+It is upto the user to choose an accurate force-field before performing the
+relaxation with lammps. 
+
+run_lammps.py:		Run lammps using a python wrapper.
+
+homo.sh:		The script that needs to be run
+                        see examples as to how to modify
+Unlike materials with different sublattice atoms, generation
+of twist angles near 0 degree and near 60 degrees for
+twisted bilayer graphene produces identical moire patterns
+Both without and with the python wrapper examples are
+provided.  
+---------------------------------------------------------
+
+
+Note: 
+
+System dependent input files for the auxillary files are:
+1) Mass_FF 
+2) basis_pos_crys and basis_pos_crys_l2
+If you wish to perform similar calculations for a different homobilayer, for
+instance WS2 or WSe2 or MoS2 etc, you only need to modify the above two files
+along with the force-field files in ff folder.
+

@@ -1,0 +1,29 @@
+Twist angle:0.000000
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+0.000000000 -56.000000000
+56.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -55.000000000
+55.000000000 0.000000000
+Total number of atoms: 12322
+Angle between super lattice vectors (in degree): 120.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.008000000 0.008000000
+Strain Percent (vector 1,vector2): 0.002895278 -0.002895278
+New lattice parameter layer 1 (in Angstrom):2.467071427 2.467071427 25.000000000
+New lattice parameter layer 2 (in Angstrom):2.511927271 2.511927271 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000000000 0.000000000
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+56.000000000 -56.000000000
+-56.000000000 0.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+55.000000000 -55.000000000
+-55.000000000 0.000000000
+Total number of atoms: 12322
+Angle between super lattice vectors (in degree): 120.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.008000000 0.008000000
+Strain Percent (vector 1,vector2): 0.002895278 -0.002895278
+New lattice parameter layer 1 (in Angstrom):2.467071427 2.467071427 25.000000000
+New lattice parameter layer 2 (in Angstrom):2.511927271 2.511927271 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000000000 0.000000000

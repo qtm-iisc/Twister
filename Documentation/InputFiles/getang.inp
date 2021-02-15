@@ -1,0 +1,73 @@
+#Range of n1, n2, m1, m2
+range_nm:
+-20 21
+
+#Lattice parameters for layer 1 (Angstrom)
+celldm_a: 
+3.164 3.164 25.0
+
+#Lattice vectors
+a1:
+0.5 0.8660254 0.0
+
+a2:
+-0.5 0.8660254 0.0
+
+a3:
+0.0 0.0 1.0
+
+Number_basis_atoms_a:
+3
+
+#Lattice parameters for layer 2 (Angstrom)
+
+celldm_b:
+3.301 3.301 25.0
+
+b1:
+0.5 0.8660254 0.0
+
+b2:
+-0.5 0.8660254 0.0
+
+b3:
+0.0 0.0 1.0
+
+Number_basis_atoms_b:
+3
+
+#Range of twist angle and step size
+theta_range:
+16.05 16.15 0.01
+
+#Tolerated mismatch in coincidence given by |L_1-L_2|
+mismatch (Angstrom):
+0.0271
+
+#Tolerated biaxial strain tolerated. This will be applied on lattice parameters to stretch them.
+strain_per:
+1.0
+
+#If unit vectors are to be strained, enter 'True', otherwise for lattice parameter straining, enter 'False'
+strain_tensor_vector:
+'True'
+
+#Layer(s) which is(are) to be strained. 
+#For strain tensor vector: False
+##Accepted inputs: 'Top','Bottom','Both'
+#For strain tensor vector: True
+##Top layer will be strained by default, regardless of input
+strain_layer:
+'Top'
+
+#Fix the angle between the superlattice vectors 
+fix_ang:
+'True'
+
+#Angle between the superlattice vectors
+f_ang:
+60
+
+#If the resultant superlattice vectors are to be plotted enter 'Y' or else enter 'N'
+plot:
+'Y'

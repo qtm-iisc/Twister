@@ -1,0 +1,83 @@
+
+Generic installation the current/latest version of lammps
+
+--------------------------------------------------------
+=> LAMMPS without python wrapper (standard build with make)
+
+Step 1: Download the most-recent lammps tar file and untar it.
+Go to src folder and 
+type the following to see your options:
+
+make 
+
+
+Step 2: In the src directory, install prticular packages 
+by typing : 
+
+make yes-packagename 
+
+For our purpose we need atleast the following packages. Install 
+them by typing: 
+
+make yes-MANYBODY
+make yes-USER-MISC
+ 
+Once, you have installed these, cross-check by typing: 
+
+make ps 
+
+Step 3: Now build (serial) by typing: 
+
+make serial
+
+
+After this you should have the lammps exceutable in the src directory: 
+lmp_serial
+
+You need to give the path of this executable while 
+performing relaxation when not using lammps python 
+wrapper. 
+---------------------------------------------------------------
+
+
+
+--------------------------------------------------------------
+=> Lammps with python wrapper
+
+Step 1P: Carry out Steps 1-2 for lammps installation without 
+python wrapper, as mentioned.  And add the following by typing:
+
+make yes-PYTHON 
+
+Step 2P: Build lammps as shared object. This is acheieved by typing: 
+
+make mode=shlib serial
+
+Step 3P: In your .cshrc add the lammps libpath:
+vi ~/.cshrc
+setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:path-to-lammps-directory/src/
+
+Now, type: 
+
+source ~/.cshrc 
+
+Or, similarly for ~/.bashrc Add the following in your ~/.bashrc :
+
+export LD_LIBRARY_PATH=path-to-lammps-directory/src
+
+Now, type:
+
+source ~/.bashrc
+
+# Step 4P:  install python wrapper by typing in the src directory:
+
+make install-python 
+
+# Step 4P_1: Cross-checking if installation is correct 
+create a python input file named, check.py which has the following:
+from lammps import lammps
+lmp = lammps()
+
+If after running the check.py (python check.py), you don't get 
+any errors, the installation went fine. Or optionally, you can paste the above commands on your python interpreter. 
+-------------------------------------------------------------

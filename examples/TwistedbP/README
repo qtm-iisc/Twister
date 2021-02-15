@@ -1,0 +1,24 @@
+In this example, we find commensurate twist-angle for twisted bilayer phosphorene.
+
+From the directory with the input file get_ang.inp, 
+in the terminal, run the following command:
+python path_to_Get_Ang/SRC/get_ang.py
+
+The documentation of the input can be found in the Documentation/ folder.
+
+An output file will be written corresponding to each angle as 
+"Angle_%angle%". The documentation of the output can be found 
+in the Documentation/ folder.
+
+To find commensurate twist-angles, run get_ang.inp for a range of twist-angles.  
+
+1. If output files are generated,they will have commensurate twist-angle 
+   with no mismatch. 
+
+2. Find the twist-angle with suitable area/atoms by checking 
+   the solutions in the output files. 
+
+Once you find the commensurate twist-angle, generate twist.inp with 
+the new lattice vectors and twist-angle and run twister.py to obtain 
+the atom positions in the superlattice. This step is performed in a 
+new folder Ang_%angle%.  

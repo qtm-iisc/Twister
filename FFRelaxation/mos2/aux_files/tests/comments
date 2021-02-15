@@ -1,0 +1,13 @@
+# Last updated (26/07/2020)
+
+=> hex table generation files 
+
+Name 			works(as one) 		(in group)	
+
+hex_table_least.py	[x]			[]
+hex_table_generic.py	[x]			[]
+
+toqe.py			[x]
+lammps_triclinic.py	[x]
+tolammps.py		[x]
+

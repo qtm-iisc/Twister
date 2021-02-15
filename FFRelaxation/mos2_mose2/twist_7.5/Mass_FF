@@ -1,0 +1,24 @@
+Masses_l1:
+Mo 95.94
+S1 32.066
+S2 32.066
+
+Masses_l2:
+Mo 95.94
+Se1 78.96
+Se2 78.96
+
+FFs:
+# potentials
+pair_style hybrid/overlay sw sw kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 lj/cut 10.0
+
+# Intralayer Interaction
+pair_coeff * * sw 1 tmd.sw Mo S S NULL NULL NULL
+pair_coeff * * sw 2 tmd.sw NULL NULL NULL Mo Se Se
+
+# Interlayer Interaction
+pair_coeff 1 5 kolmogorov/crespi/z 1 MoSe.KC Mo NULL NULL  NULL Se NULL
+pair_coeff 3 4 kolmogorov/crespi/z 2 MoS.KC NULL NULL S Mo NULL NULL
+pair_coeff 3 5 kolmogorov/crespi/z 3 SSe.KC NULL NULL S NULL Se NULL
+pair_coeff 1 4 kolmogorov/crespi/z 4 MoS.KC Mo NULL NULL  Mo NULL NULL
+pair_coeff * * lj/cut 0.0 3.0

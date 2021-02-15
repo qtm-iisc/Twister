@@ -1,0 +1,27 @@
+The input file, twist.inp, is constructed using i = 30
+entry of hex.table (../../hex.table). This angle is the 
+first 'magic' angle in tBLG.
+
+Angle: 0.0189289518072 radians
+(m,n): (30, 31)
+(p,q): (-31, 61)
+
+basis_pos_crys file contains the basis of two C atoms.
+
+To run this example, run from command line:
+
+python path_to_Twister_1.0/src/twister.py
+
+The superlattice vectors in units of celldm1,
+and atom positions (in Angstroms) constituting 
+the superlattice are provided in superlattice.dat
+
+
+A reference Quantum Espresso input file, in.QE, for 
+this superlattice is also provided. 
+
+Plot_lattice is set as False to avoid plotting the structure,
+and reduce the computation time. 
+Note that the computation will 
+take a while. You can see the superlattice.dat file 
+being updated.

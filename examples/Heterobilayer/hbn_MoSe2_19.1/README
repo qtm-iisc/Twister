@@ -1,0 +1,27 @@
+In this example, we compare hBN-MoSe2 bilayer solutions in a range around 
+19.1 degree twist-angle with results from Coincidence Lattices of 
+2D Crystals: Heterostructure Predictions and Applications, Koda et al, 2016.  
+
+The method described in Section 2.1 of the paper is used to find 
+commensurate twist-angles.
+
+
+To find the commensurate twist-angles and new lattice parameters:
+mpirun -n 1 python $pathtoTwisterSRC/get_angle.py
+
+The twist-angle of 19.11 degrees has the smallest mismatch.
+The mismatch can be checked by: grep Mismatch Angle_*
+
+The commensurate twist-angle and new lattice parameters
+are used in twist.inp along with the basis atom positions in
+files basis_pos_crys and basis_pos_crys_layer2.
+
+To obtain the atom positions in the superlattice:
+python $pathtoTwisterSRC/twister.py
+
+
+To visualize the generated superlattice:
+python $pathtoTwisterSRC/tovasp.py
+
+This generates POSCAR.vasp which can be directly visualized 
+using VESTA (http://jp-minerals.org/vesta/en/)

@@ -1,0 +1,182 @@
+LAMMPS (3 Mar 2020)
+  using 1 OpenMP thread(s) per MPI task
+#Initialize--
+#general settings
+units           metal
+dimension       3
+box tilt        large
+atom_style      atomic
+
+# structure
+boundary        p p p
+read_data       lammps.dat
+  triclinic box = (0 0 0) to (13.5823 11.7626 100) with tilt (6.79116 0 0)
+WARNING: Triclinic box skew is large (../domain.cpp:191)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  114 atoms
+  read_data CPU = 0.000815951 secs
+
+# potentials
+pair_style hybrid/overlay sw sw kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 lj/cut 10.0
+
+# Intralayer Interaction
+pair_coeff * * sw 1 tmd.sw Mo S S NULL NULL NULL
+pair_coeff * * sw 2 tmd.sw NULL NULL NULL Mo S S
+
+# Interlayer Interaction
+pair_coeff 1 5 kolmogorov/crespi/z 1 MoS.KC Mo NULL NULL  NULL S NULL
+pair_coeff 3 4 kolmogorov/crespi/z 2 MoS.KC NULL NULL S  Mo NULL NULL
+pair_coeff 3 5 kolmogorov/crespi/z 3 MoS.KC NULL NULL S  NULL S NULL
+pair_coeff 1 4 kolmogorov/crespi/z 4 MoS.KC Mo NULL NULL  Mo NULL NULL
+pair_coeff * * lj/cut 0.0 3.0
+neighbor        2.0 bin
+neigh_modify every 1 delay 0 check yes
+
+#optimize at 0 K
+dump            1 all custom 100 dump.initial id type x y z
+thermo          1000
+thermo_style    custom step pe press
+undump          1
+
+min_style       fire
+minimize        0.0 1.0e-4 1000000 1000000
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 16
+  ghost atom cutoff = 16
+  binsize = 8, bins = 3 2 13
+  8 neighbor lists, perpetual/occasional/extra = 8 0 0
+  (1) pair sw, perpetual, skip from (8)
+      attributes: full, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (2) pair sw, perpetual, skip from (8)
+      attributes: full, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (3) pair kolmogorov/crespi/z, perpetual, skip from (7)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (4) pair kolmogorov/crespi/z, perpetual, skip from (7)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (5) pair kolmogorov/crespi/z, perpetual, skip from (7)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (6) pair kolmogorov/crespi/z, perpetual, skip from (7)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (7) pair lj/cut, perpetual, half/full from (8)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (8) neighbor class addition, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+  Parameters for fire: 
+    dmax delaystep dtgrow dtshrink alpha0 alphashrink tmax tmin    integrator halfstepback 
+     0.1        20    1.1      0.5   0.25        0.99   10 0.02 eulerimplicit          yes 
+Per MPI rank memory allocation (min/avg/max) = 7.727 | 7.727 | 7.727 Mbytes
+Step PotEng Press 
+       0   -143.62909    2051.5613 
+     269   -145.06268    -162.8644 
+Loop time of 0.174892 on 1 procs for 269 steps with 114 atoms
+
+100.0% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = force tolerance
+  Energy initial, next-to-last, final = 
+        -143.629090547     -145.062676183     -145.062676185
+  Force two-norm initial, final = 2.77749 9.88564e-05
+  Force max component initial, final = 0.562769 1.13089e-05
+  Final line search alpha, max atom move = 0 0
+  Iterations, force evaluations = 269 269
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.17094    | 0.17094    | 0.17094    |   0.0 | 97.74
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.0028142  | 0.0028142  | 0.0028142  |   0.0 |  1.61
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 0.001136   |            |       |  0.65
+
+Nlocal:    114 ave 114 max 114 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    3038 ave 3038 max 3038 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    1683 ave 1683 max 1683 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  9272 ave 9272 max 9272 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 9272
+Ave neighs/atom = 81.3333
+Neighbor list builds = 0
+Dangerous builds = 0
+write_data      lammps.dat_min
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 16
+  ghost atom cutoff = 16
+  binsize = 8, bins = 3 2 13
+  8 neighbor lists, perpetual/occasional/extra = 8 0 0
+  (1) pair sw, perpetual, skip from (8)
+      attributes: full, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (2) pair sw, perpetual, skip from (8)
+      attributes: full, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (3) pair kolmogorov/crespi/z, perpetual, skip from (7)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (4) pair kolmogorov/crespi/z, perpetual, skip from (7)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (5) pair kolmogorov/crespi/z, perpetual, skip from (7)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (6) pair kolmogorov/crespi/z, perpetual, skip from (7)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (7) pair lj/cut, perpetual, half/full from (8)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (8) neighbor class addition, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+Total wall time: 0:00:00

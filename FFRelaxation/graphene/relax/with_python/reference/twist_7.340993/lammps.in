@@ -1,0 +1,31 @@
+#Initialize--
+#general settings
+units           metal
+dimension       3
+box tilt        large
+atom_style      atomic
+
+# structure
+boundary        p p p
+read_data       lammps.dat
+
+# potentials
+pair_style hybrid/overlay rebo  kolmogorov/crespi/z 14.0
+
+# Intralayer Interaction
+pair_coeff * * rebo                 CH.rebo  C C
+
+# Interlayer Interaction
+pair_coeff 1 2 kolmogorov/crespi/z  CC.KC      C C
+neighbor        2.0 bin
+neigh_modify every 1 delay 0 check yes
+
+#optimize at 0 K
+dump            1 all custom 100 dump.initial id type x y z
+thermo          1000
+thermo_style    custom step pe press
+undump          1
+
+min_style       fire
+minimize        0.0 1.0e-4 1000000 1000000
+write_data      lammps.dat_min

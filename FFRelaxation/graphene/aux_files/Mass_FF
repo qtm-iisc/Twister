@@ -1,0 +1,17 @@
+Masses_l1:
+C 12.011
+C 12.011
+
+Masses_l2:
+C 12.011
+C 12.011
+
+FFs:
+# potentials
+pair_style hybrid/overlay rebo  kolmogorov/crespi/z 14.0
+
+# Intralayer Interaction
+pair_coeff * * rebo                 CH.rebo  C C
+
+# Interlayer Interaction
+pair_coeff 1 2 kolmogorov/crespi/z  CC.KC      C C

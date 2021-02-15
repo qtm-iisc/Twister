@@ -1,0 +1,124 @@
+LAMMPS (30 Mar 2018)
+#Initialize--
+#general settings
+units           metal
+dimension       3
+box tilt        large
+atom_style      atomic
+
+# structure
+boundary        p p p
+read_data       lammps.dat
+  triclinic box = (0 0 0) to (10.7229 9.2863 100) with tilt (5.36145 0 0)
+WARNING: Triclinic box skew is large (../domain.cpp:197)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  76 atoms
+
+# potentials
+pair_style hybrid/overlay rebo  kolmogorov/crespi/z 14.0
+
+# Intralayer Interaction
+pair_coeff * * rebo                 CH.rebo  C C
+Reading potential file CH.rebo with DATE: 2018-7-3
+
+# Interlayer Interaction
+pair_coeff 1 2 kolmogorov/crespi/z  CC.KC      C C
+neighbor        2.0 bin
+neigh_modify every 1 delay 0 check yes
+
+#optimize at 0 K
+dump            1 all custom 100 dump.initial id type x y z
+thermo          1000
+thermo_style    custom step pe press
+undump          1
+
+min_style       fire
+minimize        0.0 1.0e-4 1000000 1000000
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 16
+  ghost atom cutoff = 16
+  binsize = 8, bins = 3 2 13
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair rebo, perpetual
+      attributes: full, newton on, ghost
+      pair build: full/bin/ghost
+      stencil: full/ghost/bin/3d
+      bin: standard
+  (2) pair kolmogorov/crespi/z, perpetual, skip from (3)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (3) neighbor class addition, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton/tri
+      stencil: half/bin/3d/newton/tri
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 4.758 | 4.758 | 4.758 Mbytes
+Step PotEng Press 
+       0   -563.42069    114.07246 
+    1000   -563.51474    -122.6693 
+    1554   -563.51474   -123.64314 
+Loop time of 1.73929 on 1 procs for 1554 steps with 76 atoms
+
+100.0% CPU use with 1 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = force tolerance
+  Energy initial, next-to-last, final = 
+        -563.420685792     -563.514740866     -563.514740866
+  Force two-norm initial, final = 0.506059 9.73717e-05
+  Force max component initial, final = 0.0781155 1.03179e-05
+  Final line search alpha, max atom move = 0 0
+  Iterations, force evaluations = 1554 1554
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 1.7151     | 1.7151     | 1.7151     |   0.0 | 98.61
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0.0166     | 0.0166     | 0.0166     |   0.0 |  0.95
+Output  | 8.8215e-06 | 8.8215e-06 | 8.8215e-06 |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 0.007581   |            |       |  0.44
+
+Nlocal:    76 ave 76 max 76 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    2932 ave 2932 max 2932 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    11179 ave 11179 max 11179 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  28286 ave 28286 max 28286 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 28286
+Ave neighs/atom = 372.184
+Neighbor list builds = 0
+Dangerous builds = 0
+write_data      lammps.dat_min
+Neighbor list info ...
+  update every 1 steps, delay 0 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 16
+  ghost atom cutoff = 16
+  binsize = 8, bins = 3 2 13
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair rebo, perpetual
+      attributes: full, newton on, ghost
+      pair build: full/bin/ghost
+      stencil: full/ghost/bin/3d
+      bin: standard
+  (2) pair kolmogorov/crespi/z, perpetual, skip from (3)
+      attributes: half, newton on
+      pair build: skip
+      stencil: none
+      bin: none
+  (3) neighbor class addition, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton/tri
+      stencil: half/bin/3d/newton/tri
+      bin: standard
+Total wall time: 0:00:01

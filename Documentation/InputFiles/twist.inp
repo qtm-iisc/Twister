@@ -1,0 +1,56 @@
+
+# Lattice vectors of lower layer:
+
+a1_l:
+0.5 0.8660254 0.0
+a2_l:
+-0.5 0.8660254 0.0
+a3_l:
+0.0 0.0 1.0
+
+# Lattice vectors of upper layer:
+
+a1_u:
+0.5 0.8660254 0.0
+a2_u:
+-0.5 0.8660254 0.0
+a3_u:
+0.0 0.0 1.0
+
+# Lattice parameter of lower layer:
+
+celldm1_l, celldm2_l, celldm3_l: (Angstrom)
+3.148621 3.148621 35.534473883846
+
+# Lattice parameter of upper layer:
+
+celldm1_u, celldm2_u, celldm3_u: (Angstrom)
+3.148621 3.148621 35.534473883846
+
+# Twist-angle between the layers in radians:
+
+angle: (radians)
+0.380251206693
+
+# Vertical translation of upper along z-direction
+
+translate_z: (Angstrom)
+5.97946086263966
+
+# Superlattice vectors
+
+Superlattice1: (m,n)
+1 2
+
+
+Superlattice2: (p,q)
+-2 3
+
+Plot_lattice:
+False
+
+
+# Layer 2 is always read from file from version 2.0
+
+layer2_from_file:
+True basis_pos_crys_layer2

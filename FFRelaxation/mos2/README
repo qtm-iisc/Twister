@@ -1,0 +1,58 @@
+
+=> Construction of twisted bilayer mos2 at any commensurate angles 
+=> Use the lammps.dat file to perform relaxation using 
+lammps code [https://lammps.sandia.gov/]
+
+
+------------------------------------------------------
+This example is intended to perform the moire lattice creation 
+near 0 degrees or (theta) for twisted bilayer mos2. If theta is 
+printed to be 10 degree, then it should be called 10 degree. 
+
+In the homo.sh, modify the first few lines. 
+You need to provide i) the directory of the files, 
+ii) the lattice constant of mos2, and iii) index 
+of the initial to final commensurate twist angles 
+you want to generate (as provided/generated in 
+hex.table file). 
+
+a) If you have a hex.table file, then please provide the 
+indices (init and end). For instance, the hex.table file 
+provided here, the indices are written in the first column. 
+
+a.1) If you want to create 50 commensurate twist angles 
+from 21.78  to 0.655 degrees (see hex.table file indices), 
+then provide init=1 and end=50 in the homo.sh. 
+However, if you want to create commensurate 
+twist angles only from 3.48 to 0.655 degrees, then provide 
+init=9 and end=51. (In the first column of hex.table 9 corresponds 
+to 3.48 degrees).
+
+a.2) If you want to create only a specific angle, then provide 
+the same value for init and end. For instance, for 13.17 degrees, 
+provide init=2, end=2
+
+a.3) If you want to create twist angles data file, but not all 
+of them one by one. Increase the 'step' value to 2 or higher.
+
+b) If you don't have the hex.table file, the script will generate 
+one for twisted homobilayer with hexagonal lattice and perform the 
+calculations. And then it will read the provided init and 
+end of the generated hex.table file  
+to construct the corresponding moire lattices.  
+
+To perform the atomic relaxation simulataneouly, modify lammps_relax=true
+in the homo.sh file. See the ./relax directory for example.
+After this, you have to specify the forcefields, lammps executables or if
+you want to use python wrapper or not. If the lammps_relax=false, you don't 
+need to specify these. Currently, the code will perform atomic relaxation 
+serially and therefore can be slow for small twist angles. 
+If you want to use mpi, please visit lammps 
+page to install mpi version for lammps and see how to run it. Generally, you 
+would require a jobscript if you are running on remote clusters. See the 
+LAMMPS_INSTALL file or visit lammps page to install the serial version.
+
+
+Please see the no_relax and relax subdirectories for specific examples 
+without and with structural relaxation.
+--------------------------------------------------
