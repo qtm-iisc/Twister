@@ -1,9 +1,7 @@
 
-# DOCUMENTATION: 
+**TWISTER** is a python package that helps you find and construct commensurate moiré superlattices on introducing a twist between 2D materials. Please see below for instructions regarding specific lattices. 
 
-TWISTER is a python package that helps you find and construct commensurate moiré superlattices on introducing a twist between 2D materials. Please see below for instructions regarding specific lattices. 
-
-TWISTER can also be used to study the structural reconstruction of moiré superlattices with classical forcefields through a LAMMPS interface.
+**TWISTER** can also be used to study the structural reconstruction of moiré superlattices with classical forcefields through a LAMMPS interface.
 See FFRelaxation/ for examples
 
 If you use this package please cite the following paper for which this code was developed:
@@ -19,7 +17,7 @@ For assistance with running and installation please visit [our Google Group](htt
 
 ## DEPENDENCIES:
 
-*python with Numpy, Scipy and Matplotlib*
+python with Numpy, Scipy and Matplotlib
 
 
 ## HEXAGONAL LATTICES:
