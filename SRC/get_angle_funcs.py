@@ -79,15 +79,18 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
   st_t = time.time()
   if strain_tv == 'True' and rank == 0:
   	print("Note: Since strain_tensor_vector is True, only the top layer will be strained regardless of strain_layer")
-  range_nm=np.arange(range_nm_l,range_nm_u,1)
-  numDataPerRank_s1=int(len(range_nm)/size)
+    
+  range_nm=np.arange(range_nm_l,range_nm_u,1)  #Range of n,m to be scattered over prcoessors
+  numDataPerRank_s1=int(len(range_nm)/size) #Array size for each rank
   data_s1=None
+  
+  ##Data scatter and receive 
   if numDataPerRank_s1==0:
     print('Too many processors used.Number of processors must be less than or equal to ',len(range_nm))
   else:
     if rank == 0:
       data_s1 = range_nm[:numDataPerRank_s1*size]  #Define array for recollecting after scatter
-    recvbuf = np.empty(numDataPerRank_s1, dtype='int64') #Allocate space for recvbuf
+    recvbuf = np.empty(numDataPerRank_s1, dtype='int64') #Allocate space for buffer object for recieving 
     comm.Scatter(data_s1, recvbuf, root=0) #scatter numDataPerRank_s1*size to processors
         
     data_s2=None      
@@ -95,19 +98,23 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
       for i in range((len(range_nm[numDataPerRank_s1*size:])%numDataPerRank_s1)): #divide remainder of range_nm and send 
         if rank == 0:
           data_s2 = range_nm[numDataPerRank_s1*size+i]
-          comm.send(data_s2, dest=i)
+          comm.send(data_s2, dest=i)  #Send data to rank i processor
         elif rank == i:
-          data_s2 = comm.recv(source=0)
+          data_s2 = comm.recv(source=0) #Receive data at node i processor
     if data_s2!=None:    
-         data=np.insert(recvbuf,0,data_s2)
+         data=np.insert(recvbuf,0,data_s2) 
     else:
       data=recvbuf
+      
+    ##Generate permutations of sets of (n1,n2,m1) from the data recieved with repetitions generated at each processor 
     perm_nm=np.empty((0))
     for i in data:  #permutations for each element in data 
       B=np.asarray(list(product(range_nm,repeat=3))) 
-      A=i*np.ones((len(B),4))
+      A=i*np.ones((len(B),4)) #i is added as m2 to each permutation
       A[:,:-1]=B
-      perm_nm=np.unique(join(perm_nm,A),axis=0)
+      perm_nm=np.unique(join(perm_nm,A),axis=0) #Completed set of permutations of (n1,n2,m1,m2) for rank i processor
+      
+    ##Filter (n1,n2,m1,m2) permutaions by mismatch for each angle 
     for ag in np.arange(theta_i,theta_f,dth): 
       init_l1 = time.time()
       sl=[]
@@ -122,35 +129,41 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
       SL=[]
       SL_m=[]
       area=[]
+      
+      #Rotated unit cell vectors
       R=np.array([[np.cos(ang),-np.sin(ang)],[np.sin(ang),np.cos(ang)]]) #anti-clockwise rotation
       b2_t=b2.T
-      b2_r=(np.dot(R,b2_t)).T
+      b2_r=(np.dot(R,b2_t)).T 
       b1_t=b1.T
       b1_r=(np.dot(R,b1_t)).T
+      
       Area_avg=[]
-      A =np.array([a1,a2])
-      B=np.array([b1_r,b2_r])
+      A =np.array([a1,a2]) #Lattice 1 unit cell vectors
+      B=np.array([b1_r,b2_r]) #Rotated latiice 2 unit cell vectors
       st1 = time.time()
       strain=[]
       cos_angle=[]
       new_alat_a=[]
       new_alat_b=[]
   
-      a_nm=np.matmul(perm_nm[:,:2],A)
-      b_nm=np.matmul(perm_nm[:,2:],B)
+      a_nm=np.matmul(perm_nm[:,:2],A) #Lattice 1 superlattice vector (n1*a1 + n2*a2)
+      b_nm=np.matmul(perm_nm[:,2:],B) #Lattice 2 supperlattice vector (m1*b1_r + m2*b2_r)
       A_B=a_nm-b_nm
   
       with np.errstate(divide='ignore',invalid='ignore'): 
         a_a=np.linalg.norm(a_nm,axis=1)
         AB_AB=np.linalg.norm(A_B,axis=1)
-        str_nm=AB_AB
-        a_nm=a_nm[str_nm<mismatch]
+        str_nm=AB_AB                #mismatch on overlap (|A-B|)
+        
+        #filter vectors by mismatch tolerance
+        a_nm=a_nm[str_nm<mismatch]  
         b_nm=b_nm[str_nm<mismatch]
         strain=str_nm[str_nm<mismatch]
         sl=perm_nm[:,:2][str_nm<mismatch]
         sl_m=perm_nm[:,2:][str_nm<mismatch] 
       sl_minAr = []
       Area = []
+      
       #send arrays back to rank 0 processor
       if rank!=0: 
          size_arr=np.array(len(a_nm)) 
@@ -199,7 +212,9 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
       if rank==0:
           
           if len(a_nm)>1:
-            #generates all possible pairs   
+            
+            #generate all possible pairs of superlattice vectors  
+            
             a_nm_comb=np.array(list(combinations(a_nm,2))) 
             a_nm_comb=a_nm_comb.reshape((len(a_nm_comb),-1))
             a_x_1 = np.hstack((a_nm_comb[:,:2], np.zeros((a_nm_comb[:,:2].shape[0], 1), dtype=a_nm.dtype)))
@@ -232,7 +247,8 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
        
             magn_A=np.linalg.norm(a_nm_comb[:,:2],axis=1)
             magn_B=np.linalg.norm(a_nm_comb[:,2:],axis=1)
-            #check for angle between vector
+          
+            #check for angle between vectors if specified
             if fix_ang=='True':
               ij_dot_cos=np.divide(np.einsum('ij, ij->i', a_nm_comb[:,:2], a_nm_comb[:,2:]),magn_A*magn_B)
               
@@ -260,42 +276,42 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
               ij_dot=np.divide(np.einsum('ij, ij->i', a_nm_comb[:,:2], a_nm_comb[:,2:]),magn_A*magn_B)
        
      
-            a_nm_i=np.linalg.norm(a_nm_comb[:,:2],axis=1)
+            a_nm_i=np.linalg.norm(a_nm_comb[:,:2],axis=1) 
             b_nm_i=np.linalg.norm(b_nm_comb[:,:2],axis=1)
 
 
             a_nm_j=np.linalg.norm(a_nm_comb[:,2:],axis=1)
             b_nm_j=np.linalg.norm(b_nm_comb[:,2:],axis=1)
-           
-            if strain_tv=='False':
-              if strain_layer=='Both':
-                #Biaxial strain 
+            
+           #Straining lattice parameters
+            if strain_tv=='False': 
+              if strain_layer=='Both': #Strain lattice parameters of both layers                
                 tolr_1=np.divide(b_nm_i-a_nm_i,b_nm_i+a_nm_i)
                 tolr_2=np.divide(b_nm_j-a_nm_j,b_nm_j+a_nm_j)
 
                 avg=((tolr_1+tolr_2)/2)
-                bol_str=avg<strain_per
+                bol_str=avg<strain_per #Filter by tolerated strain percentage
                 avg=avg[bol_str]
-                new_alat_a=np.dstack((alat_a[0]*(1+avg),alat_a[1]*(1+avg)))[0]
+                new_alat_a=np.dstack((alat_a[0]*(1+avg),alat_a[1]*(1+avg)))[0] #New lattice parameters
                 new_alat_b=np.dstack((alat_b[0]*(1-avg),alat_b[1]*(1-avg)))[0]
             
-              elif strain_layer=='Bottom':   
+              elif strain_layer=='Bottom':  #Strain lattice parameters of bottom layer
                 tolr_1=np.divide(b_nm_i-a_nm_i,a_nm_i)
                 tolr_2=np.divide(b_nm_j-a_nm_j,a_nm_j) 
 
                 avg=((tolr_1+tolr_2)/2)
                 bol_str=avg<strain_per
-                avg=avg[bol_str]
-                new_alat_a=np.dstack((alat_a[0]*(1+avg),alat_a[1]*(1+avg)))[0]
+                avg=avg[bol_str]            #Filter by tolerated strain percentage
+                new_alat_a=np.dstack((alat_a[0]*(1+avg),alat_a[1]*(1+avg)))[0] #New lattice parameters
                 new_alat_b=np.dstack((alat_b[0]*(1-0*avg),alat_b[1]*(1-0*avg)))[0]
-              else :
+              else :                       #Strain lattice parameters of top layer
                 tolr_1=np.divide(a_nm_i-b_nm_i,b_nm_i)
                 tolr_2=np.divide(a_nm_j-b_nm_j,b_nm_j)  
                 avg=((tolr_1+tolr_2)/2)
                 bol_str=avg<strain_per
-                avg=avg[bol_str]
+                avg=avg[bol_str]           #Filter by tolerated strain percentage
                 new_alat_a=np.dstack((alat_a[0]*(1+0*avg),alat_a[1]*(1+0*avg)))[0]
-                new_alat_b=np.dstack((alat_b[0]*(1+avg),alat_b[1]*(1+avg)))[0]
+                new_alat_b=np.dstack((alat_b[0]*(1+avg),alat_b[1]*(1+avg)))[0] #New lattice parameters
               tolr_vec1=(tolr_1[bol_str])
               tolr_vec2=(tolr_2[bol_str])
               a_nm_comb=a_nm_comb[bol_str]
@@ -306,7 +322,8 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
               SL=np.hstack((sl_comb[:,:2],sl_comb[:,2:]))
               SL_m=np.hstack((sl_m_comb[:,:2],sl_m_comb[:,2:]))
               Strain_avg=strain_comb[bol_str] 
-  
+              
+            #Straining unit vectors
             elif strain_tv=='True':
                 reshape_anm=[]
                 reshape_bnm=[]
@@ -322,7 +339,7 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                    reshape_sl_nm.append(sl_comb[k].reshape(2,2))
                         
                    strd_uv.append(np.dot(np.linalg.inv(np.array([b1,b2])),np.dot(np.linalg.inv(reshape_slm_nm[k]),np.dot(reshape_anm[k],np.linalg.inv(R.T)))))
-                   bol_str[k]=(np.all(abs(abs(strd_uv[k])-np.identity(2))<strain_per))
+                   bol_str[k]=(np.all(abs(abs(strd_uv[k])-np.identity(2))<strain_per)) #Filter by tolerated strain percentage
                    tem_mis.append(np.dot(reshape_slm_nm[k],np.dot(np.array([b1,b2]),np.dot(strd_uv[k],R.T)))-reshape_anm[k])
                    u_strd,p_strd=polar(strd_uv[-1],side='right')
                    symm_def.append(np.dot(np.array([b1_r,b2_r]),p_strd))
@@ -330,7 +347,7 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                 symm_def=np.asarray(symm_def)
                 strd_uv=np.asarray(strd_uv)
                 symm_def_uv=np.asarray(symm_def_uv)
-                strd_uv=strd_uv[bol_str]
+                strd_uv=strd_uv[bol_str]  #Strained unit vectors
 
                 if len(strd_uv)>0:
                   new_uv_r=symm_def[bol_str]
@@ -349,10 +366,6 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                   cos_angle=ij_dot_cos[bol_str]
                   Strain_avg=strain_comb[bol_str]   
 
-
-                
-                
-
           
           else:
 
@@ -366,59 +379,78 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
             print("2)If angle between superlattice vectors specified, none satisfied")
 
           else:
-
+            #Output file
             f=open("Angle_"+str(ag)+".out","w")
             f.write("Twist angle:")
             f.write("%f\n" %ag)
+            
+            
             for ind in range(len(Area_avg)):
 
               da=min(Area_avg)
-
 
               #minimum area filter
               if ((Area_avg[ind])-min(Area_avg)) < da :  
                
                 sl_minAr.append(SL[ind])
                 Area.append(Area_avg[ind])
+                
+                #Strained lattice paramters
                 if strain_tv=='False':
-                   new_a1=a1*new_alat_a[ind][0]/(alat_a[0])
+                  
+                   #Strained unit cell vectors
+                   new_a1=a1*new_alat_a[ind][0]/(alat_a[0])  
                    new_a2=a2*new_alat_a[ind][1]/alat_a[1]
                    new_b1_r=b1_r*new_alat_b[ind][0]/(alat_b[0])
                    new_b2_r=b2_r*new_alat_b[ind][1]/alat_b[1]
-
+                   
+                   #Area of unit cell vectors 
                    a_unit1=(np.linalg.norm(np.cross(new_a1,new_a2)))
                    a_unit2=(np.linalg.norm(np.cross(new_b1_r,new_b2_r)))
+                    
+                   #Strained superlattice vectors 
+                  
+                   #Lattice 1
                    new_v1=SL[:,:2][ind][0]*new_a1+SL[:,:2][ind][1]*new_a2
                    new_v2=SL[:,2:][ind][0]*new_a1+SL[:,2:][ind][1]*new_a2
-                
+                   #Lattice 2
                    new_v1_m=SL_m[:,:2][ind][0]*new_b1_r+SL_m[:,:2][ind][1]*new_b2_r
                    new_v2_m=SL_m[:,2:][ind][0]*new_b1_r+SL_m[:,2:][ind][1]*new_b2_r
-        
-                   A_fac1=round(nba_a[0]*np.linalg.norm(np.cross(new_v1,new_v2))/a_unit1) 
-                   A_fac2=round(nba_b[0]*np.linalg.norm(np.cross(new_v1_m,new_v2_m))/a_unit2)
-                
+         
+                   #Number of atoms
+                   A_fac1=round(nba_a[0]*np.linalg.norm(np.cross(new_v1,new_v2))/a_unit1) #Number of atoms in superlattice from lattice 1
+                   A_fac2=round(nba_b[0]*np.linalg.norm(np.cross(new_v1_m,new_v2_m))/a_unit2) #Number of atoms in superlattice from lattice 2               
                    total_atoms=A_fac1+A_fac2
                 
-            
+                   #Angle between superllatice vectors
                    SL_ang=(acos(cos_angle[ind])*180/np.pi)
                 
+                   #Mismtatch between strained layers
                    new_mis_vec1= new_v1-(new_v1_m)
                    new_mis_vec2= new_v2-(new_v2_m)
+                  
+                #Strained unit vectors  
                 elif strain_tv=='True':  
                      new_b1_r=new_uv_r[ind][0]
                      new_b2_r=new_uv_r[ind][1]
-                     a_unit1=(np.linalg.norm(np.cross(a1,a2)))
+                     
+                     #Area of unit cell vectors 
+                     a_unit1=(np.linalg.norm(np.cross(a1,a2))) 
                      a_unit2=(np.linalg.norm(np.cross(new_b1_r,new_b2_r)))
+                     #Area of superlattice
                      Ar_sl=np.linalg.norm(np.cross(reshape_anm[ind][0],reshape_anm[ind][1]))
-                     A_fac1=round((Ar_sl/a_unit1)*nba_a[0])
-                     A_fac2=round((Ar_sl/a_unit2)*nba_b[0]) 
-
+                     
+                     #Number of atoms
+                     A_fac1=round((Ar_sl/a_unit1)*nba_a[0]) #Number of atoms in superlattice from lattice 1
+                     A_fac2=round((Ar_sl/a_unit2)*nba_b[0]) #Number of atoms in superlattice from lattice 2  
                      total_atoms=A_fac1+A_fac2
+                     #Angle between superllatice vectors
                      SL_ang=(acos(np.dot(new_uv[ind][0],new_uv[ind][1])/(np.linalg.norm(new_b1_r)*np.linalg.norm(new_b2_r)))*180/np.pi)
 
     
                 f.write("\n")
                 
+                #Output for straining lattice parameters
                 if strain_tv=='False':
                     f.write("Superlattice (vector1 (n1,n2), vector2 (n1',n2')):\n")
                     f.write("%3.9f %3.9f\n" %(SL[:,:2][ind][0],SL[:,:2][ind][1]))
@@ -457,6 +489,8 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                         f.write("%3.9f %3.9f %3.9f\n" %(new_alat_b[ind][0],new_alat_b[ind][1],alat_b[2])) 
                     f.write("Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): ")
                     f.write("%3.9f %3.9f\n" %(np.linalg.norm(new_mis_vec1),np.linalg.norm(new_mis_vec2)))  
+                
+                #Output for straining unit vectors
                 elif strain_tv=='True':
                     f.write("Superlattice (vector1 (n1,n2),vector2 (n1',n2')):\n")
                     f.write("%3.9f %3.9f\n" %(SL[ind][0][0],SL[ind][0][1]))
