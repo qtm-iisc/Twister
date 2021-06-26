@@ -128,7 +128,7 @@ def lammps_data(input_file, data_file):
   # axis alignements by rotating 
   v1, v2, natom, alat = rot_matrix(input_file, data_file)
   # load data from data_file
-  at_type, x_c, y_c, z_c = np.loadtxt(data_file, dtype={'names': ('label', 'x_c', 'y_c', 'z_c'), 'formats': ('|S15', np.float, np.float, np.float)}, unpack = True)
+  at_type, x_c, y_c, z_c = np.loadtxt(data_file, dtype={'names': ('label', 'x_c', 'y_c', 'z_c'), 'formats': ('|S15', float, float, float)}, unpack = True)
   # atom position in Angstroms
   pos_A_x = [np.dot(x_c[i]*v2[0], np.array([1.0,0.0,0.0])) + np.dot(y_c[i]*v2[1], np.array([1.0,0.0,0.0])) + np.dot(z_c[i]*v2[2], np.array([1.0,0.0,0.0])) for i in range(natom)]
   pos_A_y = [np.dot(x_c[i]*v2[0], np.array([0.0,1.0,0.0])) + np.dot(y_c[i]*v2[1], np.array([0.0,1.0,0.0])) + np.dot(z_c[i]*v2[2], np.array([0.0,1.0,0.0])) for i in range(natom)]
