@@ -51,7 +51,7 @@ def gen_cell(n1,n2,a1,a2,b):
     for i in range(-1*n1//2,n1//2):
         for j in range(-1*n2//2, n2//2):
             for k in range(nb):
-                X.append([b[k][0]/n1+np.float(i)/n1,b[k][1]/n2+np.float(j)/n2])
+                X.append([b[k][0]/n1+float(i)/n1,b[k][1]/n2+float(j)/n2])
 
     posit=np.array(X)
 
