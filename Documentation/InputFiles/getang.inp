@@ -6,7 +6,7 @@ range_nm:
 celldm_a: 
 3.164 3.164 25.0
 
-#Lattice vectors
+#Lattice vectors for layer 1
 a1:
 0.5 0.8660254 0.0
 
@@ -24,6 +24,7 @@ Number_basis_atoms_a:
 celldm_b:
 3.301 3.301 25.0
 
+#Lattice vectors for layer 2
 b1:
 0.5 0.8660254 0.0
 
@@ -41,8 +42,12 @@ theta_range:
 16.05 16.15 0.01
 
 #Tolerated mismatch in coincidence given by |L_1-L_2|
-mismatch (Angstrom):
+initial_mismatch_thresold (Angstrom):
 0.0271
+
+#Desired final mismatch threshold for DeepSearch
+final_mismatch_thresold (Angstrom):
+0.00001
 
 #Tolerated biaxial strain tolerated. This will be applied on lattice parameters to stretch them.
 strain_per:
@@ -59,6 +64,10 @@ strain_tensor_vector:
 ##Top layer will be strained by default, regardless of input
 strain_layer:
 'Top'
+
+#Choose to use the DeepSearch function
+DeepSearch:
+'True'
 
 #Fix the angle between the superlattice vectors 
 fix_ang:
