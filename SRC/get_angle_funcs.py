@@ -12,6 +12,8 @@ from math import *
 from itertools import product,combinations
 from mpi4py import MPI as mpi
 import sys
+import os
+import shutil
 from scipy.linalg import polar
 comm = mpi.COMM_WORLD
 rank = comm.Get_rank()
@@ -51,7 +53,7 @@ def gen_cell(n1,n2,a1,a2,b):
     for i in range(-1*n1//2,n1//2):
         for j in range(-1*n2//2, n2//2):
             for k in range(nb):
-                X.append([b[k][0]/n1+float(i)/n1,b[k][1]/n2+float(j)/n2])
+                X.append([b[k][0]/n1+np.float(i)/n1,b[k][1]/n2+np.float(j)/n2])
 
     posit=np.array(X)
 
@@ -75,7 +77,17 @@ def rotate(x,theta):
 
 
 #Main function
-def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_ang,f_ang,range_nm_l,range_nm_u,th_er,alat_a,alat_b,nba_a,nba_b,plot,strain_tv):
+def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_ang,f_ang,range_nm_l,range_nm_u,th_er,alat_a,alat_b,nba_a,nba_b,plot,strain_tv,deepsearch):
+  mism_ang={}
+  new_mis_list={}
+  min_str_list={}
+  Sl_dict={}
+  new_alat_a_dict={}
+  new_alat_b_dict={}
+  ind_list={}
+  total_atom_list={}
+  new_ag_list={}
+  new_uv_list={}
   st_t = time.time()
   if strain_tv == 'True' and rank == 0:
   	print("Note: Since strain_tensor_vector is True, only the top layer will be strained regardless of strain_layer")
@@ -92,8 +104,8 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
       data_s1 = range_nm[:numDataPerRank_s1*size]  #Define array for recollecting after scatter
     recvbuf = np.empty(numDataPerRank_s1, dtype='int64') #Allocate space for buffer object for recieving 
     comm.Scatter(data_s1, recvbuf, root=0) #scatter numDataPerRank_s1*size to processors
-        
     data_s2=None      
+    
     if len(range_nm[numDataPerRank_s1*size:])!=0: 
       for i in range((len(range_nm[numDataPerRank_s1*size:])%numDataPerRank_s1)): #divide remainder of range_nm and send 
         if rank == 0:
@@ -105,7 +117,6 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
          data=np.insert(recvbuf,0,data_s2) 
     else:
       data=recvbuf
-      
     ##Generate permutations of sets of (n1,n2,m1) from the data recieved with repetitions generated at each processor 
     perm_nm=np.empty((0))
     for i in data:  #permutations for each element in data 
@@ -149,6 +160,17 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
       a_nm=np.matmul(perm_nm[:,:2],A) #Lattice 1 superlattice vector (n1*a1 + n2*a2)
       b_nm=np.matmul(perm_nm[:,2:],B) #Lattice 2 supperlattice vector (m1*b1_r + m2*b2_r)
       A_B=a_nm-b_nm
+
+      SL_ang=[]
+      total_atoms=0
+      new_mis_vec1=[]
+      new_mis_vec2=[]
+      strd_uv=[]
+      p=[]
+      u=[]
+      new_ag=[]
+      new_uv=[]
+      tem_mis=[]
   
       with np.errstate(divide='ignore',invalid='ignore'): 
         a_a=np.linalg.norm(a_nm,axis=1)
@@ -173,7 +195,6 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
          comm.Send(strain,dest=0,tag=2)
          comm.Send(sl,dest=0,tag=3)
          comm.Send(sl_m,dest=0,tag=4)
-
       #concatenate recieved data 
       elif rank==0:
         for j in range(1,size):  
@@ -209,6 +230,7 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
               sl_m=np.concatenate((sl_m,data_sl_m),axis=0)
             else:
               sl_m=data_sl_m
+
       if rank==0:
           
           if len(a_nm)>1:
@@ -332,6 +354,7 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                 tem_mis=[]
                 strd_uv=[]
                 bol_str=np.empty(len(a_nm_comb),dtype=bool)
+                max_str=[]
                 for k in range(len(b_nm_comb)):
                    reshape_anm.append(a_nm_comb[k].reshape(2,2))
                    reshape_bnm.append(b_nm_comb[k].reshape(2,2))
@@ -340,6 +363,7 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                         
                    strd_uv.append(np.dot(np.linalg.inv(np.array([b1,b2])),np.dot(np.linalg.inv(reshape_slm_nm[k]),np.dot(reshape_anm[k],np.linalg.inv(R.T)))))
                    bol_str[k]=(np.all(abs(abs(strd_uv[k])-np.identity(2))<strain_per)) #Filter by tolerated strain percentage
+                   max_str.append(np.max(abs(abs(strd_uv[k])-np.identity(2))))
                    tem_mis.append(np.dot(reshape_slm_nm[k],np.dot(np.array([b1,b2]),np.dot(strd_uv[k],R.T)))-reshape_anm[k])
                    u_strd,p_strd=polar(strd_uv[-1],side='right')
                    symm_def.append(np.dot(np.array([b1_r,b2_r]),p_strd))
@@ -365,36 +389,41 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                   Area_avg=ar_sl[bol_str]
                   cos_angle=ij_dot_cos[bol_str]
                   Strain_avg=strain_comb[bol_str]   
+                  max_str=np.asarray(max_str)[bol_str]
 
           
           else:
 
-            print("Twist angle: %f\n" %ag) 
-            print("None found. Possibile reason: Tolerance too low.")
             continue                      
           if len(Area_avg)==0:    
-            print("Twist angle: %f\n" %ag) 
-            print("None found. Possible error:\n ")
-            print("1)No linearly independent vectors found\n")
-            print("2)If angle between superlattice vectors specified, none satisfied")
-
+            continue
           else:
             #Output file
-            f=open("Angle_"+str(ag)+".out","w")
+            if os.path.exists("solutions")==False:
+              os.system("mkdir solutions")
+            ag=round(ag,abs(int(np.log10(float(dth)))))
+            f=open("solutions/Angle_"+str(ag)+".out","w")
             f.write("Twist angle:")
             f.write("%f\n" %ag)
-            
-            
+          
             for ind in range(len(Area_avg)):
-
               da=min(Area_avg)
-
+              
               #minimum area filter
               if ((Area_avg[ind])-min(Area_avg)) < da :  
-               
                 sl_minAr.append(SL[ind])
                 Area.append(Area_avg[ind])
-                
+                #Sl_dict[ag]=SL
+                if (ag in Sl_dict) == False:
+                    Sl_dict[ag]=[SL[ind]]
+                else:
+                   Sl_dict[ag].append(SL[ind])
+                new_alat_a_dict[ag]=new_alat_a
+                new_alat_b_dict[ag]=new_alat_b
+                if (ag in ind_list) == False:
+                    ind_list[ag]=[ind]
+                else:
+                   ind_list[ag].append(ind)    
                 #Strained lattice paramters
                 if strain_tv=='False':
                   
@@ -421,6 +450,11 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                    A_fac1=round(nba_a[0]*np.linalg.norm(np.cross(new_v1,new_v2))/a_unit1) #Number of atoms in superlattice from lattice 1
                    A_fac2=round(nba_b[0]*np.linalg.norm(np.cross(new_v1_m,new_v2_m))/a_unit2) #Number of atoms in superlattice from lattice 2               
                    total_atoms=A_fac1+A_fac2
+
+                   if (ag in total_atom_list) == False:
+                      total_atom_list[ag]=[total_atoms]
+                   else:
+                      total_atom_list[ag].append(total_atoms)
                 
                    #Angle between superllatice vectors
                    SL_ang=(acos(cos_angle[ind])*180/np.pi)
@@ -428,7 +462,11 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                    #Mismtatch between strained layers
                    new_mis_vec1= new_v1-(new_v1_m)
                    new_mis_vec2= new_v2-(new_v2_m)
-                  
+                   if (ag in new_mis_list)== False :
+                      new_mis_list[ag]=[min(np.linalg.norm(new_mis_vec1),np.linalg.norm(new_mis_vec2))]
+                   else:
+                      new_mis_list[ag].append(min(np.linalg.norm(new_mis_vec1),np.linalg.norm(new_mis_vec2)))
+
                 #Strained unit vectors  
                 elif strain_tv=='True':  
                      new_b1_r=new_uv_r[ind][0]
@@ -444,89 +482,56 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                      A_fac1=round((Ar_sl/a_unit1)*nba_a[0]) #Number of atoms in superlattice from lattice 1
                      A_fac2=round((Ar_sl/a_unit2)*nba_b[0]) #Number of atoms in superlattice from lattice 2  
                      total_atoms=A_fac1+A_fac2
+                     if (ag in total_atom_list) == False:
+                      total_atom_list[ag]=[total_atoms]
+                     else:
+                      total_atom_list[ag].append(total_atoms)
+                     
+
                      #Angle between superllatice vectors
                      SL_ang=(acos(np.dot(new_uv[ind][0],new_uv[ind][1])/(np.linalg.norm(new_b1_r)*np.linalg.norm(new_b2_r)))*180/np.pi)
+                     if len(min_str_list)==0:
+                        min_str=min(max_str)
+                        min_str_list.update({ag:min_str})
 
+                     elif min(max_str)< min_str:
+                        min_new_mis=min(max_str)
+                        min_str_list.update({ag:min_str})
+ 
     
                 f.write("\n")
+
+                #minimum mismatch/strain for each angle
                 
+                if len(mism_ang)==0:
+                     mism_ang[ag]=(min(np.max(abs(Strain_avg),axis=1)))
+                elif list(mism_ang.values())[-1]!= min(np.max(abs(Strain_avg),axis=1)) :
+                     mism_ang.update({ag:min(np.max(abs(Strain_avg),axis=1))})
+
                 #Output for straining lattice parameters
                 if strain_tv=='False':
-                    f.write("Superlattice (vector1 (n1,n2), vector2 (n1',n2')):\n")
-                    f.write("%3.9f %3.9f\n" %(SL[:,:2][ind][0],SL[:,:2][ind][1]))
-                    f.write("%3.9f %3.9f\n" %(SL[:,2:][ind][0],SL[:,2:][ind][1]))
-                    f.write("Superlattice (vector1 (m1,m2),vector2 (m1',m2')):\n")
-                    f.write("%3.9f %3.9f\n" %(SL_m[:,:2][ind][0],SL_m[:,:2][ind][1]))
-                    f.write("%3.9f %3.9f\n" %(SL_m[:,2:][ind][0],SL_m[:,2:][ind][1]))
-                    f.write("Total number of atoms: ")
-                    f.write("%d\n" %total_atoms)
-                    f.write("Angle between super lattice vectors (in degree): ")
-                    f.write("%f\n" %SL_ang)  
-                    f.write("Mismatch (vector1,vector2) (in Angstrom): ")
-                    f.write("%3.9f %3.9f\n" %(Strain_avg[ind][0],Strain_avg[ind][1]))
-
-                    if strain_layer=='Both':
-                        f.write("Strain Percent (vector 1,vector2): ")  
-                        f.write("%3.9f %3.9f\n" %(tolr_vec1[ind]*100,-1*tolr_vec2[ind]*100))
-                        f.write("New lattice parameter layer 1 (in Angstrom):")
-                        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_a[ind][0],new_alat_a[ind][1],alat_a[2]))
-                        f.write("New lattice parameter layer 2 (in Angstrom):")
-                        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_b[ind][0],new_alat_b[ind][1],alat_b[2])) 
-                    elif strain_layer=='Bottom':
-                        f.write("Strain Percent in bottom layer (vector 1,vector2): ")
-                        f.write("%3.9f %3.9f\n" %(tolr_vec1[ind]*100,tolr_vec2[ind]*100))
-                        f.write("New lattice parameter layer 1 (in Angstrom):")
-                        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_a[ind][0],new_alat_a[ind][1],alat_a[2]))
-                        f.write("Lattice parameter layer 2 (in Angstrom): ")
-                        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_b[ind][0],new_alat_b[ind][1],alat_b[2])) 
-                    else: 
-                        f.write("Strain Percent in top layer (vector 1,vector2): ")
-                        f.write("%3.9f %3.9f\n" %(tolr_vec1[ind]*100,tolr_vec2[ind]*100))
-                        f.write("Lattice parameter layer 1 (in Angstrom):")
-                        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_a[ind][0],new_alat_a[ind][1],alat_a[2]))
-                    
-                        f.write("New lattice parameter layer 2 (in Angstrom): ")
-                        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_b[ind][0],new_alat_b[ind][1],alat_b[2])) 
-                    f.write("Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): ")
-                    f.write("%3.9f %3.9f\n" %(np.linalg.norm(new_mis_vec1),np.linalg.norm(new_mis_vec2)))  
-                
+                    strain_tv_false_write(f,strain_layer,ind,SL,SL_m,total_atoms,SL_ang,Strain_avg,tolr_vec1,tolr_vec2, new_alat_a, new_alat_b,alat_a,alat_b,new_mis_vec1,new_mis_vec2)
                 #Output for straining unit vectors
                 elif strain_tv=='True':
-                    f.write("Superlattice (vector1 (n1,n2),vector2 (n1',n2')):\n")
-                    f.write("%3.9f %3.9f\n" %(SL[ind][0][0],SL[ind][0][1]))
-                    f.write("%3.9f %3.9f\n" %(SL[ind][1][0],SL[ind][1][1]))
-                    f.write("Superlattice (vector1 (m1,m2),vector2 (m1',m2')):\n")
-                    f.write("%3.9f %3.9f\n" %(SL_m[ind][0][0],SL_m[ind][0][1]))
-                    f.write("%3.9f %3.9f\n" %(SL_m[ind][1][0],SL_m[ind][1][1]))
-                    f.write("Total number of atoms: ")
-                    f.write("%d\n" %total_atoms)
-                    f.write("Angle between super lattice vectors (in degree):")
-                    f.write("%f\n" %SL_ang)    
-                    f.write("Mismatch (vector1,vector2) (in Angstrom):")
-                    f.write("%3.9f %3.9f\n" %(Strain_avg[ind][0],Strain_avg[ind][1]))
-                    f.write("Deformation tensor:\n ")
-                    f.write("%3.9f %3.9f\n" %((((strd_uv[ind]))[0][0]),((((strd_uv[ind]))[0][1]))))
-                    f.write("%3.9f %3.9f\n" %((((strd_uv[ind]))[1][0]),((((strd_uv[ind]))[1][1]))))
                     u,p=polar(strd_uv[ind],side='right')
                     new_ag=np.arcsin(np.dot(u,R.T)[0,1])*180/np.pi
-                    new_ag_rad=np.arcsin(np.dot(u,R.T)[0][1])
-                    f.write("Symmetric factor of deformation tensor:\n ")
-                    f.write("%3.9f %3.9f\n" %((((p))[0][0]),((((p))[0][1]))))
-                    f.write("%3.9f %3.9f\n" %((((p))[1][0]),((((p))[1][1]))))
-                    f.write("Rotation factor of deformation tensor:\n ")
-                    f.write("%3.9f %3.9f\n" %((((u))[0][0]),((((u))[0][1]))))
-                    f.write("%3.9f %3.9f\n" %((((u))[1][0]),((((u))[1][1]))))
-                    f.write("New angle of rotation (in degrees):")
-                    f.write("%3.12f\n" %new_ag)
-                    f.write("New unit vector of top layer (in Angstrom):\n ")
-                    f.write("%3.15f %3.15f\n" %(new_uv[ind][0][0]/alat_b[0],new_uv[ind][0][1]/alat_b[0]))
-                    f.write("%3.15f %3.15f\n" %(new_uv[ind][1][0]/alat_b[1],new_uv[ind][1][1]/alat_b[1]))
-                    f.write("Mismatch with new unit vectors (vector1,vector2) (in Angstrom):")
-                    f.write("%3.15f %3.15f\n" %(np.linalg.norm(tem_mis[ind][0]),np.linalg.norm(tem_mis[ind][1])))   
+                    if (ag in new_ag_list)== False :
+                      new_ag_list[ag]=[new_ag]
+                    else:
+                      new_ag_list[ag].append(new_ag)
                     
+                    #new_uv
+                    if (ag in new_uv_list)== False :
+                        new_uv_list[ag]=[new_uv[ind]]
+                    else:
+                        new_uv_list[ag].append(new_uv[ind])
+
+
+                    new_ag_rad=np.arcsin(np.dot(u,R.T)[0][1])
+                    strain_tv_true_write(f,strain_layer,ind,SL,SL_m,total_atoms,SL_ang,Strain_avg,strd_uv,p,u,new_ag,new_uv,tem_mis,alat_a,alat_b)
             
             #plotting result vectors
-            if plot=='Y' :
+            if plot=='True' :
     
                         
                   n1=int(max(range_nm_u,range_nm_l)*max(alat_a[0],alat_a[1],alat_b[0],alat_b[1]))
@@ -556,7 +561,6 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                   L2_t=L2_c-axis[0]*b1-axis[1]*b2
                   L2_r=rotate(L2_t,ang)
 
-                  #L2_r=rotate(L2,theta)
 
                   tableau20 = [(31, 119, 180), (174, 199, 232), (255, 127, 14), (255, 187, 120),
                           (44, 160, 44), (152, 223, 138), (214, 39, 40), (255, 152, 150),
@@ -579,10 +583,281 @@ def  clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_an
                   plt.legend(leg)
                   plotvec(np.array(sl_minAr),a1,a2,Area,ag)
                   plt.savefig('twist_angle_'+str(ag)+'.png',dpi=300)
+  
+  mism_ang=comm.bcast(mism_ang,root=0)
+  Sl_dict=comm.bcast(Sl_dict,root=0)
+  SL_m=comm.bcast(SL_m,root=0)
+  total_atoms=comm.bcast(total_atoms,root=0)
+  SL_ang=comm.bcast(SL_ang,root=0)
+  Strain_avg=comm.bcast(Strain_avg,root=0)
+  ind_list=comm.bcast(ind_list,root=0)
+  total_atom_list=comm.bcast(total_atom_list,root=0)
+  if len(mism_ang)!=0 and deepsearch=='True' and strain_tv=='False':
+         new_mis_list=comm.bcast(new_mis_list,root=0)
+         tolr_vec1=comm.bcast(tolr_vec1,root=0)
+         tolr_vec2=comm.bcast(tolr_vec2,root=0)
+         new_alat_a_dict=comm.bcast(new_alat_a_dict,root=0)
+         new_alat_b_dict=comm.bcast(new_alat_b_dict,root=0)
+         alat_a=comm.bcast(alat_a,root=0)
+         alat_b=comm.bcast(alat_b,root=0)
+         new_mis_vec1=comm.bcast(new_mis_vec1,root=0)
+         new_mis_vec2=comm.bcast(new_mis_vec2,root=0)
+         return mism_ang,new_mis_list,Sl_dict,SL_m,total_atoms,SL_ang,Strain_avg,tolr_vec1,tolr_vec2, new_alat_a_dict, new_alat_b_dict,alat_a,alat_b,new_mis_vec1,new_mis_vec2
+
+  if len(mism_ang)==0:
+      if rank==0:
+        print('No solution found.')
+        sys.exit()
+      else:
+        sys.exit()
+
+  if strain_tv=='True' and len(mism_ang)!=0 : 
+       if rank==0:
+            min_mis=min(mism_ang.values())
+            min_mis_pos=list(mism_ang.values()).index(min(mism_ang.values()))
+            min_angle= list(mism_ang.keys())[min_mis_pos]
+            min_angle=round(min_angle,abs(int(np.log10(float(dth)))))
+            f=open("Angle_"+str(min_angle)+".out","w")
+            f.write("Twist angle:")
+            f.write("%f\n" %min_angle)
+            shutil.copyfile('solutions/Angle_'+str(min_angle)+'.out','Angle_'+str(min_angle)+'.out')
+            plot_lat=str("False")
+            new_alat_a=0
+            new_alat_b=0
+            new_strain_avg=0
+            twist_inp(strain_tv,strain_layer,new_uv_list[min_angle],new_ag_list,strd_uv,ind_list,total_atom_list,a1,a2,b1,b2,alat_a,alat_b,new_alat_a,new_alat_b,min_angle,Sl_dict,new_strain_avg,plot_lat)
 
 
-  return np.array(sl_minAr),Area
+  if len(new_mis_list.values())!=0  and deepsearch=='False' and strain_tv=='False':
+         min_mis=(min(new_mis_list.values()))
+         res = [key for key in new_mis_list if new_mis_list[key] == (min_mis)]
+         min_angle=res[0]
+         min_angle=round(min_angle,abs(int(np.log10(float(dth)))))
+         f=open("Angle_"+str(min_angle)+".out","w")
+         f.write("Twist angle:")
+         f.write("%f\n" %min_angle)
+         shutil.copyfile('solutions/Angle_'+str(min_angle)+'.out','Angle_'+str(min_angle)+'.out')
+         plot_lat=str("False")
+         new_strain_avg=new_mis_list[min_angle]
+         new_uv=0
+         strd_uv=0
+         new_ag=0
+         ind_list=0
+         total_atom_list=0
+         twist_inp(strain_tv,strain_layer,new_uv,new_ag,strd_uv,ind_list,total_atom_list,a1,a2,b1,b2,alat_a,alat_b,new_alat_a_dict,new_alat_b_dict,min_angle,Sl_dict,new_strain_avg,plot_lat)
 
+
+      #   return mism_ang,new_mis_list,Sl_dict,SL_m,total_atoms,SL_ang,Strain_avg,tolr_vec1,tolr_vec2, new_alat_a_dict, new_alat_b_dict,alat_a,alat_b,new_mis_vec1,new_mis_vec2
+
+
+
+def strain_tv_true_write(f,strain_layer,ind,SL,SL_m,total_atoms,SL_ang,Strain_avg,strd_uv,p,u,new_ag,new_uv,tem_mis,alat_a,alat_b):
+    f.write("Superlattice (vector1 (n1,n2),vector2 (n1',n2')):\n")
+    f.write("%3.9f %3.9f\n" %(SL[ind][0][0],SL[ind][0][1]))
+    f.write("%3.9f %3.9f\n" %(SL[ind][1][0],SL[ind][1][1]))
+    f.write("Superlattice (vector1 (m1,m2),vector2 (m1',m2')):\n")
+    f.write("%3.9f %3.9f\n" %(SL_m[ind][0][0],SL_m[ind][0][1]))
+    f.write("%3.9f %3.9f\n" %(SL_m[ind][1][0],SL_m[ind][1][1]))
+    f.write("Total number of atoms:")
+    f.write("%d\n" %total_atoms)
+    f.write("Angle between super lattice vectors (in degree):")
+    f.write("%f\n" %SL_ang)
+    f.write("Mismatch (vector1,vector2) (in Angstrom):")
+    f.write("%3.9f %3.9f\n" %(Strain_avg[ind][0],Strain_avg[ind][1]))
+    f.write("Deformation tensor:\n ")
+    f.write("%3.9f %3.9f\n" %((((strd_uv[ind]))[0][0]),((((strd_uv[ind]))[0][1]))))
+    f.write("%3.9f %3.9f\n" %((((strd_uv[ind]))[1][0]),((((strd_uv[ind]))[1][1]))))
+    f.write("Symmetric factor of deformation tensor:\n ")
+    f.write("%3.9f %3.9f\n" %((((p))[0][0]),((((p))[0][1]))))
+    f.write("%3.9f %3.9f\n" %((((p))[1][0]),((((p))[1][1]))))
+    f.write("Rotation factor of deformation tensor:\n ")
+    f.write("%3.9f %3.9f\n" %((((u))[0][0]),((((u))[0][1]))))
+    f.write("%3.9f %3.9f\n" %((((u))[1][0]),((((u))[1][1]))))
+    f.write("New angle of rotation (in degrees):")
+    f.write("%3.12f\n" %new_ag)
+    f.write("New unit vector of top layer (in Angstrom):\n ")
+    f.write("%3.15f %3.15f\n" %(new_uv[ind][0][0]/alat_b[0],new_uv[ind][0][1]/alat_b[0]))
+    f.write("%3.15f %3.15f\n" %(new_uv[ind][1][0]/alat_b[1],new_uv[ind][1][1]/alat_b[1]))
+    f.write("Mismatch with new unit vectors (vector1,vector2) (in Angstrom):")
+    f.write("%3.15f %3.15f\n" %(np.linalg.norm(tem_mis[ind][0]),np.linalg.norm(tem_mis[ind][1])))
+
+
+def strain_tv_false_write(f,strain_layer,ind,SL,SL_m,total_atoms,SL_ang,Strain_avg,tolr_vec1,tolr_vec2, new_alat_a, new_alat_b,alat_a,alat_b,new_mis_vec1,new_mis_vec2):
+    f.write("Superlattice (vector1 (n1,n2), vector2 (n1',n2')):\n")
+    f.write("%3.9f %3.9f\n" %(SL[:,:2][ind][0],SL[:,:2][ind][1]))
+    f.write("%3.9f %3.9f\n" %(SL[:,2:][ind][0],SL[:,2:][ind][1]))
+    f.write("Superlattice (vector1 (m1,m2),vector2 (m1',m2')):\n")
+    f.write("%3.9f %3.9f\n" %(SL_m[:,:2][ind][0],SL_m[:,:2][ind][1]))
+    f.write("%3.9f %3.9f\n" %(SL_m[:,2:][ind][0],SL_m[:,2:][ind][1]))
+    f.write("Total number of atoms: ")
+    f.write("%d\n" %total_atoms)
+    f.write("Angle between super lattice vectors (in degree): ")
+    f.write("%f\n" %SL_ang)
+    f.write("Mismatch (vector1,vector2) (in Angstrom): ")
+    f.write("%3.9f %3.9f\n" %(Strain_avg[ind][0],Strain_avg[ind][1]))
+  
+    if strain_layer=='Both':
+        f.write("Strain Percent (vector 1,vector2): ")
+        f.write("%3.9f %3.9f\n" %(tolr_vec1[ind]*100,-1*tolr_vec2[ind]*100))
+        f.write("New lattice parameter layer 1 (in Angstrom):")
+        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_a[ind][0],new_alat_a[ind][1],alat_a[2]))
+        f.write("New lattice parameter layer 2 (in Angstrom):")
+        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_b[ind][0],new_alat_b[ind][1],alat_b[2]))
+    elif strain_layer=='Bottom':
+        f.write("Strain Percent in bottom layer (vector 1,vector2): ")
+        f.write("%3.9f %3.9f\n" %(tolr_vec1[ind]*100,tolr_vec2[ind]*100))
+        f.write("New lattice parameter layer 1 (in Angstrom):")
+        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_a[ind][0],new_alat_a[ind][1],alat_a[2]))
+        f.write("Lattice parameter layer 2 (in Angstrom): ")
+        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_b[ind][0],new_alat_b[ind][1],alat_b[2]))
+    else:
+        f.write("Strain Percent in top layer (vector 1,vector2): ")
+        f.write("%3.9f %3.9f\n" %(tolr_vec1[ind]*100,tolr_vec2[ind]*100))
+        f.write("Lattice parameter layer 1 (in Angstrom):")
+        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_a[ind][0],new_alat_a[ind][1],alat_a[2]))
+
+        f.write("New lattice parameter layer 2 (in Angstrom): ")
+        f.write("%3.9f %3.9f %3.9f\n" %(new_alat_b[ind][0],new_alat_b[ind][1],alat_b[2]))
+    f.write("Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): ")
+    f.write("%3.9f %3.9f\n" %(np.linalg.norm(new_mis_vec1),np.linalg.norm(new_mis_vec2)))
+
+def twist_inp(strain_tv,strain_layer,new_uv,new_ag_list,strd_uv,ind_list,total_atom_list,a1,a2,b1,b2,alat_a,alat_b,new_alat_a,new_alat_b,min_angle,SL,new_strain_avg,plot_lat):
+    f=open("twist.inp","w")
+    if strain_tv=='False':
+       ind=np.argmin(new_strain_avg)
+       SL=SL[min_angle]
+       f.write("a1_l:\n")
+       f.write("%3.9f %3.9f %3.9f\n" %(a1[0]/(alat_a[0]),a1[1]/(alat_a[1]),0))
+       f.write("a2_l:\n")
+       f.write("%3.9f %3.9f %3.9f \n" %(a2[0]/(alat_a[0]),a2[1]/(alat_a[1]),0))
+       f.write("a3_l:\n")
+       f.write("0.0 0.0 1.0\n")
+       f.write("\n")
+       f.write("celldm1_l, celldm2_l, celldm3_l: (Angstrom)\n")
+       f.write("%3.9f %3.9f %3.9f\n" %(new_alat_a[min_angle][ind][0],new_alat_a[min_angle][ind][1],alat_a[2]))
+       f.write("\n")
+       f.write("a1_u:\n")
+       f.write("%3.9f %3.9f %3.9f\n" %(b1[0]/alat_b[0],b1[1]/alat_b[1],0))
+       f.write("a2_u:\n")
+       f.write("%3.9f %3.9f %3.9f\n" %(b2[0]/alat_b[0],b2[1]/alat_b[1],0))
+       f.write("a3_u:\n")
+       f.write("0.0 0.0 1.0\n")
+       f.write("\n")
+       f.write("celldm1_u, celldm2_u, celldm3_u: (Angstrom)\n")
+       f.write("%3.9f %3.9f %3.9f\n" %(new_alat_b[min_angle][ind][0],new_alat_b[min_angle][ind][1],alat_b[2]))
+       f.write("\n")
+       f.write("angle: (radians)\n")
+       f.write("%3.9f\n" %(min_angle*np.pi/180))
+       f.write("\n")
+       f.write("layer2_from_file:\n")
+       f.write("True basis_pos_crys_layer2\n")
+       f.write("\n")
+       f.write("translate_z: (Angstrom)\n")
+       f.write("6.2\n")
+       f.write("\n")
+       f.write("Superlattice1: (m,n)\n")
+       f.write("%3.9f %3.9f\n" %(SL[ind][:2][0],SL[ind][:2][1]))
+       f.write("\n")
+       f.write("Superlattice2: (p,q)\n")
+       f.write("%3.9f %3.9f\n" %(SL[ind][2:][0],SL[ind][2:][1]))
+       f.write("\n")
+       f.write("Plot_lattice:\n")
+       f.write(plot_lat)
+    else:
+           ind=np.argmin(total_atom_list[min_angle])
+           new_ag=new_ag_list[min_angle][ind]
+           new_uv=new_uv[ind]
+           #ind=ind_list[min_angle][ind]
+           SL=SL[min_angle]
+           f.write("a1_l:\n")
+           f.write("%3.9f %3.9f %3.9f\n" %(a1[0]/(alat_a[0]),a1[1]/(alat_a[0]),0))
+           f.write("a2_l:\n")
+           f.write("%3.9f %3.9f %3.9f \n" %(a2[0]/(alat_a[1]),a2[1]/(alat_a[1]),0))
+           f.write("a3_l:\n")
+           f.write("0.0 0.0 1.0\n")
+           f.write("\n")
+           f.write("celldm1_l, celldm2_l, celldm3_l: (Angstrom)\n")
+           f.write("%3.9f %3.9f %3.9f\n" %(alat_a[0],alat_a[1],alat_a[2]))
+           f.write("\n")
+           f.write("a1_u:\n")
+           f.write("%3.9f %3.9f %3.9f\n" %(new_uv[0][0]/alat_b[0],new_uv[0][1]/alat_b[0],0))
+           f.write("a2_u:\n")
+           f.write("%3.9f %3.9f %3.9f\n" %(new_uv[1][0]/alat_b[1],new_uv[1][1]/alat_b[1],0))
+           f.write("a3_u:\n")
+           f.write("0.0 0.0 1.0\n")
+           f.write("\n")
+           f.write("celldm1_u, celldm2_u, celldm3_u: (Angstrom)\n")
+           f.write("%3.9f %3.9f %3.9f\n" %(alat_b[0],alat_b[1],alat_b[2]))
+           f.write("\n")
+           f.write("angle: (radians)\n")
+           f.write("%3.12f\n" %(new_ag*np.pi/180))
+           f.write("\n")
+           f.write("layer2_from_file:\n")
+           f.write("True basis_pos_crys_layer2\n")
+           f.write("\n")
+           f.write("translate_z: (Angstrom)\n")
+           f.write("6.2\n")
+           f.write("\n")
+           f.write("Superlattice1: (m,n)\n")
+           f.write("%3.9f %3.9f\n" %(SL[ind][0][0],SL[ind][0][1]))
+           f.write("\n")
+           f.write("Superlattice2: (p,q)\n")
+           f.write("%3.9f %3.9f\n" %((SL[ind][1][0],SL[ind][1][1])))
+           f.write("\n")
+           f.write("Plot_lattice:\n")
+           f.write(plot_lat)
+    print("Solution found.")       
+
+
+def deep_search(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_ang,f_ang,range_nm_l,range_nm_u,th_er,alat_a,alat_b,nba_a,nba_b,plot,strain_tv,deepsearch,f_thresh):
+    if strain_tv=='True' :
+      if rank==0:  
+        print('Please enter DeepSearch as False.')
+        sys.exit()
+    else:
+        mism_ang,new_mis_list,Sl_dict,SL_m,total_atoms,SL_ang,Strain_avg,tolr_vec1,tolr_vec2, new_alat_a_dict, new_alat_b_dict,alat_a,alat_b,new_mis_vec1,new_mis_vec2= clt(a1,a2,b1,b2,theta_i,theta_f,dth,mismatch,strain_per,strain_layer,fix_ang,f_ang,range_nm_l,range_nm_u,th_er,alat_a,alat_b,nba_a,nba_b,plot,strain_tv,deepsearch)    
+        i=0
+        dth=10**-(len(str(dth))-2)
+        while min(min(list(new_mis_list.values())))>f_thresh:
+          if i <10 :  
+             i=1+i
+             min_mis_list=[]
+             for j in range(len(new_mis_list.values())):
+                min_mis_list.append(min(list(new_mis_list.values())[j]))
+             res = [key for key in new_mis_list if min(new_mis_list[key]) == min(min_mis_list)]
+             min_angle=res[0]
+             theta_i=min_angle - 10**-(str(dth).index('1') -1)
+             theta_f=min_angle + 10**-(str(dth).index('1')-1)
+             dth = np.float(10**-(str(dth).index('1')))
+             dth=(f"{dth:.15f}")
+             mismatch=mism_ang[min_angle]+float(dth)
+             if float(dth)!=0:
+                mism_ang,new_mis_list,Sl_dict,SL_m,total_atoms,SL_ang,Strain_avg,tolr_vec1,tolr_vec2, new_alat_a_dict, new_alat_b_dict,alat_a,alat_b,new_mis_vec1,new_mis_vec2= clt(a1,a2,b1,b2,theta_i,theta_f,float(dth),mismatch,strain_per,strain_layer,fix_ang,f_ang,range_nm_l,range_nm_u,th_er,alat_a,alat_b,nba_a,nba_b,plot,strain_tv,deepsearch)
+             else:
+                 print('No solutions found.')
+                 sys.exit()
+
+          else:
+            print('No solutions found.')
+            sys.exit()
+
+        if rank==0:
+         min_mis=(min(new_mis_list.values()))
+         res = [key for key in new_mis_list if new_mis_list[key] == (min_mis)]
+         min_angle=res[0] 
+         min_angle=round(min_angle,abs(int(np.log10(float(dth)))))
+         f=open("Angle_"+str(min_angle)+".out","w")
+         f.write("Twist angle:")
+         f.write("%s\n" %str(min_angle))
+         shutil.copyfile('solutions/Angle_'+str(min_angle)+'.out','Angle_'+str(min_angle)+'.out')
+         plot_lat=str("False")
+         new_strain_avg=new_mis_list[min_angle]
+         new_uv=0
+         strd_uv=0
+         new_ag=0
+         ind_list=0
+         total_atom_list=0
+         twist_inp(strain_tv,strain_layer,new_uv,new_ag,strd_uv,ind_list,total_atom_list,a1,a2,b1,b2,alat_a,alat_b,new_alat_a_dict,new_alat_b_dict,min_angle,Sl_dict,new_strain_avg,plot_lat)
 
 #reads user input from get_ang.inp
 def read_input(input_file):
@@ -637,9 +912,13 @@ def read_input(input_file):
      w = lines[i+1].split()
      b3 = [eval(w[0]),eval(w[1]),eval(w[2])]
 
-   if "mismatch (Angstrom):" in lines[i]:
+   if "initial_mismatch_threshold (Angstrom):" in lines[i]:
      w=lines[i+1].split()
      mismatch=[eval(w[0])]
+    
+   if "final_mismatch_threshold (Angstrom):" in lines[i]:
+     w=lines[i+1].split()
+     f_thresh=[eval(w[0])] 
 
    if "strain_per:" in lines[i]:
      w=lines[i+1].split()
@@ -665,7 +944,12 @@ def read_input(input_file):
      w=lines[i+1].split()
      plot=[eval(w[0])]
 
+   if "DeepSearch:" in lines[i]:
+     w=lines[i+1].split()
+     deepsearch=[eval(w[0])]
 
 
- return np.array(range_nm),np.array(celldm_a),np.array(a1),np.array(a2),np.array(a3),np.array(celldm_b),np.array(b1),np.array(b2),np.array(b3),np.array(theta_range),np.array(mismatch),np.array(fix_ang),np.array(f_ang),np.array(nba_a),np.array(nba_b),np.array(strain_per),np.array(plot),np.array(strain_layer),np.array(strain_tv)
+
+ return np.array(range_nm),np.array(celldm_a),np.array(a1),np.array(a2),np.array(a3),np.array(celldm_b),np.array(b1),np.array(b2),np.array(b3),np.array(theta_range),np.array(mismatch),np.array(fix_ang),np.array(f_ang),np.array(nba_a),np.array(nba_b),np.array(strain_per),np.array(plot),np.array(strain_layer),np.array(strain_tv),np.array(deepsearch),np.array(f_thresh)
+
 
