@@ -1,4 +1,4 @@
-In this example, we find commensurate twist-angle for twisted bilayer phosphorene.
+In this example, we find commensurate twist-angles for twisted bilayer phosphorene.
 
 From the directory with the input file get_ang.inp, 
 in the terminal, run the following command:
@@ -6,19 +6,20 @@ python path_to_Get_Ang/SRC/get_ang.py
 
 The documentation of the input can be found in the Documentation/ folder.
 
-An output file will be written corresponding to each angle as 
-"Angle_%angle%". The documentation of the output can be found 
-in the Documentation/ folder.
-
 To find commensurate twist-angles, run get_ang.inp for a range of twist-angles.  
 
 1. If output files are generated,they will have commensurate twist-angle 
    with no mismatch. 
 
-2. Find the twist-angle with suitable area/atoms by checking 
-   the solutions in the output files. 
+2. A twist.inp file will be generated with 
+the new lattice vectors and twist-angle with minimum deformation and smallest superllatice area. Run twister.py to obtain 
+the atom positions in the superlattice.  
 
-Once you find the commensurate twist-angle, generate twist.inp with 
-the new lattice vectors and twist-angle and run twister.py to obtain 
-the atom positions in the superlattice. This step is performed in a 
-new folder Ang_%angle%.  
+An output file will be written corresponding to each angle as "Angle_%angle%" in the solutions/ folder. 
+The documentation of the output can be found in the Documentation/ folder.
+
+
+To visualize the generated structure, we provide a utility, tovasp.py, which reads 
+twist.inp and superlattice.dat to generate POSCAR.vasp. This can be visualised 
+directly in VESTA (http://jp-minerals.org/vesta)
+python path_to_Twister/SRC/tovasp.py

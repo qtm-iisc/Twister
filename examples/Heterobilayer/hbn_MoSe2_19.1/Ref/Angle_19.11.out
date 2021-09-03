@@ -1,0 +1,85 @@
+Twist angle:19.110000
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+1.000000000 -3.000000000
+3.000000000 -2.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -2.000000000
+2.000000000 -2.000000000
+Total number of atoms: 26
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.044129048 0.044129036
+Strain Percent (vector 1,vector2): -0.333083324 0.333083230
+New lattice parameter layer 1 (in Angstrom):2.503632948 2.503632948 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.311995079 3.311995079 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000392455 0.000392466
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+1.000000000 -3.000000000
+-2.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 -2.000000000
+-2.000000000 0.000000000
+Total number of atoms: 26
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.044129048 0.044129032
+Strain Percent (vector 1,vector2): -0.333083324 0.333083207
+New lattice parameter layer 1 (in Angstrom):2.503632948 2.503632948 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.311995079 3.311995079 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000392455 0.000392450
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+3.000000000 -2.000000000
+2.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+2.000000000 -2.000000000
+2.000000000 0.000000000
+Total number of atoms: 26
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.044129036 0.044129032
+Strain Percent (vector 1,vector2): -0.333083230 0.333083207
+New lattice parameter layer 1 (in Angstrom):2.503632950 2.503632950 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.311995077 3.311995077 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000392466 0.000392450
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+-3.000000000 2.000000000
+-2.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 2.000000000
+-2.000000000 0.000000000
+Total number of atoms: 26
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.044129036 0.044129032
+Strain Percent (vector 1,vector2): -0.333083230 0.333083207
+New lattice parameter layer 1 (in Angstrom):2.503632950 2.503632950 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.311995077 3.311995077 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000392466 0.000392450
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+-3.000000000 2.000000000
+-1.000000000 3.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-2.000000000 2.000000000
+0.000000000 2.000000000
+Total number of atoms: 26
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.044129036 0.044129048
+Strain Percent (vector 1,vector2): -0.333083230 0.333083324
+New lattice parameter layer 1 (in Angstrom):2.503632948 2.503632948 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.311995079 3.311995079 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000392466 0.000392455
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+-1.000000000 3.000000000
+2.000000000 1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+0.000000000 2.000000000
+2.000000000 0.000000000
+Total number of atoms: 26
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.044129048 0.044129032
+Strain Percent (vector 1,vector2): -0.333083324 0.333083207
+New lattice parameter layer 1 (in Angstrom):2.503632948 2.503632948 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.311995079 3.311995079 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000392455 0.000392450

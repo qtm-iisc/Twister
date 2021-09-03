@@ -1,0 +1,37 @@
+a1_l:
+1.000000000 0.000000000 0.000000000
+a2_l:
+0.000000000 1.000000000 0.000000000 
+a3_l:
+0.0 0.0 1.0
+
+celldm1_l, celldm2_l, celldm3_l: (Angstrom)
+3.321000000 4.620000000 25.000000000
+
+a1_u:
+0.996799032 0.003505187 0.000000000
+a2_u:
+0.003505187 0.996304874 0.000000000
+a3_u:
+0.0 0.0 1.0
+
+celldm1_u, celldm2_u, celldm3_u: (Angstrom)
+3.321000000 4.620000000 25.000000000
+
+angle: (radians)
+0.083215796613
+
+layer2_from_file:
+True basis_pos_crys_layer2
+
+translate_z: (Angstrom)
+6.2
+
+Superlattice1: (m,n)
+0.000000000 -9.000000000
+
+Superlattice2: (p,q)
+-16.000000000 0.000000000
+
+Plot_lattice:
+True

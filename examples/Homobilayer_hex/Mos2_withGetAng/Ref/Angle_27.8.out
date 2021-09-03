@@ -1,0 +1,85 @@
+Twist angle:27.800000
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+1.000000000 -4.000000000
+4.000000000 -3.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -3.000000000
+3.000000000 -4.000000000
+Total number of atoms: 78
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.000841712 0.000841747
+Strain Percent (vector 1,vector2): -0.000000088 -0.000000000
+New lattice parameter layer 1 (in Angstrom):3.163999999 3.163999999 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.164000001 3.164000001 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000841712 0.000841747
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+1.000000000 -4.000000000
+-3.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-1.000000000 -3.000000000
+-4.000000000 1.000000000
+Total number of atoms: 78
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.000841712 0.000841712
+Strain Percent (vector 1,vector2): -0.000000088 -0.000000088
+New lattice parameter layer 1 (in Angstrom):3.164000000 3.164000000 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.164000000 3.164000000 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000841712 0.000841712
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+3.000000000 1.000000000
+4.000000000 -3.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+4.000000000 -1.000000000
+3.000000000 -4.000000000
+Total number of atoms: 78
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.000841712 0.000841747
+Strain Percent (vector 1,vector2): 0.000000088 -0.000000000
+New lattice parameter layer 1 (in Angstrom):3.164000001 3.164000001 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.163999999 3.163999999 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000841712 0.000841747
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+3.000000000 1.000000000
+-1.000000000 4.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+4.000000000 -1.000000000
+1.000000000 3.000000000
+Total number of atoms: 78
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.000841712 0.000841712
+Strain Percent (vector 1,vector2): 0.000000088 0.000000088
+New lattice parameter layer 1 (in Angstrom):3.164000000 3.164000000 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.164000000 3.164000000 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000841712 0.000841712
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+-4.000000000 3.000000000
+-3.000000000 -1.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-3.000000000 4.000000000
+-4.000000000 1.000000000
+Total number of atoms: 78
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.000841747 0.000841712
+Strain Percent (vector 1,vector2): 0.000000000 -0.000000088
+New lattice parameter layer 1 (in Angstrom):3.164000001 3.164000001 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.163999999 3.163999999 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000841747 0.000841712
+
+Superlattice (vector1 (n1,n2), vector2 (n1',n2')):
+-4.000000000 3.000000000
+-1.000000000 4.000000000
+Superlattice (vector1 (m1,m2),vector2 (m1',m2')):
+-3.000000000 4.000000000
+1.000000000 3.000000000
+Total number of atoms: 78
+Angle between super lattice vectors (in degree): 60.000000
+Mismatch (vector1,vector2) (in Angstrom): 0.000841747 0.000841712
+Strain Percent (vector 1,vector2): 0.000000000 0.000000088
+New lattice parameter layer 1 (in Angstrom):3.163999999 3.163999999 25.000000000
+New lattice parameter layer 2 (in Angstrom):3.164000001 3.164000001 25.000000000
+Mismatch with new lattice parmaters (vector1,vector2) (in Angstrom): 0.000841747 0.000841712

@@ -1,5 +1,5 @@
 range_nm:
--14 15
+-12 12
 
 celldm_a: 
 3.164 3.164 25.0
@@ -32,10 +32,13 @@ Number_basis_atoms_b:
 3
 
 theta_range:
-4.70 4.72 0.001
+4.0 5.0 0.01
 
-mismatch (Angstrom):
-0.026
+initial_mismatch_threshold (Angstrom):
+0.1
+
+final_mismatch_threshold (Angstrom):
+0.00001
 
 strain_tensor_vector:
 'False'
@@ -46,6 +49,9 @@ strain_per:
 strain_layer:
 'Both'
 
+DeepSearch:
+'True'
+
 fix_ang:
 'True'
 
@@ -53,4 +59,4 @@ f_ang:
 60
 
 plot:
-'N'
+'False'

@@ -34,8 +34,11 @@ Number_basis_atoms_b:
 theta_range:
 27.7 27.9 0.01
 
-mismatch (Angstrom):
-0.1
+initial_mismatch_threshold (Angstrom):
+0.5
+
+final_mismatch_threshold (Angstrom):
+0.00001
 
 strain_tensor_vector:
 'False'
@@ -46,6 +49,9 @@ strain_per:
 strain_layer:
 'Both'
 
+DeepSearch:
+'False'
+
 fix_ang:
 'True'
 
@@ -53,7 +59,7 @@ f_ang:
 60
 
 plot:
-'Y'
+'N'
 
 
 

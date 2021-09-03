@@ -2,26 +2,45 @@ In this example, we compare hBN-MoSe2 bilayer solutions in a range around
 19.1 degree twist-angle with results from Coincidence Lattices of 
 2D Crystals: Heterostructure Predictions and Applications, Koda et al, 2016.  
 
-The method described in Section 2.1 of the paper is used to find 
-commensurate twist-angles.
+From the directory with the input file get_ang.inp, in the 
+terminal, run the following command:
+python3 path_to_Twister/SRC/get_ang.py
+
+The documentation of the input can be found in the Documentation/ folder.
+
+- If DeepSearch is True:
 
 
-To find the commensurate twist-angles and new lattice parameters:
-mpirun -n 1 python $pathtoTwisterSRC/get_angle.py
+1.Choose a range of twist-angles, in theta_range and run get_ang.inp. For example, 
+   theta_range of 1.0 2.0 0.1 will sample twist angles from 1 degree to 2 degree with a step
+   of 0.1 degrees
+ 
+2. DeepSearch will find a twist-angle with mismatch < 1.e-5. For example, if 1.2 is the 
+twist-angle with minimum mismatch in the range of 1.0 degree to 2.0 degree with 0.1 degree
+step, then the next iteration will sample twist angles from 1.1 degree to 1.3 degree with a step of 0.01 degree.
 
-The twist-angle of 19.11 degrees has the smallest mismatch.
-The mismatch can be checked by: grep Mismatch Angle_*
+- If DeepSearch is False:
 
-The commensurate twist-angle and new lattice parameters
-are used in twist.inp along with the basis atom positions in
-files basis_pos_crys and basis_pos_crys_layer2.
+1. Choose a range of twist-angles, in theta_range and run get_ang.inp For example, 
+   theta_range of 1.0 2.0 0.1 will sample twist angles from 1 degree to 2 degree with a step
+   of 0.1 degrees.
 
-To obtain the atom positions in the superlattice:
-python $pathtoTwisterSRC/twister.py
+2. Twist-angle with minimum mismatch will be written and the other solutions can be found in 'solutions/'.
+ 
+
+Once you run get_ang.py, 'twist.inp' will be generated with the 
+new lattice parameters, superlattice vectors (n1,n2; n1',n2')  and 
+twist-angle. Run twister.py to obtain the atom positions in the superlattice. 
 
 
-To visualize the generated superlattice:
-python $pathtoTwisterSRC/tovasp.py
+An output file will be written corresponding to each angle as "Angle_%angle%". 
+The documentation of the output can be found in the Documentation/ folder.
 
-This generates POSCAR.vasp which can be directly visualized 
-using VESTA (http://jp-minerals.org/vesta/en/)
+A twist.inp file with be generated with 
+the new lattice vectors and twist-angle. Run twister.py to obtain 
+the atom positions in the superlattice. 
+
+To visualize the generated structure, we provide a utility, tovasp.py, which reads 
+twist.inp and superlattice.dat to generate POSCAR.vasp. This can be visualised 
+directly in VESTA (http://jp-minerals.org/vesta)
+python path_to_Twister/SRC/tovasp.py
