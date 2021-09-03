@@ -5,8 +5,9 @@
 **TWISTER** can also be used to study the structural reconstruction of moiré superlattices with classical forcefields through a LAMMPS interface.
 See FFRelaxation/ for examples
 
-If you use this package please cite the following paper for which this code was developed:
+If you use this package please cite the following papers for which this code was developed:
 
+"Twister: Construction and structural relaxation of commensurate moiré superlattices", [arxiv](https://arxiv.org/abs/2102.07884)
 "Ultraflatbands and Shear Solitons in Moire Patterns of Twisted Bilayer Transition Metal Dichalcogenides", [Phys. Rev. Lett. 121, 266401 (2018)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.266401) 
 
 We also distribute registry-dependent Kolmogorov-Crespi interlayer potentials and LAMMPS input files in the KC_ilp/ folder used in the following paper:
