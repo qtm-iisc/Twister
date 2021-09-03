@@ -12,11 +12,11 @@ def hex_t_init(alat, n_max, m_max, ang_min, ang_max):
   f.write("%s \t %s \t %s \t %s \t %s\n"%('angle', 'n  m', 'p  q','angle(rad)', 'length'))
   for n in range(1, n_max):
     for m in range(n, m_max):
-      n = float(n)
-      m = float(m)
+      n = np.float(n)
+      m = np.float(m)
       angle =   np.arccos((m**2 + 4*n*m + n**2)/(2*(m**2 + n*m + n**2)))*180./np.pi   # angles in deg
       if angle > ang_min and angle < ang_max:
-        f.write("%6.10f\t%d\t%d\t%d\t%d\t%6.10f\t%6.10f\n"%(angle,  n, m, -1*m, n+m, angle*np.pi/180, np.sqrt(n**2 + n*m + m**2)*float(alat)))
+        f.write("%6.10f\t%d\t%d\t%d\t%d\t%6.10f\t%6.10f\n"%(angle,  n, m, -1*m, n+m, angle*np.pi/180, np.sqrt(n**2 + n*m + m**2)*np.float(alat)))
   f.close()
 
 def sort_angles(n_max, m_max, ang_min, ang_max, sorted_file, cutoff):
