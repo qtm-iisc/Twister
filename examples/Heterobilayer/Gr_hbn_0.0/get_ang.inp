@@ -34,7 +34,7 @@ Number_basis_atoms_b:
 theta_range:
 0.0 0.1 0.05
 
-inital_mismatch_threshold (Angstrom):
+initial_mismatch_threshold (Angstrom):
 0.01
 
 final_mismatch_threshold (Angstrom):
