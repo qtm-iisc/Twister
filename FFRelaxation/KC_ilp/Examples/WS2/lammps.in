@@ -1,0 +1,195 @@
+units		metal
+dimension	3
+atom_style      atomic
+neighbor        0.3 bin
+
+#structure
+boundary	p p p
+read_data	lammps.dat
+mass            1 32.066
+mass            2 183.84
+mass            3 32.066
+mass            4 32.066
+mass            5 183.84
+mass            6 32.066
+mass            7 32.066
+mass            8 183.84
+mass            9 32.066
+mass            10 32.066
+mass            11 183.84
+mass            12 32.066
+mass            13 32.066
+mass            14 183.84
+mass            15 32.066
+mass            16 32.066
+mass            17 183.84
+mass            18 32.066
+mass            19 32.066
+mass            20 183.84
+mass            21 32.066
+mass            22 32.066
+mass            23 183.84
+mass            24 32.066
+
+#potentials
+pair_style      hybrid/overlay sw sw lj/cut 10.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 &
+kolmogorov/crespi/z 14.0  kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0
+
+
+# SW for layer 1
+pair_coeff      * *  sw 1 h-ws2.sw S1 W1 S2 S3 W2 S4 S5 W3 S6 S7 W4 S8 NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL 
+# SW for layer 2
+pair_coeff      * *  sw 2 h-ws2.sw NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL S1 W1 S2 S3 W2 S4 S5 W3 S6 S7 W4 S8
+
+# Set arbitrary interactions - 0, before overlaying with KC
+pair_coeff * * lj/cut 0.0 3.4
+
+# S layer1: 1, 4, 7, 10
+# S layer2: 15, 18, 21, 24
+# W layer1: 2, 5, 8, 11
+# W layer2: 14, 17, 20, 23
+#------------------------------------------
+# S-S KC interactions.
+#------------------------------------------
+# KC between 1 and 15,18,21,24
+pair_coeff 1 15 kolmogorov/crespi/z 1 ILP.KC S NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 1 18 kolmogorov/crespi/z 2  ILP.KC S NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL NULL  
+pair_coeff 1 21 kolmogorov/crespi/z 3  ILP.KC S NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL NULL  
+pair_coeff 1 24 kolmogorov/crespi/z 4  ILP.KC S NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL S
+
+
+# KC between 4 and 15,18,21,24
+pair_coeff 4 15 kolmogorov/crespi/z 5  ILP.KC NULL NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL NULL  
+pair_coeff 4 18 kolmogorov/crespi/z 6  ILP.KC NULL NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL NULL
+pair_coeff 4 21 kolmogorov/crespi/z 7  ILP.KC NULL NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL NULL
+pair_coeff 4 24 kolmogorov/crespi/z 8  ILP.KC NULL NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL S
+
+
+# KC between 7 and 15,18,21,24
+pair_coeff 7 15 kolmogorov/crespi/z 9  ILP.KC NULL NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL   NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 7 18 kolmogorov/crespi/z 10 ILP.KC NULL NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL NULL
+pair_coeff 7 21 kolmogorov/crespi/z 11 ILP.KC NULL NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL NULL
+pair_coeff 7 24 kolmogorov/crespi/z 12 ILP.KC NULL NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL S
+
+
+# KC between 10 and 15,18,21,24
+pair_coeff 10 15 kolmogorov/crespi/z 13  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL   NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 10 18 kolmogorov/crespi/z 14  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL   NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL NULL
+pair_coeff 10 21 kolmogorov/crespi/z 15  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL NULL
+pair_coeff 10 24 kolmogorov/crespi/z 16  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL S
+
+#------------------------------------------
+# S-W KC interactions.
+#------------------------------------------
+
+# KC between 1, 15 and 2, 14
+pair_coeff 2 15 kolmogorov/crespi/z 17  ILP.KC NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 1 14 kolmogorov/crespi/z 18  ILP.KC S NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
+
+# KC between 1, 18 and 2, 17
+pair_coeff 2 18 kolmogorov/crespi/z 19  ILP.KC NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL NULL
+pair_coeff 1 17 kolmogorov/crespi/z 20  ILP.KC S NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL
+
+# KC between 1, 21 and 2, 20
+pair_coeff 2 21 kolmogorov/crespi/z 21  ILP.KC NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL NULL
+pair_coeff 1 20 kolmogorov/crespi/z 22  ILP.KC S NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL
+
+# KC between 1, 24 and 2, 23
+pair_coeff 2 24 kolmogorov/crespi/z 23  ILP.KC NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL S
+pair_coeff 1 23 kolmogorov/crespi/z 24  ILP.KC S NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL
+#
+#
+
+
+## KC between 5, 14 and 4, 15 
+pair_coeff 5 15 kolmogorov/crespi/z 25  ILP.KC NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL   NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 4 14 kolmogorov/crespi/z 26  ILP.KC NULL NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL   NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
+
+## KC between 5, 17 and 4, 18
+pair_coeff 5 18 kolmogorov/crespi/z 27  ILP.KC NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL NULL
+pair_coeff 4 17 kolmogorov/crespi/z 28  ILP.KC NULL NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL
+
+## KC between 5, 20 and 4, 21
+pair_coeff 5 21 kolmogorov/crespi/z 29  ILP.KC NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL NULL
+pair_coeff 4 20 kolmogorov/crespi/z 30  ILP.KC NULL NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL
+## KC between 5, 23 and 24, 23
+pair_coeff 5 24 kolmogorov/crespi/z 31  ILP.KC NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL S
+pair_coeff 4 23 kolmogorov/crespi/z 32  ILP.KC NULL NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL
+#
+
+pair_coeff 8 15 kolmogorov/crespi/z 33  ILP.KC NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL   NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 7 14 kolmogorov/crespi/z 34  ILP.KC NULL NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL   NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
+#
+pair_coeff 8 18 kolmogorov/crespi/z 35  ILP.KC NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL   NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL NULL
+pair_coeff 7 17 kolmogorov/crespi/z 36  ILP.KC NULL NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL   NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL
+#
+pair_coeff 8 21 kolmogorov/crespi/z 37  ILP.KC NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL NULL
+pair_coeff 7 20 kolmogorov/crespi/z 38  ILP.KC  NULL NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL
+#
+pair_coeff 8 24 kolmogorov/crespi/z 39  ILP.KC NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL S
+pair_coeff 7 23 kolmogorov/crespi/z 40  ILP.KC NULL NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL
+#
+
+pair_coeff 11 15 kolmogorov/crespi/z 41  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL   NULL NULL S NULL NULL NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 10 14 kolmogorov/crespi/z 42  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL   NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
+
+pair_coeff 11 18 kolmogorov/crespi/z 43  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL   NULL NULL NULL NULL NULL S NULL NULL NULL NULL NULL NULL
+pair_coeff 10 17 kolmogorov/crespi/z 44  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL   NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL
+
+pair_coeff 11 21 kolmogorov/crespi/z 45  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL   NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL NULL
+pair_coeff 10 20 kolmogorov/crespi/z 46  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL   NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL
+
+pair_coeff 11 24 kolmogorov/crespi/z 47  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL S
+pair_coeff 10 23 kolmogorov/crespi/z 48  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL S NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL
+#
+#------------------------------------------
+# W-W KC interactions.
+#------------------------------------------
+# W layer1: 2, 5, 8, 11
+# W layer2: 14, 17, 20, 23
+
+# KC between 2 and 14,17,20,23
+pair_coeff 2 14 kolmogorov/crespi/z 49  ILP.KC NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 2 17 kolmogorov/crespi/z 50  ILP.KC NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 2 20 kolmogorov/crespi/z 51  ILP.KC NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL
+pair_coeff 2 23 kolmogorov/crespi/z 52  ILP.KC NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL
+
+#
+## KC between 5 and 14,17,20,23
+pair_coeff 5 14 kolmogorov/crespi/z 53  ILP.KC NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL   NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 5 17 kolmogorov/crespi/z 54  ILP.KC NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 5 20 kolmogorov/crespi/z 55  ILP.KC NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL
+pair_coeff 5 23 kolmogorov/crespi/z 56  ILP.KC NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL
+#
+## KC between 8 and 14,17,20,23
+pair_coeff 8 14 kolmogorov/crespi/z 57  ILP.KC NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL   NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 8 17 kolmogorov/crespi/z 58  ILP.KC NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL   NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 8 20 kolmogorov/crespi/z 59  ILP.KC NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL
+pair_coeff 8 23 kolmogorov/crespi/z 60  ILP.KC NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL
+#
+## KC between 11 and 14,17,20,23
+pair_coeff 11 14 kolmogorov/crespi/z 61  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL   NULL W NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 11 17 kolmogorov/crespi/z 62  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL   NULL NULL NULL NULL W NULL NULL NULL NULL NULL NULL NULL
+pair_coeff 11 20 kolmogorov/crespi/z 63  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL   NULL NULL NULL NULL NULL NULL NULL W NULL NULL NULL NULL
+pair_coeff 11 23 kolmogorov/crespi/z 64  ILP.KC NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL   NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL W NULL
+
+# Relax
+dump            1 all custom 1 dump.minimization id type x y z
+min_style	cg
+minimize	0.0 1.0e-8 10000000 1000000
+print "Done!"

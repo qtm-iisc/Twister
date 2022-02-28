@@ -1,0 +1,32 @@
+We provide the Kolmogorov-Crespi interlayer potential files in 
+the Potentials/ folder. These are in a format suitable to be used 
+with the LAMMPS package (https://lammps.sandia.gov/). If you use 
+these potentials please cite the following paper:
+
+
+The Examples/ folder provides the LAMMPS input file for 
+the KC potential to be used in conjunction with the 
+Stillinger-Weber (SW) potential. The SW potentials 
+need to be downloaded from http://jiangjinwu.org/sw 
+and put in the appropriate folder. The user may 
+download 'supplement.zip' from the link and look 
+in the folder: supplement/sw_lammps/
+
+MoS2 example needs h-mos2.sw
+WS2 example needs h-ws2.sw
+MoSe2 example needs h-mose2.sw
+WSe2 example needs h-wse2.sw
+
+The lammps.in in each Example sets up the intralayer SW and interlayer 
+KC/z interaction and relaxes the AB stacked TMD. The SW potentials 
+downloaded from the above link use a rectangular unit cell of 12 atoms
+for monolayer.
+
+Instructions to compile LAMMPS with SW, KC support:
+In the LAMMPS package src/ directory run the following in the same
+order:
+make serial
+make yes-USER-MISC
+make yes-MOLECULE
+make yes-MANYBODY
+make serial

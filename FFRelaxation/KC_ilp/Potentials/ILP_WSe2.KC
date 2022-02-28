@@ -1,0 +1,9 @@
+# By Mit H. Naik, 21 March 2019
+#
+# W-W, Se-Se and Se-W interlayer KC interaction parameters.
+# Order: z0 (Ang), C0 (meV), C2 (meV), C4 (meV), C (meV), \delta (Ang), \lambda (Ang^{-1}), A (meV), S (scaling parameter)
+#
+W W 10.545 0.254 0.139 -0.028 0.506 1.010 0.944 1.356 1.0
+Se Se 3.992 7.886 6.355 -0.011 26.762 0.935 2.753 60.829 1.0
+W Se 5.079 -1.109 -0.762 -0.120 4.627 0.783 1.999 5.112 1.0
+Se W 5.079 -1.109 -0.762 -0.120 4.627 0.783 1.999 5.112 1.0

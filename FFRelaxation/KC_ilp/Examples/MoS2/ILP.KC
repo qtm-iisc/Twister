@@ -1,0 +1,9 @@
+# By Mit H. Naik, 21 March 2019
+#
+# Mo-Mo, S-S and S-Mo interlayer KC interaction parameters.
+# Order: z0 (Ang), C0 (meV), C2 (meV), C4 (meV), C (meV), \delta (Ang), \lambda (Ang^{-1}), A (meV), S (scaling parameter)
+#
+Mo Mo 9.236 1.471 1.126 0.131 1.928 1.183 0.924 3.439 1.0
+S S 3.857 7.074 2.624 0.024 24.859 0.982 2.762 55.637 1.0
+Mo S 4.049 -2.718 -2.719 -0.325 16.459 0.616 2.564 14.239 1.0
+S Mo 4.049 -2.718 -2.719 -0.325 16.459 0.616 2.564 14.239 1.0

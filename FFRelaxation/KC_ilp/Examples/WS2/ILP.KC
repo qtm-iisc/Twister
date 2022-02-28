@@ -1,0 +1,9 @@
+# By Mit H. Naik, 21 March 2019
+#
+# W-W, S-S and S-W interlayer KC interaction parameters.
+# Order: z0 (Ang), C0 (meV), C2 (meV), C4 (meV), C (meV), \delta (Ang), \lambda (Ang^{-1}), A (meV), S (scaling parameter)
+#
+W W 10.545 0.254 0.139 -0.028 0.506 1.010 0.944 1.356 1.0
+S S 3.857 7.074 2.624 0.024 24.859 0.982 2.762 55.637 1.0
+W S 4.331 -1.344 -1.370 -0.162 8.372 0.587 2.082 7.078 1.0
+S W 4.331 -1.344 -1.370 -0.162 8.372 0.587 2.082 7.078 1.0
