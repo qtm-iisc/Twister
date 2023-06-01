@@ -1,9 +1,15 @@
-This directory contains examples for relaxing the moir\'e superlattices
-using forcefields as implemented in the LAMMPS package.
+# Instructions
 
-NOTE: Please go through the README in the TMD relaxations carefully -- it 
-requires an additional step during the LAMMPS compilation to get the 
-Stillinger-Weber intralayer forcefields to work in the desired manner.
+This directory contains examples for relaxing the moir\'e superlattices using
+forcefields as implemented in the LAMMPS package.
 
-Tips on installing LAMMPS with the required packages are provided in 
+## Important Comment
+*NOTE* Use of sw/mod for Stillinger-Weber potentials in Mass_FF. Please
+       run them using the latest LAMMPS code. We checked our code with
+       LAMMPS Jan. 2022 version.
+
+If you wish to use older LAMMPS version, you must change the source code
+of pair_sw.cpp for SW potentials as mentioned in the directory.
+
+Tips on installing LAMMPS with the required packages are provided in
 LAMMPS_INSTALL
