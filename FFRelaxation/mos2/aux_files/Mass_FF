@@ -10,11 +10,11 @@ S2 32.066
 
 FFs:
 # potentials
-pair_style hybrid/overlay sw sw kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 lj/cut 10.0
+pair_style hybrid/overlay sw/mod sw/mod kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 kolmogorov/crespi/z 14.0 lj/cut 10.0
 
 # Intralayer Interaction
-pair_coeff * * sw 1 tmd.sw Mo S S NULL NULL NULL
-pair_coeff * * sw 2 tmd.sw NULL NULL NULL Mo S S
+pair_coeff * * sw/mod 1 tmd.sw Mo S S NULL NULL NULL
+pair_coeff * * sw/mod 2 tmd.sw NULL NULL NULL Mo S S
 
 # Interlayer Interaction
 pair_coeff 1 5 kolmogorov/crespi/z 1 MoS.KC Mo NULL NULL  NULL S NULL
